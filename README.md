@@ -24,19 +24,16 @@
 - 
 
 #### From Spec:
-• Each branch maintains a queue of all existing cars and car types.
-• The car rental agency maintains a list of all its customers
-• Reservation can be done at any branch. Each customer can rent a car and return
-it to the same branch or any other branch in Canada for an additional fee.
-• If a car is returned to another branch, it will be included in the returned branch
-queue of available cars.
-• Car rental can be done on a daily, weekly or monthly basis. Each rental category has
-its own pricing based on the car type.
-• If a customer has a Gold star membership with the rental agency, they will be eligible for
-free upgrades if the car type selected is not available. Returning cars to different branches
-will be free of charge for gold membership customers.
-• Gold membership is granted automatically if a user rent at least three times in the same year.
-• A late fee is applied if a customer returns a car later than the reservation return date.
+- Each branch maintains a queue of all existing cars and car types.
+- The car rental agency maintains a list of all its customers
+- Reservation can be done at any branch. 
+- Each customer can rent a car and return it to the same branch or any other branch in Canada for an additional fee.
+- If a car is returned to another branch, it will be included in the returned branch queue of available cars.
+- Car rental can be done on a daily, weekly or monthly basis. Each rental category has its own pricing based on the car type.
+- If a customer has a Gold star membership with the rental agency, they will be eligible for free upgrades if the car type selected is not available. 
+- Returning cars to different branches will be free of charge for gold membership customers.
+- Gold membership is granted automatically if a user rent at least three times in the same year.
+- A late fee is applied if a customer returns a car later than the reservation return date.
 
 
 #### Notes and Guidelines
