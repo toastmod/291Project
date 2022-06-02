@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "291Project": {
+      "commandName": "Project"
+    },
+    "sureyeah": {
+      "commandName": "Executable"
+    }
+  }
+}

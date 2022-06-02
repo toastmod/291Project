@@ -5,6 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>_291Project</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>_291Project.Program</StartupObject>
   </PropertyGroup>
 
 </Project>
