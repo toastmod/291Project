@@ -4,12 +4,12 @@
 ### Goal
 - To implement a front-end program that customers and employees can use to successfully book/manage a car rental comapny.
 
-#### Current Tasks:
+### Current Tasks:
 - Customer Login Screen - DF
 - Setting up DB(?) - AN
 
 
-##### Todo
+#### Todo
 - Database set up and linked to project.
 - Database linked to project.
 - Customer Screens
@@ -36,12 +36,12 @@
 - A late fee is applied if a customer returns a car later than the reservation return date.
 
 
-#### Notes and Guidelines
-##### UI
+### Notes and Guidelines
+#### UI
   - The UI must remain consistent. Currently it's set at a minimal UI, smaller sized fonts, no clutter. This was done to normalize the UI, and can be temporary.
   - We can vote on the direction we want to take the design, but it must remain consistent between screens.
 
-##### Development
+#### Development
   - Documentation is necessary. Explain what each function does, and its place in the program. No need to go overboard, but give enough so we don't have to dig around to figure out why a function/button is there.
   - Descriptive variable names are necessary, e.g. no functions or variables named '`f`' with no notes on what they are or what they do.
   - Tasks will be assigned/announced so every team member knows what to do and they their teammates are doing. 
