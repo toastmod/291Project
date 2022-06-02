@@ -60,5 +60,45 @@ namespace _291Project
         {
 
         }
+
+        private void line1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void line2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void postalcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Province_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void City_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CSignUpForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
