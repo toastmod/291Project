@@ -12,11 +12,11 @@ namespace _291Project {
     public partial class Form2a : System.Windows.Forms.Form
     {
         public string msg;
-        public Form1 f2;
-        public Form2a(string a, Form1 b)
+        public CSignUpForm f2;
+        public Form2a(string signup_msg, CSignUpForm b)
         {
             InitializeComponent();
-            msg = a;
+            msg = signup_msg;
             displayedmessage.Text = msg;
             f2 = b;
         }

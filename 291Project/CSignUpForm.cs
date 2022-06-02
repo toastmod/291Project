@@ -2,9 +2,9 @@ using System;
 using System.Windows.Forms;
 namespace _291Project
 {
-    public partial class Form1 
+    public partial class CSignUpForm 
     {
-        public Form1()
+        public CSignUpForm()
         {
             InitializeComponent();
 
@@ -52,6 +52,11 @@ namespace _291Project
         }
 
         private void FirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void last_Click(object sender, EventArgs e)
         {
 
         }

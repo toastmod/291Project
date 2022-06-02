@@ -44,7 +44,9 @@ namespace _291Project
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form1 customerSignUp = new Form1();
+            // Temporary, just testing flow. 
+            // This should link to a "Customer Login" Screen
+            CSignUpForm customerSignUp = new CSignUpForm();
             customerSignUp.Show();
             this.Visible = false;
         }

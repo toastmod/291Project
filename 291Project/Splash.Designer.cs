@@ -35,6 +35,7 @@
             // 
             // Customer
             // 
+            this.Customer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Customer.Location = new System.Drawing.Point(37, 91);
             this.Customer.Name = "Customer";
             this.Customer.Size = new System.Drawing.Size(93, 38);
@@ -45,6 +46,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(182, 91);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 38);
@@ -76,7 +78,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Customer);
             this.Name = "Splash";
-            this.Text = "Numved Car Rentals";
+            this.Text = "Numved Car Rental - Login";
             this.Load += new System.EventHandler(this.Splash_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
