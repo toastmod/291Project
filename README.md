@@ -21,7 +21,7 @@
     - Rental Request Screen
     - Rental Management screen
       - Approve/Deny/Change
-- 
+
 
 #### From Spec:
 - Each branch maintains a queue of all existing cars and car types.
