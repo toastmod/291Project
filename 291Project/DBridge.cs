@@ -35,7 +35,7 @@ namespace _291Project
 
         public static SqlDataReader run_query(String query)
         {
-
+            DBridge.init();
             return (new SqlCommand(query)).ExecuteReader();
         }
 
