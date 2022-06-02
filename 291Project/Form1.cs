@@ -45,5 +45,15 @@ namespace _291Project
             this.Visible = false;
 
         }
+
+        private void PhoneNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
