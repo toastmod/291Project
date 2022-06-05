@@ -4,10 +4,22 @@
 ### Goal
 - To implement a front-end program that customers and employees can use to successfully book/manage a car rental comapny.
 
-### Current Tasks:
-- Customer Login Screen - DF
-- Setting up DB(?) - AN
+### Current Assignments:
+- **Dylan**
+  - Customer Login Screen -> Reservation Screen(Table of all avail cars + rates)
+- **Andrew**
+  - Set up DB and connect it to project, either hosted or local (whatever is easier to do and work with)
+- **Hamza**
+  - Employee Menu
+    - -> buttons to nagivate to: Branch, Reservations (goes to res menu), Car Menu, Customers, Reports
+- **Grant**
+  - Reservation Menu
+  - -> buttons to navigate to:
+    - Create a Reservation
+    - Current Reservations 
 
+If you have completed your assignment, message the group chat and we'll assign
+the next step. Alternatively, continue to make the screen that the buttons lead to, and update the chat so everyone is on the same page.
 
 #### Todo
 - 
@@ -23,7 +35,7 @@
 
 
 - **Employee Screens**
-    - First screen is a menu with the following options
+    - First screen is a menu with the following options (**H**)
       - Branch (change Branch) -> Popup with dropdown, along with change/cancel buttons
       - Reservation Queue -> Reservation Queue Screen
         - Approve/Cancel/Change
