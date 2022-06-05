@@ -78,6 +78,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Sign Up";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_2);
             // 
             // Splash
             // 
@@ -89,6 +90,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Customer);
             this.Name = "Splash";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Numved Car Rental - Login";
             this.Load += new System.EventHandler(this.Splash_Load);
             this.ResumeLayout(false);

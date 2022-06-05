@@ -17,6 +17,7 @@ namespace _291Project
             InitializeComponent();
         }
 
+
         private void Splash_Load(object sender, EventArgs e)
         {
 
@@ -27,10 +28,6 @@ namespace _291Project
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -46,9 +43,11 @@ namespace _291Project
         {
             // Temporary, just testing flow. 
             // This should link to a "Customer Login" Screen
-            CSignUpForm customerSignUp = new CSignUpForm();
-            customerSignUp.Show();
+            
+            CustomerMainMenu cMain = new CustomerMainMenu();
+            cMain.Show();
             this.Visible = false;
+           
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -63,6 +62,16 @@ namespace _291Project
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            // Temporary, just testing flow. 
+            // This should link to a "Customer Login" Screen
+            CSignUpForm customerSignUp = new CSignUpForm();
+            customerSignUp.Show();
+            this.Visible = false;
 
         }
     }
