@@ -281,6 +281,7 @@ namespace _291Project
             this.Controls.Add(this.address_label);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CSignUpForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NCR - Customer Sign Up";
             this.Load += new System.EventHandler(this.CSignUpForm_Load);
             this.ResumeLayout(false);
