@@ -17,7 +17,6 @@
     - Car Menu
     - Customers
     - Reports
-
 - **Grant**
   - Reservation Menu
   - -> buttons to navigate to:
