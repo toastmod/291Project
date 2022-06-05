@@ -11,7 +11,13 @@
   - Set up DB and connect it to project, either hosted or local (whatever is easier to do and work with)
 - **Hamza**
   - Employee Menu
-    - -> buttons to nagivate to: Branch, Reservations (goes to res menu), Car Menu, Customers, Reports
+    - -> buttons to nagivate to: 
+    - Branch (dropdown that changes branch)
+    - Reservations (goes to res menu)
+    - Car Menu
+    - Customers
+    - Reports
+
 - **Grant**
   - Reservation Menu
   - -> buttons to navigate to:
