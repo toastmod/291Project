@@ -19,7 +19,8 @@ namespace _291Project
         {
             if(!initialized)
             {
-                myConnection = new SqlConnection("Server = DESKTOP-BDONDJ3; Database = lab3_thursday; Trusted_Connection = yes");
+                Console.WriteLine("Initializing Database connection.");
+                myConnection = new SqlConnection("Server=tcp:291project.database.windows.net,1433;Initial Catalog=291db;Persist Security Info=False;User ID=coolperson;Password=coolcool321@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
                 myConnection.Open();
                 try
                 {
@@ -28,7 +29,7 @@ namespace _291Project
                 }
                 catch (Exception err)
                 {
-                    MessageBox.Show(err.ToString(), "Cound not connect to database.");
+                    MessageBox.Show(err.ToString(), "Could not connect to database.");
                 }
             }
         }
