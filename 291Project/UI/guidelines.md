@@ -2,11 +2,11 @@
 
 ### Font
 - TrebuchetMS
+- Bold Labels
 
 #### Font Sizes
 - Header - 20pt
 - Sidebar - 20pt
-- Bold Labels - 12
 - Regular text within user controls - 12pt 
 
 ### Sidebar
@@ -15,13 +15,14 @@
 - Exit   - Closes program.
 
 ### Window Sizes 
-- Splash Screen - 
-- Sidebars - 
-- Customer/Employee Menus - 
-- User Control Forms - 
+- Splash Screen - 330-220
+- Sidebars - 90 x 460
+- Customer/Employee Menus - 820 x 500
+- User Control Forms - 700 x 450
 
 
 
 
 ### Palette
 [<img src="https://i.imgur.com/HcoKB8R.png">]
+*Colors are yet to be determined*
