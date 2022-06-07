@@ -4,27 +4,41 @@
 ### Goal
 - To implement a front-end program that customers and employees can use to successfully book/manage a car rental comapny.
 
+
+
 ### Current Assignments:
 - **Dylan**
-  - Customer Login Screen -> Reservation Screen(Table of all avail cars + rates)
+  - Setting up Design Specs
+  - Customer Home Page, Employee Login page
 - **Andrew**
   - Set up DB and connect it to project, either hosted or local (whatever is easier to do and work with)
 - **Hamza**
   - Employee Menu
-    - -> buttons to nagivate to: 
-    - Branch (dropdown that changes branch)
-    - Reservations (goes to res menu)
+  - Side buttons: Home, Logout, Exit
+    - -> buttons on home page to change/nagivate to: 
+        - Branch (dropdown that changes branch)
+        - Reservations (goes to res menu)
+              - Goes to Grant's reservation menu.
     - Car Menu
+        - Described below.
     - Customers
     - Reports
+
 - **Grant**
-  - Reservation Menu
+  - Reservation Menu - Both Employee and Customers
   - -> buttons to navigate to:
-    - Create a Reservation
-    - Current Reservations 
+    - Create a Reservation (both customers and employees have this)
+          - Leads to reservation user control, with filters and a table view that will show query results. Described below in Todo.
+          - Employees will have an extra field available to select a customer/input a customer id. Perhaps this pops up a customer search?
+    - Current Reservations (Employee)
+        - Shows table from query on current reservations out for current branch, filter to allow for choosing which branch/all
 
 If you have completed your assignment, message the group chat and we'll assign
-the next step. Alternatively, continue to make the screen that the buttons lead to, and update the chat so everyone is on the same page.
+the next step. Alternatively, continue to make the screen that the buttons lead to, 
+and update the chat so everyone is on the same page.
+
+
+
 
 #### Todo
 - 
@@ -89,6 +103,7 @@ the next step. Alternatively, continue to make the screen that the buttons lead 
 #### UI
   - The UI must remain consistent. Currently it's set at a minimal UI, smaller sized fonts, no clutter. This was done to normalize the UI, and can be temporary.
   - We can vote on the direction we want to take the design, but it must remain consistent between screens.
+  - 
 
 ### Automate as much as possible, the employee simply manages the system.
 > - Scenario 1 - Car is requested and available
