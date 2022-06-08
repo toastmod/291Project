@@ -82,6 +82,13 @@ namespace _291Project
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReservationMenu reservation = new ReservationMenu();
+            reservation.Show();
+            this.Visible = false;
+        }
     }
     
 }
