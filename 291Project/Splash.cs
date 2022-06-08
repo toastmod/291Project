@@ -12,6 +12,7 @@ namespace _291Project
 {
     public partial class Splash : Form
     {
+        
         public Splash()
         {
             InitializeComponent();
@@ -57,7 +58,9 @@ namespace _291Project
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-
+            EmployeeMenu employee =  new EmployeeMenu();
+            employee.Show();
+            this.Visible = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

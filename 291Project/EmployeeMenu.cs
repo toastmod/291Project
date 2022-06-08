@@ -12,7 +12,8 @@ namespace _291Project
 {
     public partial class EmployeeMenu : Form
     {
-       bool sidebarExpand;
+        public Splash splash;
+        bool sidebarExpand;
 
         public EmployeeMenu()
         {
@@ -76,6 +77,11 @@ namespace _291Project
             //        sidebarTimer.Stop();
             //    }
             }
+
+        private void EmployeeMenu_Load(object sender, EventArgs e)
+        {
+
         }
+    }
     
 }

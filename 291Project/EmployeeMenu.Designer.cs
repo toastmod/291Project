@@ -56,20 +56,18 @@
             this.sidebar.Controls.Add(this.button4);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.sidebar.MaximumSize = new System.Drawing.Size(687, 1563);
-            this.sidebar.MinimumSize = new System.Drawing.Size(202, 1563);
+            this.sidebar.MaximumSize = new System.Drawing.Size(370, 733);
+            this.sidebar.MinimumSize = new System.Drawing.Size(109, 733);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(687, 1563);
+            this.sidebar.Size = new System.Drawing.Size(370, 733);
             this.sidebar.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(6, 7);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(676, 167);
+            this.panel2.Size = new System.Drawing.Size(364, 78);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -77,10 +75,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(87, 57);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(47, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(434, 49);
+            this.label1.Size = new System.Drawing.Size(215, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Menu for Employees";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -88,10 +85,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(6, 188);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.panel1.Location = new System.Drawing.Point(3, 87);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(680, 214);
+            this.panel1.Size = new System.Drawing.Size(366, 100);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -100,9 +96,8 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(674, 207);
+            this.button1.Size = new System.Drawing.Size(363, 97);
             this.button1.TabIndex = 0;
             this.button1.Text = "Branch";
             this.button1.UseVisualStyleBackColor = true;
@@ -113,10 +108,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(6, 416);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.button2.Location = new System.Drawing.Point(3, 193);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(674, 207);
+            this.button2.Size = new System.Drawing.Size(363, 97);
             this.button2.TabIndex = 2;
             this.button2.Text = "Reservations";
             this.button2.UseVisualStyleBackColor = true;
@@ -126,10 +120,9 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(6, 637);
-            this.button3.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.button3.Location = new System.Drawing.Point(3, 296);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(674, 207);
+            this.button3.Size = new System.Drawing.Size(363, 97);
             this.button3.TabIndex = 3;
             this.button3.Text = "Car Menu";
             this.button3.UseVisualStyleBackColor = true;
@@ -139,10 +132,9 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.Location = new System.Drawing.Point(6, 858);
-            this.button5.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.button5.Location = new System.Drawing.Point(3, 399);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(674, 207);
+            this.button5.Size = new System.Drawing.Size(363, 97);
             this.button5.TabIndex = 5;
             this.button5.Text = "Reports";
             this.button5.UseVisualStyleBackColor = true;
@@ -152,10 +144,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Location = new System.Drawing.Point(6, 1079);
-            this.button4.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.button4.Location = new System.Drawing.Point(3, 502);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(674, 207);
+            this.button4.Size = new System.Drawing.Size(363, 97);
             this.button4.TabIndex = 4;
             this.button4.Text = "Customers";
             this.button4.UseVisualStyleBackColor = true;
@@ -166,24 +157,23 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(914, 480);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(492, 225);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(17, 20);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(9, 9);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // EmployeeMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(2740, 1783);
+            this.ClientSize = new System.Drawing.Size(1381, 666);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.sidebar);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "EmployeeMenu";
             this.Text = "Employee Only";
+            this.Load += new System.EventHandler(this.EmployeeMenu_Load);
             this.sidebar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
