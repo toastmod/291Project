@@ -8,24 +8,26 @@
 
 ### Current Assignments:
 - **Dylan**
-  - Setting up Design Specs
-  - Customer Home Page, Employee Login page
+  - Finish Setting up Design Specs
+  - Login and splash screen, redirect to proper screens.
+  - Normalizing UI, editing for consistency. Will go over each screen and edit for a consistent flow. 
 - **Andrew**
-  - Set up DB and connect it to project, either hosted or local (whatever is easier to do and work with)
+  - Car Queue screen, connected to the DB (for the Demo)
 - **Hamza**
   - Employee Menu
   - Side buttons: Home, Logout, Exit
     - -> buttons on home page to change/nagivate to: 
-        - Branch (dropdown that changes branch)
+        - Branch (dropdown to change branch setting) - maybe not needed? discuss.
         - Reservations (goes to res menu)
               - Goes to Grant's reservation menu.
     - Car Menu
         - Described below.
     - Customers
     - Reports
-
 - **Grant**
   - Reservation Menu - Both Employee and Customers
+  - Home menu on Customers Main Screen will lead to Car Reservation menu
+  - Home menu on Employee Home Screen
   - -> buttons to navigate to:
     - Create a Reservation (both customers and employees have this)
           - Leads to reservation user control, with filters and a table view that will show query results. Described below in Todo.
@@ -43,6 +45,7 @@ and update the chat so everyone is on the same page.
 #### Todo
 - 
 - **Database set up and linked to project by next Wed.**
+
 - **Customer Screens**
   - Customer Rental Request Screen
     - Shows a table of all available cars along with rates.
