@@ -56,11 +56,12 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(164, 922);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(161, 922);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(6, 230);
             this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
@@ -71,6 +72,7 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.Location = new System.Drawing.Point(6, 120);
             this.button4.Margin = new System.Windows.Forms.Padding(6);
             this.button4.Name = "button4";
@@ -81,6 +83,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(6, 6);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
@@ -102,6 +105,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(154)))), ((int)(((byte)(156)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(173, 12);
             this.dataGridView1.Name = "dataGridView1";
