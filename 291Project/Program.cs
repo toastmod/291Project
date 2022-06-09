@@ -14,6 +14,8 @@ namespace _291Project
         [STAThread]
         static void Main()
         {
+            DBridge.init();
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

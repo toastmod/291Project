@@ -10,13 +10,14 @@ namespace _291Project
 {
     public static class DBridge
     {
-        public static bool initialized;
+        public static bool initialized = false;
         public static SqlConnection myConnection;
         public static SqlCommand myCommand;
         public static SqlDataReader myReader;
 
         public static void init()
         {
+            Console.WriteLine("this should fucking work");
             if(!initialized)
             {
                 Console.WriteLine("Initializing Database connection.");
@@ -26,18 +27,22 @@ namespace _291Project
                 {
                     myCommand = new SqlCommand();
                     myCommand.Connection = myConnection;
+                    initialized = true;
                 }
                 catch (Exception err)
                 {
                     MessageBox.Show(err.ToString(), "Could not connect to database.");
+                    initialized = false;
                 }
+
             }
         }
 
         public static SqlDataReader run_query(String query)
         {
             DBridge.init();
-            return (new SqlCommand(query)).ExecuteReader();
+            myCommand.CommandText = query;
+            return myCommand.ExecuteReader();
         }
 
     }
