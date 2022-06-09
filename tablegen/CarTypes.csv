@@ -1,0 +1,4 @@
+CarType,daily_rate,weekly_rate,monthly_rate,
+SEDAN,40,35,30,
+TRUCK,60,55,50,
+VAN,50,45,40,

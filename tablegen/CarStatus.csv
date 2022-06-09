@@ -1,0 +1,4 @@
+CarStatusID,Status,
+0,IN_REPAIR,
+1,AVAIL,
+2,RESERVED,
