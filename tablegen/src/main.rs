@@ -149,6 +149,9 @@ fn main() {
     gen_write("RepairLog.csv", vec![
         ownall!(repair_ids),
         gen_col::<CarID>("Car_ID", 12),
+        gen_col::<Day>("Day", 12),
+        gen_col::<Month>("Month", 12),
+        gen_col::<Year>("Year", 12),
     ]);
 
 
