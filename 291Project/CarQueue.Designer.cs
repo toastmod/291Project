@@ -1,6 +1,6 @@
 ﻿namespace _291Project
 {
-    partial class EmployeeMenu
+    partial class UserControl2
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,16 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // UserControl1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(700, 450);
-            this.ResumeLayout(false);
-
         }
 
         #endregion

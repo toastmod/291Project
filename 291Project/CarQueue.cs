@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _291Project
 {
-    public partial class EmployeeMenu : UserControl
+    public partial class UserControl2 : UserControl
     {
-        public EmployeeMenu()
+        public UserControl2()
         {
             InitializeComponent();
         }
