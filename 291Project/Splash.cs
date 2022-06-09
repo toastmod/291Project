@@ -59,7 +59,7 @@ namespace _291Project
         private void button1_Click_2(object sender, EventArgs e)
         {
             // Links to employee screen.
-            EmployeeMenu employee =  new EmployeeMenu();
+            EmployeeMain employee =  new EmployeeMain();
             employee.Show();
             this.Visible = false;
         }

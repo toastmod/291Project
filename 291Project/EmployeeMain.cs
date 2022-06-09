@@ -16,5 +16,10 @@ namespace _291Project
         {
             InitializeComponent();
         }
+
+        private void EmployeeMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
