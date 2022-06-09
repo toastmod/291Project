@@ -17,7 +17,7 @@ namespace _291Project
         {
             InitializeComponent();
 
-            var reader = DBridge.run_query("SELECT * from Cars");
+            var reader = DBridge.run_query("SELECT Car_ID, Car_Type, Branch_ID, CarStatus.Status from Cars, CarStatus where CarStatus.CarStatusID = Cars.CarStatusID");
             dt.Load(reader);
 
             dataGridView1.DataSource = dt;
