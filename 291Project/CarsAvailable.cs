@@ -15,15 +15,8 @@ namespace _291Project
         public CarsAvailable()
         {
             InitializeComponent();
-            var reader = DBridge.run_query("SELECT * from Cars");
-            dataGridView1.Columns.Add("Car_ID","");
-            dataGridView1.Columns.Add("CarType","");
-            dataGridView1.Columns.Add("BranchID","");
-            dataGridView1.Columns.Add("CarStatusID","");
-            for(int i=0; i<12; i++)
-            {
-                dataGridView1.Rows.Add(reader.Read());
-;           }
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

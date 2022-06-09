@@ -12,9 +12,16 @@ namespace _291Project
 {
     public partial class EmployeeMain : Form
     {
+        public DataTable dt = new DataTable();
         public EmployeeMain()
         {
             InitializeComponent();
+
+            var reader = DBridge.run_query("SELECT * from Cars");
+            dt.Load(reader);
+
+            dataGridView1.DataSource = dt;
+
         }
 
         private void EmployeeMain_Load(object sender, EventArgs e)
@@ -24,9 +31,20 @@ namespace _291Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DBridge.init();
-            var cview = new CarsAvailable();
-            cview.Show();
+            //DBridge.init();
+
+
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
