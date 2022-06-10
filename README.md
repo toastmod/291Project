@@ -4,7 +4,10 @@
 ### Goal
 - To implement a front-end program that customers and employees can use to successfully book/manage a car rental comapny.
 
-
+## NOTES FROM MILESTONE 2:
+- No need for car status if only available cars are shown.
+- Make sure no overlapping reservations on customer cars. 
+  - Does not overlap with any current reservation.
 
 ### Current Assignments:
 - **Dylan**
@@ -25,9 +28,7 @@
     - Customers
     - Reports
 - **Grant**
-  - Reservation Menu - Both Employee and Customers
-  - Home menu on Customers Main Screen will lead to Car Reservation menu
-  - Home menu on Employee Home Screen
+  - Reservation Menu - Employees
   - -> buttons to navigate to:
     - Create a Reservation (both customers and employees have this)
           - Leads to reservation user control, with filters and a table view that will show query results. Described below in Todo.
@@ -40,6 +41,10 @@ the next step. Alternatively, continue to make the screen that the buttons lead 
 and update the chat so everyone is on the same page.
 
 
+## Whiteboard Meeting Rundown
+### Employee Screens
+#### Employee Main Menu
+- 
 
 
 #### Todo
@@ -80,7 +85,7 @@ and update the chat so everyone is on the same page.
         - Top end car types for rental income in specific province/specific branch.
           - Parameterized
         - How many gold member per year
-        - How many transactions after gold member
+        - How many transactions after gold member (Average)
         - Sales
         - **The more complex the query, the higher the grade**
 
