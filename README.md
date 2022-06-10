@@ -90,7 +90,6 @@ and update the chat so everyone is on the same page.
     - If we're doing Past Rent Date add filter: (Date To < Today)
 ---
 #### Customers 
-- Shows Emp_Customers UC
 - Table Grid of all Customer Data
 - Filter button brings up filter window ->
   - Customer ID
@@ -155,7 +154,8 @@ and update the chat so everyone is on the same page.
     - CID, Cname, Date From, Date To, Car Type, CarID, Branch From, Branch Returned
   - One Button: **Filter** 
   - One checkbox - View Cancelled Reservations
-    - Changes query to "Status in [Complete, Cancelled]
+    - Changes query to where 
+  >Res_Status in [Complete, Cancelled]
   - **Filter**
     - Province
     - Branch
@@ -181,6 +181,51 @@ and update the chat so everyone is on the same page.
     - Branch (Default: Emp)
     - Car Type
     - Car make
+---
+
+### Customer Screens
+#### Customer Main Menu
+- Make Reservation
+- View Current Reservation
+- View Past Reservations
+---
+##### Make Reservation
+- **Cus_Reserv** UC
+- Table grid view to view query results
+- Two drop down selectors
+  - Province (Default: Cus)
+  - Branch (Default: Cus)
+- Filters
+  - Car Type
+  - Car Make
+  - Car Color
+  - Max Rate/day
+- Submit
+  - Checks validity
+  - If passes, adds to reservations table.
+
+##### View Current Reservation
+- **Cus_Res_cur** UC
+- Single page
+- If no current reservation (Res Status: Reserved (or something, forgot the statuses))
+  - "No Current Reservation"
+- If current reservation
+  - Res# ___
+  - Date Range ___
+  - Branch ___
+  - Car Type ___
+  - Car Make ___
+  - Car Year ___
+  - Car Color ___
+  - Rate ___
+
+##### View Past Reservations (low priority)
+- **Past_Res_cur** UC
+- Table grid view for past reservations where Cus_ID = Current Customer's ID
+- Show Cancelled
+  - Checkbox
+  - Changes query to 
+>where Res_Status in [Complete, Cancelled]
 ---
 
 
