@@ -47,7 +47,7 @@ and update the chat so everyone is on the same page.
 #### Employee Main Menu
 - 4 Navigational Buttons:
   - Car Menu      -> Car Sub-Menu   
-  - Customer      -> Customer UC
+  - Customer      -> Emp_Customer UC
   - Reservations  -> Reservations Sub-Menu
   - Reports       -> Reports UC
 ---
@@ -89,7 +89,8 @@ and update the chat so everyone is on the same page.
     -  (Status: Rented)
     - If we're doing Past Rent Date add filter: (Date To < Today)
 ---
-#### Customers UC
+#### Customers 
+- Shows Emp_Customers UC
 - Table Grid of all Customer Data
 - Filter button brings up filter window ->
   - Customer ID
@@ -180,8 +181,10 @@ and update the chat so everyone is on the same page.
     - Branch (Default: Emp)
     - Car Type
     - Car make
-
 ---
+
+
+
 #### Todo
 - **Customer Screens**
   - Customer Rental Request Screen
