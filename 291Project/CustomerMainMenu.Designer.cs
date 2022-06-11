@@ -37,6 +37,7 @@
             this.view_curr_res_button = new System.Windows.Forms.Button();
             this.req_res_button = new System.Windows.Forms.Button();
             this.customer_id_box = new System.Windows.Forms.Label();
+            this.customerReservationMenu1 = new _291Project.CustomerReservationMenu();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(88, 461);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(88, 561);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -98,7 +99,7 @@
             this.tableLayoutPanel2.Controls.Add(this.past_res_button, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.view_curr_res_button, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.req_res_button, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(151, 60);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(203, 96);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -142,7 +143,7 @@
             // 
             this.customer_id_box.AutoSize = true;
             this.customer_id_box.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customer_id_box.Location = new System.Drawing.Point(105, 19);
+            this.customer_id_box.Location = new System.Drawing.Point(142, 19);
             this.customer_id_box.Name = "customer_id_box";
             this.customer_id_box.Size = new System.Drawing.Size(65, 18);
             this.customer_id_box.TabIndex = 2;
@@ -150,12 +151,22 @@
             this.customer_id_box.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.customer_id_box.Click += new System.EventHandler(this.customer_id_box_Click);
             // 
+            // customerReservationMenu1
+            // 
+            this.customerReservationMenu1.Location = new System.Drawing.Point(88, 0);
+            this.customerReservationMenu1.Name = "customerReservationMenu1";
+            this.customerReservationMenu1.Size = new System.Drawing.Size(798, 561);
+            this.customerReservationMenu1.TabIndex = 3;
+            this.customerReservationMenu1.Visible = false;
+            this.customerReservationMenu1.Load += new System.EventHandler(this.customerReservationMenu1_Load);
+            // 
             // CustomerMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.ClientSize = new System.Drawing.Size(804, 461);
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.customerReservationMenu1);
             this.Controls.Add(this.customer_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -180,5 +191,6 @@
         private System.Windows.Forms.Button past_res_button;
         private System.Windows.Forms.Button view_curr_res_button;
         private System.Windows.Forms.Button req_res_button;
+        private CustomerReservationMenu customerReservationMenu1;
     }
 }

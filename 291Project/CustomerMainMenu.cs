@@ -41,5 +41,14 @@ namespace _291Project
             customer_id_box.Text = $"Welcome {CustomerDisplayName}!";
 
         }
+
+        private void customerReservationMenu1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void req_res_button_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
