@@ -24,7 +24,8 @@
 
 
 ### Palette
-[<img src="https://i.imgur.com/HcoKB8R.png">]
+<img src="https://i.imgur.com/HcoKB8R.png">
+
 *Colors are yet to be determined*
 
 Tan Background  - rgb(213,205,186)
