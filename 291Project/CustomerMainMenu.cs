@@ -17,7 +17,7 @@ namespace _291Project
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.BringToFront();
         }
 
         private void button4_Click(object sender, EventArgs e)
