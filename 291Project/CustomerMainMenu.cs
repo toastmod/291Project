@@ -12,12 +12,12 @@ namespace _291Project
 {
     public partial class CustomerMainMenu : Form
     {
-        public bool logged_in = false;
         public CustomerMainMenu()
         {
             InitializeComponent();
         }
 
+        
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -38,6 +38,11 @@ namespace _291Project
         }
 
         private void customerHome1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

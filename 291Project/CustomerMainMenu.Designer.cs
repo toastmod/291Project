@@ -32,7 +32,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.customerHome1 = new _291Project.CustomerLogin();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.ID_display = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,25 +86,42 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // customerHome1
+            // tableLayoutPanel2
             // 
-            this.customerHome1.Location = new System.Drawing.Point(94, 3);
-            this.customerHome1.Name = "customerHome1";
-            this.customerHome1.Size = new System.Drawing.Size(700, 450);
-            this.customerHome1.TabIndex = 1;
-            this.customerHome1.Load += new System.EventHandler(this.customerHome1_Load);
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(151, 60);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(588, 331);
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // CustomerMain
+            // ID_display
+            // 
+            this.ID_display.BackColor = System.Drawing.SystemColors.Control;
+            this.ID_display.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ID_display.Location = new System.Drawing.Point(103, 12);
+            this.ID_display.Name = "ID_display";
+            this.ID_display.Size = new System.Drawing.Size(100, 20);
+            this.ID_display.TabIndex = 2;
+            this.ID_display.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ID_display.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // CustomerMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 461);
-            this.Controls.Add(this.customerHome1);
+            this.Controls.Add(this.ID_display);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "CustomerMain";
+            this.Name = "CustomerMainMenu";
             this.Text = "Numved Car Rentals";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,6 +131,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
-        private CustomerLogin customerHome1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TextBox ID_display;
     }
 }

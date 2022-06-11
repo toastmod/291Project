@@ -93,18 +93,23 @@ namespace _291Project
             login_id = login_id.Trim().ToUpper();
             if (login_id == "C")
             {
-            CustomerMainMenu cMain = new CustomerMainMenu();
-            cMain.Show();
-            this.Visible = false;
+                CustomerMainMenu cMain = new CustomerMainMenu();
+                cMain.Show();
+                this.Visible = false;
             }
             else if (login_id == "E")
             {
-            // Links to employee screen.
-            EmployeeMain employee =  new EmployeeMain();
-            employee.Show();
-            this.Visible = false;
-
+                // Links to employee screen.
+                EmployeeMain employee = new EmployeeMain();
+                employee.Show();
+                this.Visible = false;
             }
+            else 
+            {
+                MessageBox.Show("Please Enter Valid Credentials", "Failed to Login", 
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
     }
