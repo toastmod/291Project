@@ -122,6 +122,7 @@
             this.AcceptButton = this.login_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(205)))), ((int)(((byte)(186)))));
             this.ClientSize = new System.Drawing.Size(589, 410);
             this.Controls.Add(this.login_button);

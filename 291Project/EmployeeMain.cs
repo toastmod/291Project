@@ -26,10 +26,9 @@ namespace _291Project
         private void button3_Click(object sender, EventArgs e)
         {
             //DBridge.init();
-
-
-
-
+            empCarMenu2.BringToFront();
+            empCarMenu2.Show();
+            empCarMenu2.Enabled = true;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -54,6 +53,8 @@ namespace _291Project
 
         private void button1_Click(object sender, EventArgs e)
         {
+            empCarMenu2.Hide();
+
             this.BringToFront();
         }
 
@@ -63,6 +64,18 @@ namespace _291Project
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void empCarMenu2_Load(object sender, EventArgs e)
+        {
+            empCarMenu2.Hide();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }

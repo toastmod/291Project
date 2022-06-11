@@ -12,8 +12,6 @@ namespace _291Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            EmployeeMenu employee = new EmployeeMenu();
-            employee.Show();
             this.Visible = false;
 
         }

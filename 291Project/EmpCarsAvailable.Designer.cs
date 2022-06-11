@@ -1,7 +1,7 @@
 ﻿
 namespace _291Project
 {
-    partial class CarsAvailable
+    partial class EmpCarsAvailable
     {
         /// <summary> 
         /// Required designer variable.

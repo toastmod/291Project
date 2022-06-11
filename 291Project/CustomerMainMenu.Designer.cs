@@ -166,10 +166,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.customerReservationMenu1);
             this.Controls.Add(this.customer_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.customerReservationMenu1);
             this.Name = "CustomerMainMenu";
             this.Text = "Numved Car Rentals";
             this.Load += new System.EventHandler(this.CustomerMainMenu_Load_1);

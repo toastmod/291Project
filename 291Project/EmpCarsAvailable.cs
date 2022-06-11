@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace _291Project
 {
-    public partial class EmployeeMenu : UserControl
+    public partial class EmpCarsAvailable : UserControl
     {
-        public EmployeeMenu()
+        public EmpCarsAvailable()
         {
             InitializeComponent();
+
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

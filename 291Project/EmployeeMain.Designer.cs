@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.back_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,6 +40,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.emp_id_box = new System.Windows.Forms.Label();
             this.mainMenuBranchDropdown = new System.Windows.Forms.ComboBox();
+            this.empCarMenu2 = new _291Project.EmpCarMenu();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.back_btn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -77,16 +78,17 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button4
+            // back_btn
             // 
-            this.button4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(4, 60);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 49);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Back";
-            this.button4.UseVisualStyleBackColor = true;
+            this.back_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.back_btn.Location = new System.Drawing.Point(4, 60);
+            this.back_btn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(85, 49);
+            this.back_btn.TabIndex = 2;
+            this.back_btn.Text = "Back";
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -181,6 +183,16 @@
             this.mainMenuBranchDropdown.TabIndex = 7;
             this.mainMenuBranchDropdown.Text = "Select Branch...";
             // 
+            // empCarMenu2
+            // 
+            this.empCarMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
+            this.empCarMenu2.Location = new System.Drawing.Point(216, 70);
+            this.empCarMenu2.Margin = new System.Windows.Forms.Padding(2);
+            this.empCarMenu2.Name = "empCarMenu2";
+            this.empCarMenu2.Size = new System.Drawing.Size(552, 414);
+            this.empCarMenu2.TabIndex = 8;
+            this.empCarMenu2.Load += new System.EventHandler(this.empCarMenu2_Load);
+            // 
             // EmployeeMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -191,6 +203,7 @@
             this.Controls.Add(this.emp_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.empCarMenu2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "EmployeeMain";
@@ -207,7 +220,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -216,5 +229,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label emp_id_box;
         public System.Windows.Forms.ComboBox mainMenuBranchDropdown;
+        private EmpCarMenu empCarMenu1;
+        private EmpCarMenu empCarMenu2;
     }
 }
