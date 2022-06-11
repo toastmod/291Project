@@ -37,7 +37,6 @@
             this.view_curr_res_button = new System.Windows.Forms.Button();
             this.req_res_button = new System.Windows.Forms.Button();
             this.customer_id_box = new System.Windows.Forms.Label();
-            this.customerReservationMenu1 = new _291Project.CustomerReservationMenu();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -58,12 +57,13 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(88, 561);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(94, 561);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(3, 115);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 49);
@@ -74,6 +74,7 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.Location = new System.Drawing.Point(3, 60);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 49);
@@ -84,6 +85,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 51);
@@ -151,15 +153,6 @@
             this.customer_id_box.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.customer_id_box.Click += new System.EventHandler(this.customer_id_box_Click);
             // 
-            // customerReservationMenu1
-            // 
-            this.customerReservationMenu1.Location = new System.Drawing.Point(88, 0);
-            this.customerReservationMenu1.Name = "customerReservationMenu1";
-            this.customerReservationMenu1.Size = new System.Drawing.Size(798, 561);
-            this.customerReservationMenu1.TabIndex = 3;
-            this.customerReservationMenu1.Visible = false;
-            this.customerReservationMenu1.Load += new System.EventHandler(this.customerReservationMenu1_Load);
-            // 
             // CustomerMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -169,7 +162,6 @@
             this.Controls.Add(this.customer_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.customerReservationMenu1);
             this.Name = "CustomerMainMenu";
             this.Text = "Numved Car Rentals";
             this.Load += new System.EventHandler(this.CustomerMainMenu_Load_1);
@@ -191,6 +183,5 @@
         private System.Windows.Forms.Button past_res_button;
         private System.Windows.Forms.Button view_curr_res_button;
         private System.Windows.Forms.Button req_res_button;
-        private CustomerReservationMenu customerReservationMenu1;
     }
 }

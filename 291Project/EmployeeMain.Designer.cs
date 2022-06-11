@@ -41,6 +41,7 @@
             this.emp_id_box = new System.Windows.Forms.Label();
             this.mainMenuBranchDropdown = new System.Windows.Forms.ComboBox();
             this.empCarMenu2 = new _291Project.EmpCarMenu();
+            this.empReservationMenu1 = new _291Project.EmpReservationMenu();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -193,6 +194,15 @@
             this.empCarMenu2.TabIndex = 8;
             this.empCarMenu2.Load += new System.EventHandler(this.empCarMenu2_Load);
             // 
+            // empReservationMenu1
+            // 
+            this.empReservationMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
+            this.empReservationMenu1.Location = new System.Drawing.Point(200, 60);
+            this.empReservationMenu1.Name = "empReservationMenu1";
+            this.empReservationMenu1.Size = new System.Drawing.Size(568, 424);
+            this.empReservationMenu1.TabIndex = 9;
+            this.empReservationMenu1.Load += new System.EventHandler(this.empReservationMenu1_Load);
+            // 
             // EmployeeMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -204,6 +214,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.empCarMenu2);
+            this.Controls.Add(this.empReservationMenu1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "EmployeeMain";
@@ -229,7 +240,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label emp_id_box;
         public System.Windows.Forms.ComboBox mainMenuBranchDropdown;
-        private EmpCarMenu empCarMenu1;
         private EmpCarMenu empCarMenu2;
+        private EmpReservationMenu empReservationMenu1;
     }
 }

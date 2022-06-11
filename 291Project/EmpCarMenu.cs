@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _291Project
@@ -21,7 +14,17 @@ namespace _291Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+        }
+
+        private void EmpCarMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cars_due_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

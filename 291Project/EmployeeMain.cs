@@ -43,6 +43,8 @@ namespace _291Project
 
         private void button5_Click(object sender, EventArgs e)
         {
+            empReservationMenu1.BringToFront();
+            empReservationMenu1.Show();
 
         }
 
@@ -53,9 +55,11 @@ namespace _291Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            empCarMenu2.Hide();
-
             this.BringToFront();
+            empCarMenu2.Hide();
+            empReservationMenu1.Hide();
+
+
         }
 
         private void emp_id_box_Click(object sender, EventArgs e)
@@ -77,6 +81,12 @@ namespace _291Project
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void empReservationMenu1_Load(object sender, EventArgs e)
+        {
+            empReservationMenu1.Hide();
 
         }
     }
