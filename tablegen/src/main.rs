@@ -1,16 +1,28 @@
 
-use std::{fmt::Debug, io::Write};
+use std::{fmt::Debug, io::Write, sync::Arc};
 use rand::Rng;
 mod names;
 
 const car_types: [&str; 4] = ["CarType","SEDAN", "TRUCK", "VAN"];
 const car_statuses: [&str; 4] = ["Status","IN_REPAIR", "AVAIL", "RESERVED"];
-const car_ids: [&str; 13] = ["Car_ID","0","1","2","3","4","5","6","7","8","9","10","11"];
-const repair_ids: [&str; 13] = ["RepairID","0","1","2","3","4","5","6","7","8","9","10","11"];
+//const car_ids1: [&str; 13] = ["Car_ID"];
+//const repair_ids1: [&str; 13] = ["RepairID"];
 const res_statues: [&str; 4] = ["Status","RESERVED", "IN PROCESS", "COMPLETED"];
 const membership_types: [&str; 3] = ["MembershipType","REG", "GOLD"]; 
 
+struct A;
 
+impl A {
+    fn new() -> Self {
+        Self
+    
+    
+    }
+
+    fn do_thing(&self) {
+        print!("sdfjsidfisdfjsd");
+    }
+}
 
 trait Gen {
     fn gen() -> String;
@@ -124,8 +136,14 @@ macro_rules! ownall {
     };
 }
 
+const ROWS: usize = 30;
 fn main() {
     println!("=== Table Gen ===");
+
+    let mut car_ids: [String; ROWS+1] = ["Car_ID"] + [String::from(""); ROWS];
+    for i in 1..(ROWS+1) {
+        car_ids[i].push_str(format)
+    }
 
     gen_write("Cars.csv", vec![ 
         ownall!(car_ids),
@@ -153,7 +171,6 @@ fn main() {
         gen_col::<Month>("Month", 12),
         gen_col::<Year>("Year", 12),
     ]);
-
 
 }
 
