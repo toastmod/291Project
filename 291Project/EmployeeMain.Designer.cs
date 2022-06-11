@@ -38,6 +38,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.emp_id_box = new System.Windows.Forms.Label();
+            this.mainMenuBranchDropdown = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(94, 461);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(94, 561);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // button2
@@ -118,7 +119,7 @@
             this.tableLayoutPanel2.Controls.Add(this.button5, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button6, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.button7, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(189, 54);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(216, 83);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -162,19 +163,30 @@
             // emp_id_box
             // 
             this.emp_id_box.AutoSize = true;
-            this.emp_id_box.Location = new System.Drawing.Point(121, 20);
+            this.emp_id_box.Location = new System.Drawing.Point(137, 24);
             this.emp_id_box.Name = "emp_id_box";
             this.emp_id_box.Size = new System.Drawing.Size(60, 15);
             this.emp_id_box.TabIndex = 6;
             this.emp_id_box.Text = "Welcome!";
             this.emp_id_box.Click += new System.EventHandler(this.emp_id_box_Click);
             // 
+            // mainMenuBranchDropdown
+            // 
+            this.mainMenuBranchDropdown.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mainMenuBranchDropdown.FormattingEnabled = true;
+            this.mainMenuBranchDropdown.Location = new System.Drawing.Point(733, 20);
+            this.mainMenuBranchDropdown.Name = "mainMenuBranchDropdown";
+            this.mainMenuBranchDropdown.Size = new System.Drawing.Size(127, 26);
+            this.mainMenuBranchDropdown.TabIndex = 7;
+            this.mainMenuBranchDropdown.Text = "Select Branch...";
+            // 
             // EmployeeMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.ClientSize = new System.Drawing.Size(804, 461);
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.mainMenuBranchDropdown);
             this.Controls.Add(this.emp_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -201,5 +213,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label emp_id_box;
+        public System.Windows.Forms.ComboBox mainMenuBranchDropdown;
     }
 }
