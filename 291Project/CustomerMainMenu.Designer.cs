@@ -33,7 +33,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.ID_display = new System.Windows.Forms.TextBox();
+            this.customer_id_box = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,27 +98,29 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(588, 331);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // ID_display
+            // customer_id_box
             // 
-            this.ID_display.BackColor = System.Drawing.SystemColors.Control;
-            this.ID_display.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ID_display.Location = new System.Drawing.Point(103, 12);
-            this.ID_display.Name = "ID_display";
-            this.ID_display.Size = new System.Drawing.Size(100, 20);
-            this.ID_display.TabIndex = 2;
-            this.ID_display.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ID_display.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.customer_id_box.AutoSize = true;
+            this.customer_id_box.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.customer_id_box.Location = new System.Drawing.Point(105, 19);
+            this.customer_id_box.Name = "customer_id_box";
+            this.customer_id_box.Size = new System.Drawing.Size(65, 18);
+            this.customer_id_box.TabIndex = 2;
+            this.customer_id_box.Text = "Welcome!";
+            this.customer_id_box.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.customer_id_box.Click += new System.EventHandler(this.customer_id_box_Click);
             // 
             // CustomerMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 461);
-            this.Controls.Add(this.ID_display);
+            this.Controls.Add(this.customer_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CustomerMainMenu";
             this.Text = "Numved Car Rentals";
+            this.Load += new System.EventHandler(this.CustomerMainMenu_Load_1);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,6 +134,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox ID_display;
+        private System.Windows.Forms.Label customer_id_box;
     }
 }

@@ -42,9 +42,5 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel createR;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
     }
 }
