@@ -64,8 +64,9 @@ namespace _291Project
             else if (login_id[0] == 'E')
             {
                 // Links to employee screen.
-                EmployeeMain employee = new EmployeeMain();
-                employee.Show();
+                EmployeeMain eMain = new EmployeeMain();
+                eMain.EmployeeDisplayName = userlogin;
+                eMain.Show();
                 this.Visible = false;
             }
             else
