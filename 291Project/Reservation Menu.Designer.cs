@@ -34,7 +34,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.createRes1 = new _291Project.background();
-            this.createReservation1 = new _291Project.createReservation();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,19 +99,12 @@
             this.createRes1.Size = new System.Drawing.Size(504, 414);
             this.createRes1.TabIndex = 5;
             // 
-            // createReservation1
-            // 
-            this.createReservation1.Location = new System.Drawing.Point(88, 0);
-            this.createReservation1.Name = "createReservation1";
-            this.createReservation1.Size = new System.Drawing.Size(504, 414);
-            this.createReservation1.TabIndex = 6;
             // 
             // ReservationMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 414);
-            this.Controls.Add(this.createReservation1);
             this.Controls.Add(this.createRes1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
@@ -133,6 +125,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private background createRes1;
-        private createReservation createReservation1;
     }
 }

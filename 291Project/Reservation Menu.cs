@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _291Project
@@ -28,18 +21,16 @@ namespace _291Project
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
-            
+
         }
 
         private void ReservationMenu_Load(object sender, EventArgs e)
         {
             createRes1.SendToBack();
-            createReservation1.SendToBack();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            createReservation1.BringToFront();
         }
     }
 }
