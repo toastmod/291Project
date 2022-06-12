@@ -42,6 +42,7 @@
             this.mainMenuBranchDropdown = new System.Windows.Forms.ComboBox();
             this.EmpCarMenu = new _291Project.EmpCarMenu();
             this.EmpReservationMenu1 = new _291Project.EmpReservationMenu();
+            this.Back_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -52,28 +53,30 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(154)))), ((int)(((byte)(156)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.emp_logout_btn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.Back_btn, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.emp_logout_btn, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(94, 561);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(4, 115);
+            this.button2.Location = new System.Drawing.Point(4, 176);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 49);
+            this.button2.Size = new System.Drawing.Size(85, 51);
             this.button2.TabIndex = 2;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
@@ -82,10 +85,10 @@
             // emp_logout_btn
             // 
             this.emp_logout_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emp_logout_btn.Location = new System.Drawing.Point(4, 60);
+            this.emp_logout_btn.Location = new System.Drawing.Point(4, 117);
             this.emp_logout_btn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.emp_logout_btn.Name = "emp_logout_btn";
-            this.emp_logout_btn.Size = new System.Drawing.Size(85, 49);
+            this.emp_logout_btn.Size = new System.Drawing.Size(85, 51);
             this.emp_logout_btn.TabIndex = 2;
             this.emp_logout_btn.Text = "Log Out";
             this.emp_logout_btn.UseVisualStyleBackColor = true;
@@ -204,6 +207,15 @@
             this.EmpReservationMenu1.TabIndex = 9;
             this.EmpReservationMenu1.Load += new System.EventHandler(this.empReservationMenu1_Load);
             // 
+            // Back_btn
+            // 
+            this.Back_btn.Location = new System.Drawing.Point(3, 60);
+            this.Back_btn.Name = "Back_btn";
+            this.Back_btn.Size = new System.Drawing.Size(85, 51);
+            this.Back_btn.TabIndex = 3;
+            this.Back_btn.Text = "Back";
+            this.Back_btn.UseVisualStyleBackColor = true;
+            // 
             // EmployeeMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -245,5 +257,6 @@
         public System.Windows.Forms.ComboBox mainMenuBranchDropdown;
         private EmpCarMenu EmpCarMenu;
         private EmpReservationMenu EmpReservationMenu1;
+        private System.Windows.Forms.Button Back_btn;
     }
 }

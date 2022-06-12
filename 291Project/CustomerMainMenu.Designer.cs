@@ -37,6 +37,7 @@
             this.view_curr_res_button = new System.Windows.Forms.Button();
             this.req_res_button = new System.Windows.Forms.Button();
             this.Customer_id_box = new System.Windows.Forms.Label();
+            this.Back_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -47,16 +48,18 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(154)))), ((int)(((byte)(156)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.LogoutBtn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Back_btn, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.LogoutBtn, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(94, 561);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
@@ -64,9 +67,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(3, 115);
+            this.button2.Location = new System.Drawing.Point(3, 174);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 49);
+            this.button2.Size = new System.Drawing.Size(85, 51);
             this.button2.TabIndex = 2;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
@@ -75,9 +78,9 @@
             // LogoutBtn
             // 
             this.LogoutBtn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LogoutBtn.Location = new System.Drawing.Point(3, 60);
+            this.LogoutBtn.Location = new System.Drawing.Point(3, 117);
             this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(85, 49);
+            this.LogoutBtn.Size = new System.Drawing.Size(85, 51);
             this.LogoutBtn.TabIndex = 2;
             this.LogoutBtn.Text = "Log Out";
             this.LogoutBtn.UseVisualStyleBackColor = true;
@@ -153,6 +156,15 @@
             this.Customer_id_box.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Customer_id_box.Click += new System.EventHandler(this.Customer_id_box_Click);
             // 
+            // Back_btn
+            // 
+            this.Back_btn.Location = new System.Drawing.Point(3, 60);
+            this.Back_btn.Name = "Back_btn";
+            this.Back_btn.Size = new System.Drawing.Size(85, 51);
+            this.Back_btn.TabIndex = 3;
+            this.Back_btn.Text = "Back";
+            this.Back_btn.UseVisualStyleBackColor = true;
+            // 
             // CustomerMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -184,5 +196,6 @@
         private System.Windows.Forms.Button past_res_button;
         private System.Windows.Forms.Button view_curr_res_button;
         private System.Windows.Forms.Button req_res_button;
+        private System.Windows.Forms.Button Back_btn;
     }
 }

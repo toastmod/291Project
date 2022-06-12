@@ -11,30 +11,21 @@
 
 ### Current Assignments:
 - **Dylan**
-  - Finish Setting up Design Specs
-  - Login and splash screen, redirect to proper screens.
-  - Normalizing UI, editing for consistency. Will go over each screen and edit for a consistent flow. 
+
 - **Andrew**
-  - Car Queue screen, connected to the DB (for the Demo)
+  - Hook up Branch Selector to DB
+  - Prepare for DB connections: Reservations, Cars, Customers, Reports
+  - As soon as one of these are ready, start on connecting it to DB.
 - **Hamza**
-  - Employee Menu
-  - Side buttons: Home, Logout, Exit
-    - -> buttons on home page to change/nagivate to: 
-        - Branch (dropdown to change branch setting) - maybe not needed? discuss.
-        - Reservations (goes to res menu)
-              - Goes to Grant's reservation menu.
-    - Car Menu
-        - Described below.
-    - Customers
-    - Reports
+  - Employee Menu -> Reservation Menu -> Set up user controls for the three options.
+    - They'll require DB connections, but focus on getting their UI set up, then we can connect them together on Tuesday.
+  - If you finish these quickly, set up Employee Menu -> Manage Customers User Control.
 - **Grant**
-  - Reservation Menu - Employees
-  - -> buttons to navigate to:
-    - Create a Reservation (both customers and employees have this)
-          - Leads to reservation user control, with filters and a table view that will show query results. Described below in Todo.
-          - Employees will have an extra field available to select a customer/input a customer id. Perhaps this pops up a customer search?
-    - Current Reservations (Employee)
-        - Shows table from query on current reservations out for current branch, filter to allow for choosing which branch/all
+  - Set up UI for Customer User controls, that are linked from the buttons on the Customer Menu form.
+    - Request a Reservation
+    - View Curr Reservation
+    - View Past Reservation
+
 
 If you have completed your assignment, message the group chat and we'll assign
 the next step. Alternatively, continue to make the screen that the buttons lead to, 
