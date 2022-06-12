@@ -14,44 +14,44 @@ namespace _291Project
             InitializeComponent();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Home_btn_click(object sender, EventArgs e)
         {
             this.BringToFront();
         }
 
-        public void button4_Click(object sender, EventArgs e)
+        public void Logout_btn_click(object sender, EventArgs e)
         {
             this.splashscreen.Show();
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Exit_btn_click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
 
-        private void customer_id_box_Click(object sender, EventArgs e)
+        private void Customer_id_box_Click(object sender, EventArgs e)
         {
 
         }
 
         private void CustomerMainMenu_Load_1(object sender, EventArgs e)
         {
-            customer_id_box.Text = $"Welcome {CustomerDisplayName}!";
+            Customer_id_box.Text = $"Welcome {CustomerDisplayName}!";
 
         }
 
-        private void customerReservationMenu1_Load(object sender, EventArgs e)
+        private void CustomerReservationMenu1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void req_res_button_Click(object sender, EventArgs e)
+        private void Req_res_button_Click(object sender, EventArgs e)
         {
         }
     }

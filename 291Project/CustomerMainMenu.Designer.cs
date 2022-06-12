@@ -36,7 +36,7 @@
             this.past_res_button = new System.Windows.Forms.Button();
             this.view_curr_res_button = new System.Windows.Forms.Button();
             this.req_res_button = new System.Windows.Forms.Button();
-            this.customer_id_box = new System.Windows.Forms.Label();
+            this.Customer_id_box = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(94, 561);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
             // button2
             // 
@@ -70,7 +70,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Exit_btn_click);
             // 
             // LogoutBtn
             // 
@@ -81,7 +81,7 @@
             this.LogoutBtn.TabIndex = 2;
             this.LogoutBtn.Text = "Log Out";
             this.LogoutBtn.UseVisualStyleBackColor = true;
-            this.LogoutBtn.Click += new System.EventHandler(this.button4_Click);
+            this.LogoutBtn.Click += new System.EventHandler(this.Logout_btn_click);
             // 
             // button1
             // 
@@ -92,7 +92,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Home_btn_click);
             // 
             // tableLayoutPanel2
             // 
@@ -141,17 +141,17 @@
             this.req_res_button.Text = "Request a Reservation";
             this.req_res_button.UseVisualStyleBackColor = true;
             // 
-            // customer_id_box
+            // Customer_id_box
             // 
-            this.customer_id_box.AutoSize = true;
-            this.customer_id_box.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customer_id_box.Location = new System.Drawing.Point(142, 19);
-            this.customer_id_box.Name = "customer_id_box";
-            this.customer_id_box.Size = new System.Drawing.Size(65, 18);
-            this.customer_id_box.TabIndex = 2;
-            this.customer_id_box.Text = "Welcome!";
-            this.customer_id_box.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.customer_id_box.Click += new System.EventHandler(this.customer_id_box_Click);
+            this.Customer_id_box.AutoSize = true;
+            this.Customer_id_box.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Customer_id_box.Location = new System.Drawing.Point(142, 19);
+            this.Customer_id_box.Name = "Customer_id_box";
+            this.Customer_id_box.Size = new System.Drawing.Size(65, 18);
+            this.Customer_id_box.TabIndex = 2;
+            this.Customer_id_box.Text = "Welcome!";
+            this.Customer_id_box.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Customer_id_box.Click += new System.EventHandler(this.Customer_id_box_Click);
             // 
             // CustomerMainMenu
             // 
@@ -159,10 +159,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.customer_id_box);
+            this.Controls.Add(this.Customer_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CustomerMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Numved Car Rentals";
             this.Load += new System.EventHandler(this.CustomerMainMenu_Load_1);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -179,7 +180,7 @@
         private System.Windows.Forms.Button LogoutBtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label customer_id_box;
+        private System.Windows.Forms.Label Customer_id_box;
         private System.Windows.Forms.Button past_res_button;
         private System.Windows.Forms.Button view_curr_res_button;
         private System.Windows.Forms.Button req_res_button;

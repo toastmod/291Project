@@ -38,10 +38,10 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.emp_id_box = new System.Windows.Forms.Label();
+            this.Emp_id_box = new System.Windows.Forms.Label();
             this.mainMenuBranchDropdown = new System.Windows.Forms.ComboBox();
-            this.empCarMenu2 = new _291Project.EmpCarMenu();
-            this.empReservationMenu1 = new _291Project.EmpReservationMenu();
+            this.EmpCarMenu = new _291Project.EmpCarMenu();
+            this.EmpReservationMenu1 = new _291Project.EmpReservationMenu();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +101,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.ResMenuBtn_Click);
             // 
             // button3
             // 
@@ -164,15 +164,15 @@
             this.button7.Text = "Manage Customers";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // emp_id_box
+            // Emp_id_box
             // 
-            this.emp_id_box.AutoSize = true;
-            this.emp_id_box.Location = new System.Drawing.Point(137, 24);
-            this.emp_id_box.Name = "emp_id_box";
-            this.emp_id_box.Size = new System.Drawing.Size(60, 15);
-            this.emp_id_box.TabIndex = 6;
-            this.emp_id_box.Text = "Welcome!";
-            this.emp_id_box.Click += new System.EventHandler(this.emp_id_box_Click);
+            this.Emp_id_box.AutoSize = true;
+            this.Emp_id_box.Location = new System.Drawing.Point(137, 24);
+            this.Emp_id_box.Name = "Emp_id_box";
+            this.Emp_id_box.Size = new System.Drawing.Size(60, 15);
+            this.Emp_id_box.TabIndex = 6;
+            this.Emp_id_box.Text = "Welcome!";
+            this.Emp_id_box.Click += new System.EventHandler(this.Emp_id_box_Click);
             // 
             // mainMenuBranchDropdown
             // 
@@ -184,24 +184,24 @@
             this.mainMenuBranchDropdown.TabIndex = 7;
             this.mainMenuBranchDropdown.Text = "Select Branch...";
             // 
-            // empCarMenu2
+            // EmpCarMenu
             // 
-            this.empCarMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.empCarMenu2.Location = new System.Drawing.Point(216, 70);
-            this.empCarMenu2.Margin = new System.Windows.Forms.Padding(2);
-            this.empCarMenu2.Name = "empCarMenu2";
-            this.empCarMenu2.Size = new System.Drawing.Size(552, 414);
-            this.empCarMenu2.TabIndex = 8;
-            this.empCarMenu2.Load += new System.EventHandler(this.empCarMenu2_Load);
+            this.EmpCarMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
+            this.EmpCarMenu.Location = new System.Drawing.Point(216, 70);
+            this.EmpCarMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.EmpCarMenu.Name = "EmpCarMenu";
+            this.EmpCarMenu.Size = new System.Drawing.Size(552, 414);
+            this.EmpCarMenu.TabIndex = 8;
+            this.EmpCarMenu.Load += new System.EventHandler(this.EmpCarMenu_Load);
             // 
-            // empReservationMenu1
+            // EmpReservationMenu1
             // 
-            this.empReservationMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.empReservationMenu1.Location = new System.Drawing.Point(200, 60);
-            this.empReservationMenu1.Name = "empReservationMenu1";
-            this.empReservationMenu1.Size = new System.Drawing.Size(568, 424);
-            this.empReservationMenu1.TabIndex = 9;
-            this.empReservationMenu1.Load += new System.EventHandler(this.empReservationMenu1_Load);
+            this.EmpReservationMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
+            this.EmpReservationMenu1.Location = new System.Drawing.Point(200, 60);
+            this.EmpReservationMenu1.Name = "EmpReservationMenu1";
+            this.EmpReservationMenu1.Size = new System.Drawing.Size(568, 424);
+            this.EmpReservationMenu1.TabIndex = 9;
+            this.EmpReservationMenu1.Load += new System.EventHandler(this.empReservationMenu1_Load);
             // 
             // EmployeeMain
             // 
@@ -210,14 +210,16 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.mainMenuBranchDropdown);
-            this.Controls.Add(this.emp_id_box);
+            this.Controls.Add(this.Emp_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.empCarMenu2);
-            this.Controls.Add(this.empReservationMenu1);
+            this.Controls.Add(this.EmpCarMenu);
+            this.Controls.Add(this.EmpReservationMenu1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
             this.Name = "EmployeeMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NCR - Employee Menu";
             this.Load += new System.EventHandler(this.EmployeeMain_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -238,9 +240,9 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label emp_id_box;
+        private System.Windows.Forms.Label Emp_id_box;
         public System.Windows.Forms.ComboBox mainMenuBranchDropdown;
-        private EmpCarMenu empCarMenu2;
-        private EmpReservationMenu empReservationMenu1;
+        private EmpCarMenu EmpCarMenu;
+        private EmpReservationMenu EmpReservationMenu1;
     }
 }

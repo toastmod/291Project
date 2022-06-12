@@ -6,12 +6,12 @@ namespace _291Project
 {
     public partial class EmployeeMain : Form
     {
-        public Splash splashscreen;
+        public Splash LoginScreen;
         public string EmployeeDisplayName { get; set; }
         public DataTable dt = new DataTable();
         public EmployeeMain(Splash splashscreen)
         {
-            this.splashscreen = splashscreen;
+            this.LoginScreen = splashscreen;
             InitializeComponent();
 
             //var reader = DBridge.run_query("SELECT * from Cars");
@@ -22,21 +22,17 @@ namespace _291Project
 
         private void EmployeeMain_Load(object sender, EventArgs e)
         {
-            emp_id_box.Text = $"Welcome {EmployeeDisplayName}!";
+            Emp_id_box.Text = $"Welcome {EmployeeDisplayName}!";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //DBridge.init();
-            empCarMenu2.BringToFront();
-            empCarMenu2.Show();
-            empCarMenu2.Enabled = true;
+            EmpCarMenu.BringToFront();
+            EmpCarMenu.Show();
+            EmpCarMenu.Enabled = true;
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -45,8 +41,8 @@ namespace _291Project
 
         private void button5_Click(object sender, EventArgs e)
         {
-            empReservationMenu1.BringToFront();
-            empReservationMenu1.Show();
+            EmpReservationMenu1.BringToFront();
+            EmpReservationMenu1.Show();
 
         }
 
@@ -55,42 +51,37 @@ namespace _291Project
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ResMenuBtn_Click(object sender, EventArgs e)
         {
             this.BringToFront();
-            empCarMenu2.Hide();
-            empReservationMenu1.Hide();
+            EmpCarMenu.Hide();
+            EmpReservationMenu1.Hide();
 
 
         }
 
-        private void emp_id_box_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Emp_id_box_Click(object sender, EventArgs e)
         {
 
         }
 
 
-        private void empCarMenu2_Load(object sender, EventArgs e)
+        private void EmpCarMenu_Load(object sender, EventArgs e)
         {
-            empCarMenu2.Hide();
+            EmpCarMenu.Hide();
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.splashscreen.Show();
+            this.LoginScreen.Show();
             this.Close();
 
         }
 
         private void empReservationMenu1_Load(object sender, EventArgs e)
         {
-            empReservationMenu1.Hide();
+            EmpReservationMenu1.Hide();
 
         }
     }
