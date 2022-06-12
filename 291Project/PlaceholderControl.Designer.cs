@@ -1,6 +1,7 @@
-﻿namespace _291Project
+﻿
+namespace _291Project
 {
-    partial class EmployeeMenu
+    partial class PlaceholderControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,18 +29,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // UserControl1
+            // label1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Loading...";
+            // 
+            // PlaceholderControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.label1);
+            this.Name = "PlaceholderControl";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

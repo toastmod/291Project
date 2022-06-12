@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace _291Project
 {
-    public partial class CarsAvailable : UserControl
+    public partial class EmpCarsAvailable : UserControl
     {
-        public CarsAvailable()
+        public EmpCarsAvailable()
         {
             InitializeComponent();
-
-
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
     }
 }

@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace _291Project
 {
-    public partial class createReservation : UserControl
+    public partial class CarMenu : UserControl
     {
-        public createReservation()
+        public CarMenu()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CarMenu_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

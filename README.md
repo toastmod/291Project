@@ -4,7 +4,10 @@
 ### Goal
 - To implement a front-end program that customers and employees can use to successfully book/manage a car rental comapny.
 
-
+## NOTES FROM MILESTONE 2:
+- No need for car status if only available cars are shown.
+- Make sure no overlapping reservations on customer cars. 
+  - Does not overlap with any current reservation.
 
 ### Current Assignments:
 - **Dylan**
@@ -25,9 +28,7 @@
     - Customers
     - Reports
 - **Grant**
-  - Reservation Menu - Both Employee and Customers
-  - Home menu on Customers Main Screen will lead to Car Reservation menu
-  - Home menu on Employee Home Screen
+  - Reservation Menu - Employees
   - -> buttons to navigate to:
     - Create a Reservation (both customers and employees have this)
           - Leads to reservation user control, with filters and a table view that will show query results. Described below in Todo.
@@ -40,12 +41,196 @@ the next step. Alternatively, continue to make the screen that the buttons lead 
 and update the chat so everyone is on the same page.
 
 
+## Whiteboard Meeting Rundown
+---
+### Employee Screens
+#### Employee Main Menu
+- 4 Navigational Buttons:
+  - Car Menu      -> Car Sub-Menu   
+  - Customer      -> Emp_Customer UC
+  - Reservations  -> Reservations Sub-Menu
+  - Reports       -> Reports UC
+---
+#### Car Sub-Menu
+##### Car Sub-Menu - Add Car
+  - **Add Car UC**
+  - Form to fill for car. On submission car will be checked to see if already exists in DB.
+    - Status (Default: Available)
+    - Province (Default: correlates working Branch for Emp)
+    - Branch (Default: Branch that Emp works at)
+    - License - Must be Letter or Number
+    - Colour - Dropdown
+    - Car Type - Dropdown
+    - Car Make - Dropdown
+    - Year - Dropdown
+##### Car Sub-Menu -  Car Search
+  -  **Car Search UC**. 
+    - Table Grid view for viewing results
+    - Two buttons below table grid: **Update** and **Filter**
+    - **Filter**
+      - Status (Default: all)
+      - Province (Default: correlates working Branch for Emp)
+      - Branch (Default: Branch that Emp works at)
+      - License (Default: all)
+      - Colour (Default: all)
+      - Car Type (Default: all)
+      - Car Make (Default: all)
+      - Year (Default: All) 
+    - **Update** 
+      - (Greyed until entry selected from Table Grid View)
+      - Brings up form similar to Add Car, will values corresponding to current car values. 
+
+##### Car Sub-Menu - Cars Available
+  - **Car Search UC** with the filters preapplied:
+    - (Status: Avail)
+##### Car Sub-Menu -  Cars Due
+  - (Being Rented or Past Rent date?)
+  - **Car Search UC** with the filters preapplied:
+    -  (Status: Rented)
+    - If we're doing Past Rent Date add filter: (Date To < Today)
+---
+#### Customers 
+- Table Grid of all Customer Data
+- Filter button brings up filter window ->
+  - Customer ID
+  - Membership Status
+  - Date Range (for either customer created or last reservation?)
+---
+#### Reservations Sub-Menu (Employee Side)
+- **Emp_Res_Submenu UC**
+- Three Navigational Buttons:
+  - Create
+  - Current
+  - Past
+
+##### Reservation Sub-Menu UC - Create
+- **Emp_Reservation_Creation UC**
+  - Very similar to customer side, except a CID entrybox is added.
+  - Table Grid view to view Query results
+    - Cols:
+      - CarID
+      - Branch
+      - Car Type
+      - Car Make
+      - Rate
+  - Filters - opens Filters WF
+    - Date From
+    - Date To (Maybe we can put these into one Date Range)
+    - Car Type
+    - Car Make
+    - Branch
+  - Submit
+    - Submits to Reservations Table
+
+##### Reservation Sub-Menu UC - Current
+- **Emp_Reservation_View_Cur UC**
+  - Table Grid View for Reservations/Cars currently active.
+  - Cols
+    - CID, Cname, Date From, Date To, Car Type, CarID, Branch From, Branch Returned
+  - Two Buttons: **Filter** & **Update**
+  - **Filter**
+    - Province
+    - Branch
+    - CustomerID
+    - Date range
+    - Car type
+    - Make
+    - Membership Status (?)
+  - **Update**
+    - Opens Reservation entry in new window, with fields prefilled from entry
+      - Status
+      - Date From
+      - Date To
+      - Car
+        - Maybe this can display CarID with a button to bring up the car search, to find an available/suitable car? Since the logic/filtering will be built, we can reuse that code. Lets chat about this one.,
+      - Two buttons for finalization - Update and Cancel
+        - Update - Checks for validity, then updates reservation
+        - Cancel - Cancels operation, entry is not changed.
+
+##### Reservation Sub-Menu UC - Past
+- **Emp_Reservation_View_Past UC**
+  - Table Grid View for reservations that have been completed.
+  - Cols
+    - CID, Cname, Date From, Date To, Car Type, CarID, Branch From, Branch Returned
+  - One Button: **Filter** 
+  - One checkbox - View Cancelled Reservations
+    - Changes query to where 
+  >Res_Status in [Complete, Cancelled]
+  - **Filter**
+    - Province
+    - Branch
+    - CustomerID
+    - Date range
+    - Car type
+    - Make
+    - Membership Status (?)
+---
+#### Reports UC
+- Opens **Emp_Reports UC**
+  - Table grid view that changes dynamically based on report chosen.
+    - Ideally, this gets changed to a dynamic graph portion
+  - One long dropdown for \[Reports...]
+    - Sales Data
+    - Most Popular Car/Car type
+    - number of Gold Members
+    - Average number of transactions after Gold Member upgrade.
+  - **Filters** Button to bring up Filters WF
+    - NOTE: Filters will be enabled/disabled based on Report chosen.
+    - Date Range
+    - Province (Default: Emp)
+    - Branch (Default: Emp)
+    - Car Type
+    - Car make
+---
+
+### Customer Screens
+#### Customer Main Menu
+- Make Reservation
+- View Current Reservation
+- View Past Reservations
+---
+##### Make Reservation
+- **Cus_Reserv** UC
+- Table grid view to view query results
+- Two drop down selectors
+  - Province (Default: Cus)
+  - Branch (Default: Cus)
+- Filters
+  - Car Type
+  - Car Make
+  - Car Color
+  - Max Rate/day
+- Submit
+  - Checks validity
+  - If passes, adds to reservations table.
+
+##### View Current Reservation
+- **Cus_Res_cur** UC
+- Single page
+- If no current reservation (Res Status: Reserved (or something, forgot the statuses))
+  - "No Current Reservation"
+- If current reservation
+  - Res# ___
+  - Date Range ___
+  - Branch ___
+  - Car Type ___
+  - Car Make ___
+  - Car Year ___
+  - Car Color ___
+  - Rate ___
+
+##### View Past Reservations (low priority)
+- **Past_Res_cur** UC
+- Table grid view for past reservations where Cus_ID = Current Customer's ID
+- Show Cancelled
+  - Checkbox
+  - Changes query to 
+>where Res_Status in [Complete, Cancelled]
+---
+
 
 
 #### Todo
-- 
-- **Database set up and linked to project by next Wed.**
-
 - **Customer Screens**
   - Customer Rental Request Screen
     - Shows a table of all available cars along with rates.
@@ -80,7 +265,7 @@ and update the chat so everyone is on the same page.
         - Top end car types for rental income in specific province/specific branch.
           - Parameterized
         - How many gold member per year
-        - How many transactions after gold member
+        - How many transactions after gold member (Average)
         - Sales
         - **The more complex the query, the higher the grade**
 

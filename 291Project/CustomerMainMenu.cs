@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _291Project
 {
     public partial class CustomerMainMenu : Form
     {
-        public bool logged_in = false;
+        public string CustomerDisplayName { get; set; }
         public CustomerMainMenu()
         {
             InitializeComponent();
@@ -24,7 +17,7 @@ namespace _291Project
         }
         private void button1_Click(object sender, EventArgs e)
         {
-         
+            this.BringToFront();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -37,9 +30,25 @@ namespace _291Project
             Application.Exit();
         }
 
-        private void customerHome1_Load(object sender, EventArgs e)
+
+        private void customer_id_box_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CustomerMainMenu_Load_1(object sender, EventArgs e)
+        {
+            customer_id_box.Text = $"Welcome {CustomerDisplayName}!";
+
+        }
+
+        private void customerReservationMenu1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void req_res_button_Click(object sender, EventArgs e)
+        {
         }
     }
 }
