@@ -40,6 +40,10 @@ namespace _291Project
                 carsavail_uc.Show();
                 carsavail_uc.BringToFront();
             }
+            else
+            {
+                MessageBox.Show("Please select a Branch.", "Error");
+            }
         }
     }
 }
