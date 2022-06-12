@@ -41,7 +41,14 @@ namespace _291Project
         {
             DBridge.init();
             myCommand.CommandText = query;
-            return myCommand.ExecuteReader();
+
+            if(myReader != null)
+            {
+                myReader.Close();
+            }
+
+            myReader = myCommand.ExecuteReader();
+            return myReader;
         }
 
     }

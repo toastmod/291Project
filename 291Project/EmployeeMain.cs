@@ -14,10 +14,17 @@ namespace _291Project
             this.LoginScreen = splashscreen;
             InitializeComponent();
 
+            // load branch IDs into drop down
             var reader = DBridge.run_query("SELECT Branch_ID from Branches");
             while(reader.Read())
             {
-                mainMenuBranchDropdown.Items.Add(reader["Branch_ID"]);
+                mainMenuBranchDropdown.Items.Add(reader["Branch_ID"].ToString());
+            }
+
+            // if a branch ID is already loaded in the context, set it to that ID item.
+            if(Program.context_branchid != null)
+            {
+                mainMenuBranchDropdown.SelectedIndex = mainMenuBranchDropdown.FindStringExact(Program.context_branchid);
             }
 
         }

@@ -30,14 +30,16 @@ namespace _291Project
 
         private void cars_avail_btn_Click(object sender, EventArgs e)
         {
-
-            var carsavail_uc = new EmpCarsAvailable();
-            this.Controls.Add(carsavail_uc);
-            carsavail_uc.Dock = DockStyle.Fill;
-            carsavail_uc.Visible = true;
-            carsavail_uc.Enabled = true;
-            carsavail_uc.Show();
-            carsavail_uc.BringToFront();
+            if(Program.context_branchid != null)
+            {
+                var carsavail_uc = new EmpCarsAvailable();
+                this.Controls.Add(carsavail_uc);
+                carsavail_uc.Dock = DockStyle.Fill;
+                carsavail_uc.Visible = true;
+                carsavail_uc.Enabled = true;
+                carsavail_uc.Show();
+                carsavail_uc.BringToFront();
+            }
         }
     }
 }
