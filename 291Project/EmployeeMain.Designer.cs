@@ -183,6 +183,7 @@
             this.mainMenuBranchDropdown.Size = new System.Drawing.Size(127, 26);
             this.mainMenuBranchDropdown.TabIndex = 7;
             this.mainMenuBranchDropdown.Text = "Select Branch...";
+            this.mainMenuBranchDropdown.SelectedIndexChanged += new System.EventHandler(this.mainMenuBranchDropdown_SelectedIndexChanged);
             // 
             // EmpCarMenu
             // 

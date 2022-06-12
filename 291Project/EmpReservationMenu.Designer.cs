@@ -61,6 +61,7 @@
             this.emp_create_res.TabIndex = 0;
             this.emp_create_res.Text = "Create Reservation";
             this.emp_create_res.UseVisualStyleBackColor = true;
+            this.emp_create_res.Click += new System.EventHandler(this.emp_create_res_Click);
             // 
             // emp_curr_res
             // 
@@ -71,6 +72,7 @@
             this.emp_curr_res.TabIndex = 1;
             this.emp_curr_res.Text = "Current Reservations";
             this.emp_curr_res.UseVisualStyleBackColor = true;
+            this.emp_curr_res.Click += new System.EventHandler(this.emp_curr_res_Click);
             // 
             // emp_past_res
             // 
@@ -81,6 +83,7 @@
             this.emp_past_res.TabIndex = 2;
             this.emp_past_res.Text = "Past Reservations";
             this.emp_past_res.UseVisualStyleBackColor = true;
+            this.emp_past_res.Click += new System.EventHandler(this.emp_past_res_Click);
             // 
             // EmpReservationMenu
             // 

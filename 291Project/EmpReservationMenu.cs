@@ -16,5 +16,20 @@ namespace _291Project
         {
             InitializeComponent();
         }
+
+        private void emp_create_res_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void emp_curr_res_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void emp_past_res_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

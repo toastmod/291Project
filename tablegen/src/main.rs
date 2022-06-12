@@ -1,16 +1,28 @@
 
-use std::{fmt::Debug, io::Write};
+use std::{fmt::Debug, io::Write, sync::Arc};
 use rand::Rng;
 mod names;
 
 const car_types: [&str; 4] = ["CarType","SEDAN", "TRUCK", "VAN"];
 const car_statuses: [&str; 4] = ["Status","IN_REPAIR", "AVAIL", "RESERVED"];
-const car_ids: [&str; 13] = ["Car_ID","0","1","2","3","4","5","6","7","8","9","10","11"];
-const repair_ids: [&str; 13] = ["RepairID","0","1","2","3","4","5","6","7","8","9","10","11"];
+//const car_ids1: [&str; 13] = ["Car_ID"];
+//const repair_ids1: [&str; 13] = ["RepairID"];
 const res_statues: [&str; 4] = ["Status","RESERVED", "IN PROCESS", "COMPLETED"];
 const membership_types: [&str; 3] = ["MembershipType","REG", "GOLD"]; 
 
+struct A;
 
+impl A {
+    fn new() -> Self {
+        Self
+    
+    
+    }
+
+    fn do_thing(&self) {
+        print!("sdfjsidfisdfjsd");
+    }
+}
 
 trait Gen {
     fn gen() -> String;
@@ -43,6 +55,18 @@ impl Gen for Key {
     fn gen() -> String {
         let mut r = rand::thread_rng();
         
+        let mut key: usize = r.gen_range(0..ROWS);
+
+        let mut s = String::from(format!("{}", key)); 
+        s
+    }
+}
+
+struct BranchID;
+impl Gen for BranchID {
+    fn gen() -> String {
+        let mut r = rand::thread_rng();
+        
         let mut key: usize = r.gen_range(0..12);
 
         let mut s = String::from(format!("{}", key)); 
@@ -55,7 +79,7 @@ impl Gen for CarType {
     fn gen() -> String {
         let mut r = rand::thread_rng();
         
-        let mut t: usize = r.gen_range(1..4);
+        let mut t: usize = r.gen_range(1..(car_types.len()-1));
 
         let mut s = String::from(car_types[t]); 
         s
@@ -63,13 +87,36 @@ impl Gen for CarType {
 }
 
 struct CarID;
+
+impl CarID {
+    fn gen_ordered(rows: usize) -> Vec<String> {
+        let mut v = vec![String::from("Car_ID")];
+        for i in 0..ROWS {
+            v.push(String::from(format!("{}",i)));
+        }
+        v
+    }
+}
+
+struct RepairID;
+
+impl RepairID {
+    fn gen_ordered(rows: usize) -> Vec<String> {
+        let mut v = vec![String::from("RepairID")];
+        for i in 0..rows {
+            v.push(String::from(format!("{}",i)));
+        }
+        v
+    }
+}
+
 impl Gen for CarID {
     fn gen() -> String {
         let mut r = rand::thread_rng();
         
-        let mut t: usize = r.gen_range(1..13);
+        let mut t: usize = r.gen_range(0..ROWS);
 
-        let mut s = String::from(car_ids[t]); 
+        let mut s = String::from(format!("{}",t)); 
         s
     }
 }
@@ -124,14 +171,20 @@ macro_rules! ownall {
     };
 }
 
+const ROWS: usize = 30;
 fn main() {
     println!("=== Table Gen ===");
 
+    // let mut car_ids: [String; ROWS+1] = ["Car_ID"] + [String::from(""); ROWS];
+    // for i in 1..(ROWS+1) {
+    //     car_ids[i].push_str(format)
+    // }
+
     gen_write("Cars.csv", vec![ 
-        ownall!(car_ids),
-        gen_col::<CarType>("Car_Type",12),
-        gen_col::<Key>("Branch_ID",12),
-        gen_col::<StatusID>("CarStatusID",12),
+        CarID::gen_ordered(ROWS),
+        gen_col::<CarType>("Car_Type",ROWS),
+        gen_col::<BranchID>("Branch_ID",ROWS),
+        gen_col::<StatusID>("CarStatusID",ROWS),
     ]);
 
     gen_write("CarTypes.csv", vec![ 
@@ -147,11 +200,11 @@ fn main() {
     ]);
 
     gen_write("RepairLog.csv", vec![
-        ownall!(repair_ids),
-        gen_col::<CarID>("Car_ID", 12),
-        gen_col::<Day>("Day", 12),
-        gen_col::<Month>("Month", 12),
-        gen_col::<Year>("Year", 12),
+        RepairID::gen_ordered(ROWS),
+        gen_col::<CarID>("Car_ID", ROWS),
+        gen_col::<Day>("Day", ROWS),
+        gen_col::<Month>("Month", ROWS),
+        gen_col::<Year>("Year", ROWS),
     ]);
 
 

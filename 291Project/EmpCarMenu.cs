@@ -5,6 +5,7 @@ namespace _291Project
 {
     public partial class EmpCarMenu : UserControl
     {
+        
         public EmpCarMenu()
         {
             InitializeComponent();
@@ -25,6 +26,18 @@ namespace _291Project
         private void cars_due_btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cars_avail_btn_Click(object sender, EventArgs e)
+        {
+
+            var carsavail_uc = new EmpCarsAvailable();
+            this.Controls.Add(carsavail_uc);
+            carsavail_uc.Dock = DockStyle.Fill;
+            carsavail_uc.Visible = true;
+            carsavail_uc.Enabled = true;
+            carsavail_uc.Show();
+            carsavail_uc.BringToFront();
         }
     }
 }

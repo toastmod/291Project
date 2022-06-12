@@ -14,9 +14,11 @@ namespace _291Project
             this.LoginScreen = splashscreen;
             InitializeComponent();
 
-            //var reader = DBridge.run_query("SELECT * from Cars");
-            //dt.Load(reader);
-            //dataGridView1.DataSource = dt;
+            var reader = DBridge.run_query("SELECT Branch_ID from Branches");
+            while(reader.Read())
+            {
+                mainMenuBranchDropdown.Items.Add(reader["Branch_ID"]);
+            }
 
         }
 
@@ -57,7 +59,6 @@ namespace _291Project
             EmpCarMenu.Hide();
             EmpReservationMenu1.Hide();
 
-
         }
 
         private void Emp_id_box_Click(object sender, EventArgs e)
@@ -83,6 +84,12 @@ namespace _291Project
         {
             EmpReservationMenu1.Hide();
 
+        }
+
+        private void mainMenuBranchDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.context_branchid = mainMenuBranchDropdown.SelectedItem.ToString();
+            Console.WriteLine("BRANCHID WAS SET TO " + Program.context_branchid);
         }
     }
 }

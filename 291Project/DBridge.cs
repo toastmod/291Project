@@ -17,7 +17,6 @@ namespace _291Project
 
         public static void init()
         {
-            Console.WriteLine("this should fucking work");
             if(!initialized)
             {
                 Console.WriteLine("Initializing Database connection.");

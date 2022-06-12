@@ -87,6 +87,7 @@ namespace _291Project
             this.cars_avail_btn.TabIndex = 2;
             this.cars_avail_btn.Text = "Cars Available";
             this.cars_avail_btn.UseVisualStyleBackColor = true;
+            this.cars_avail_btn.Click += new System.EventHandler(this.cars_avail_btn_Click);
             // 
             // cars_due_btn
             // 

@@ -8,6 +8,8 @@ namespace _291Project
 {
     static class Program
     {
+
+        public static String context_branchid;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
