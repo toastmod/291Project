@@ -5,9 +5,12 @@ namespace _291Project
 {
     public partial class CustomerMainMenu : Form
     {
+        public Splash splashscreen;
+
         public string CustomerDisplayName { get; set; }
-        public CustomerMainMenu()
+        public CustomerMainMenu(Splash splashscreen)
         {
+            this.splashscreen = splashscreen;
             InitializeComponent();
         }
 
@@ -20,9 +23,10 @@ namespace _291Project
             this.BringToFront();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        public void button4_Click(object sender, EventArgs e)
         {
-
+            this.splashscreen.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

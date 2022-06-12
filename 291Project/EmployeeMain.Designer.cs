@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
-            this.back_btn = new System.Windows.Forms.Button();
+            this.emp_logout_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.back_btn, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.emp_logout_btn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -79,17 +79,17 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // back_btn
+            // emp_logout_btn
             // 
-            this.back_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.back_btn.Location = new System.Drawing.Point(4, 60);
-            this.back_btn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(85, 49);
-            this.back_btn.TabIndex = 2;
-            this.back_btn.Text = "Back";
-            this.back_btn.UseVisualStyleBackColor = true;
-            this.back_btn.Click += new System.EventHandler(this.button4_Click);
+            this.emp_logout_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.emp_logout_btn.Location = new System.Drawing.Point(4, 60);
+            this.emp_logout_btn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.emp_logout_btn.Name = "emp_logout_btn";
+            this.emp_logout_btn.Size = new System.Drawing.Size(85, 49);
+            this.emp_logout_btn.TabIndex = 2;
+            this.emp_logout_btn.Text = "Log Out";
+            this.emp_logout_btn.UseVisualStyleBackColor = true;
+            this.emp_logout_btn.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -231,7 +231,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button back_btn;
+        private System.Windows.Forms.Button emp_logout_btn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

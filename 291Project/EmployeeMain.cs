@@ -6,10 +6,12 @@ namespace _291Project
 {
     public partial class EmployeeMain : Form
     {
+        public Splash splashscreen;
         public string EmployeeDisplayName { get; set; }
         public DataTable dt = new DataTable();
-        public EmployeeMain()
+        public EmployeeMain(Splash splashscreen)
         {
+            this.splashscreen = splashscreen;
             InitializeComponent();
 
             //var reader = DBridge.run_query("SELECT * from Cars");
@@ -81,6 +83,8 @@ namespace _291Project
 
         private void button4_Click(object sender, EventArgs e)
         {
+            this.splashscreen.Show();
+            this.Close();
 
         }
 
