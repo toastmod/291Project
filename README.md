@@ -25,7 +25,6 @@
     - Request a Reservation
     - View Curr Reservation
     - View Past Reservation
-  - If these are built, continue on to setting up the UI for the Employee Menu -> Manage Reservations
 
 
 If you have completed your assignment, message the group chat and we'll assign
