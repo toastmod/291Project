@@ -10,8 +10,17 @@ namespace _291Project
         public string CustomerDisplayName { get; set; }
         public CustomerMainMenu(Splash splashscreen)
         {
+     
             this.splashscreen = splashscreen;
             InitializeComponent();
+
+            custRequestRes1.Hide();
+            custViewCurrentRes1.Hide();
+            custViewPastRes1.Hide();
+
+            custRequestRes1.SendToBack();
+            custViewCurrentRes1.SendToBack();
+            custViewPastRes1.SendToBack();
         }
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -20,7 +29,9 @@ namespace _291Project
         }
         private void Home_btn_click(object sender, EventArgs e)
         {
-            this.BringToFront();
+            custViewPastRes1.Hide();
+            custViewCurrentRes1.Hide();
+            custRequestRes1.Hide();
         }
 
         public void Logout_btn_click(object sender, EventArgs e)
@@ -53,6 +64,24 @@ namespace _291Project
 
         private void Req_res_button_Click(object sender, EventArgs e)
         {
+        }
+
+        private void req_res_button_Click_1(object sender, EventArgs e)
+        {
+            custRequestRes1.BringToFront();
+            custRequestRes1.Show();
+        }
+
+        private void view_curr_res_button_Click(object sender, EventArgs e)
+        {
+            custViewCurrentRes1.BringToFront();
+            custViewCurrentRes1.Show();
+        }
+
+        private void past_res_button_Click(object sender, EventArgs e)
+        {
+            custViewPastRes1.BringToFront();
+            custViewPastRes1.Show();
         }
     }
 }
