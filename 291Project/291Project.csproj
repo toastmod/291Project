@@ -9,11 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="EmpCarQueue.cs" />
+    <Compile Remove="EmpCarQueue.Designer.cs" />
     <Compile Remove="Form2a.cs" />
     <Compile Remove="Form2a.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="EmpCarQueue.resx" />
     <EmbeddedResource Remove="Form2a.resx" />
   </ItemGroup>
 

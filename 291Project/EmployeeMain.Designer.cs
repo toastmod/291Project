@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.emp_logout_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.Back_btn = new System.Windows.Forms.Button();
+            this.emp_logout_btn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button5 = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@
             this.mainMenuBranchDropdown = new System.Windows.Forms.ComboBox();
             this.EmpCarMenu = new _291Project.EmpCarMenu();
             this.EmpReservationMenu1 = new _291Project.EmpReservationMenu();
-            this.Back_btn = new System.Windows.Forms.Button();
+            this.empCustomerManagement1 = new _291Project.EmpCustomerManagement();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +71,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(94, 561);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(4, 3);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 51);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ResMenuBtn_Click);
+            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -82,6 +95,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // Back_btn
+            // 
+            this.Back_btn.Location = new System.Drawing.Point(3, 60);
+            this.Back_btn.Name = "Back_btn";
+            this.Back_btn.Size = new System.Drawing.Size(85, 51);
+            this.Back_btn.TabIndex = 3;
+            this.Back_btn.Text = "Back";
+            this.Back_btn.UseVisualStyleBackColor = true;
+            // 
             // emp_logout_btn
             // 
             this.emp_logout_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -93,18 +115,6 @@
             this.emp_logout_btn.Text = "Log Out";
             this.emp_logout_btn.UseVisualStyleBackColor = true;
             this.emp_logout_btn.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(4, 3);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 51);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Home";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ResMenuBtn_Click);
             // 
             // button3
             // 
@@ -166,6 +176,7 @@
             this.button7.TabIndex = 6;
             this.button7.Text = "Manage Customers";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.EmpManageCustomersBtn);
             // 
             // Emp_id_box
             // 
@@ -186,7 +197,7 @@
             this.mainMenuBranchDropdown.Size = new System.Drawing.Size(127, 26);
             this.mainMenuBranchDropdown.TabIndex = 7;
             this.mainMenuBranchDropdown.Text = "Select Branch...";
-            this.mainMenuBranchDropdown.SelectedIndexChanged += new System.EventHandler(this.mainMenuBranchDropdown_SelectedIndexChanged);
+            this.mainMenuBranchDropdown.SelectedIndexChanged += new System.EventHandler(this.MainMenuBranchDropdown_SelectedIndexChanged);
             // 
             // EmpCarMenu
             // 
@@ -205,16 +216,17 @@
             this.EmpReservationMenu1.Name = "EmpReservationMenu1";
             this.EmpReservationMenu1.Size = new System.Drawing.Size(568, 424);
             this.EmpReservationMenu1.TabIndex = 9;
-            this.EmpReservationMenu1.Load += new System.EventHandler(this.empReservationMenu1_Load);
+            this.EmpReservationMenu1.Load += new System.EventHandler(this.EmpReservationMenu1_Load);
             // 
-            // Back_btn
+            // empCustomerManagement1
             // 
-            this.Back_btn.Location = new System.Drawing.Point(3, 60);
-            this.Back_btn.Name = "Back_btn";
-            this.Back_btn.Size = new System.Drawing.Size(85, 51);
-            this.Back_btn.TabIndex = 3;
-            this.Back_btn.Text = "Back";
-            this.Back_btn.UseVisualStyleBackColor = true;
+            this.empCustomerManagement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
+            this.empCustomerManagement1.Location = new System.Drawing.Point(149, 70);
+            this.empCustomerManagement1.Name = "empCustomerManagement1";
+            this.empCustomerManagement1.Size = new System.Drawing.Size(660, 450);
+            this.empCustomerManagement1.TabIndex = 10;
+            this.empCustomerManagement1.Visible = false;
+            this.empCustomerManagement1.Load += new System.EventHandler(this.empCustomerManagement1_Load);
             // 
             // EmployeeMain
             // 
@@ -228,6 +240,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.EmpCarMenu);
             this.Controls.Add(this.EmpReservationMenu1);
+            this.Controls.Add(this.empCustomerManagement1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
@@ -258,5 +271,6 @@
         private EmpCarMenu EmpCarMenu;
         private EmpReservationMenu EmpReservationMenu1;
         private System.Windows.Forms.Button Back_btn;
+        private EmpCustomerManagement empCustomerManagement1;
     }
 }
