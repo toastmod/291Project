@@ -11,6 +11,7 @@
 
 ### Current Assignments:
 - **Dylan**
+  - Manage Customers UC
 
 - **Andrew**
   - Hook up Branch Selector to DB
@@ -19,7 +20,6 @@
 - **Hamza**
   - Employee Menu -> Reservation Menu -> Set up user controls for the three options.
     - They'll require DB connections, but focus on getting their UI set up, then we can connect them together on Tuesday.
-  - If you finish these quickly, set up Employee Menu -> Manage Customers User Control.
 - **Grant**
   - Set up UI for Customer User controls, that are linked from the buttons on the Customer Menu form.
     - Request a Reservation
