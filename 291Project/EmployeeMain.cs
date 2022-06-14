@@ -97,7 +97,9 @@ namespace _291Project
         private void mainMenuBranchDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             Program.context_branchid = mainMenuBranchDropdown.SelectedItem.ToString();
-            Console.WriteLine("BRANCHID WAS SET TO " + Program.context_branchid);
+            Program.println("BRANCHID WAS SET TO " + Program.context_branchid);
+            EmpCarMenu.UpdateBranch();
+            
         }
 
         private void Back_btn_Click(object sender, EventArgs e)

@@ -7,17 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace _291Project
 {
     public partial class EmpCarsAvailable : UserControl
     {
         public DataTable avail_dt = new DataTable();
+        public SqlDataReader reader = null;
         public EmpCarsAvailable()
         {
             InitializeComponent();
 
-            var reader = DBridge.run_query("SELECT * FROM Cars WHERE Cars.Branch_ID = " + Program.context_branchid);
+            reader = DBridge.run_query("SELECT * FROM Cars WHERE Cars.Branch_ID = " + Program.context_branchid);
             avail_dt.Load(reader);
             dataGridView2.DataSource = avail_dt;
         }
@@ -38,6 +40,15 @@ namespace _291Project
             this.Enabled = false;
             this.Hide();
 
+        }
+
+        public void UpdateBranch()
+        {
+            reader.Close();
+            reader = DBridge.run_query("SELECT * FROM Cars WHERE Cars.Branch_ID = " + Program.context_branchid);
+            avail_dt.Clear();
+            avail_dt.Load(reader);
+            dataGridView2.DataSource = avail_dt;
         }
     }
 }

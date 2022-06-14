@@ -62,6 +62,14 @@ namespace _291Project
                 this.Hide();
             }
         }
+
+        public void UpdateBranch()
+        {
+            if (carsavail_uc != null)
+            {
+                carsavail_uc.UpdateBranch();
+            }
+        }
     }
 
 }
