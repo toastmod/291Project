@@ -12,7 +12,7 @@ namespace _291Project
         {
             InitializeComponent();
 
-            reader = DBridge.run_query("SELECT * FROM Cars WHERE Cars.Branch_ID = " + Program.context_branchid);
+            reader = DBridge.run_query("SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, CarStatus.Status FROM Cars, CarStatus WHERE Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = " + Program.context_branchid);
             avail_dt.Load(reader);
             CarSearchDataView.DataSource = avail_dt;
         }
@@ -38,7 +38,7 @@ namespace _291Project
         public void UpdateBranch()
         {
             reader.Close();
-            reader = DBridge.run_query("SELECT * FROM Cars WHERE Cars.Branch_ID = " + Program.context_branchid);
+            reader = DBridge.run_query("SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, CarStatus.Status FROM Cars, CarStatus WHERE Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = " + Program.context_branchid);
             avail_dt.Clear();
             avail_dt.Load(reader);
             CarSearchDataView.DataSource = avail_dt;

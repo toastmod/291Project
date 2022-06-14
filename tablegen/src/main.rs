@@ -171,7 +171,7 @@ macro_rules! ownall {
     };
 }
 
-const ROWS: usize = 30;
+const ROWS: usize = 300;
 fn main() {
     println!("=== Table Gen ===");
 
