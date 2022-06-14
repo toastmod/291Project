@@ -16,13 +16,13 @@ namespace _291Project
 
             // load branch IDs into drop down
             var reader = DBridge.run_query("SELECT Branch_ID from Branches");
-            while(reader.Read())
+            while (reader.Read())
             {
                 mainMenuBranchDropdown.Items.Add(reader["Branch_ID"].ToString());
             }
 
             // if a branch ID is already loaded in the context, set it to that ID item.
-            if(Program.context_branchid != null)
+            if (Program.context_branchid != null)
             {
                 mainMenuBranchDropdown.SelectedIndex = mainMenuBranchDropdown.FindStringExact(Program.context_branchid);
             }
@@ -32,6 +32,7 @@ namespace _291Project
         private void EmployeeMain_Load(object sender, EventArgs e)
         {
             Emp_id_box.Text = $"Welcome {EmployeeDisplayName}!";
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace _291Project
             this.BringToFront();
             EmpCarMenu.Hide();
             EmpReservationMenu1.Hide();
+            empCustomerManagement1.Hide();
 
         }
 
@@ -88,13 +90,13 @@ namespace _291Project
 
         }
 
-        private void empReservationMenu1_Load(object sender, EventArgs e)
+        private void EmpReservationMenu1_Load(object sender, EventArgs e)
         {
             EmpReservationMenu1.Hide();
 
         }
 
-        private void mainMenuBranchDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        private void MainMenuBranchDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             Program.context_branchid = mainMenuBranchDropdown.SelectedItem.ToString();
             Program.println("BRANCHID WAS SET TO " + Program.context_branchid);
@@ -110,6 +112,17 @@ namespace _291Project
         private void button6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void EmpManageCustomersBtn(object sender, EventArgs e)
+        {
+            empCustomerManagement1.BringToFront();
+            empCustomerManagement1.Show();
+        }
+
+        private void empCustomerManagement1_Load(object sender, EventArgs e)
+        {
+            empCustomerManagement1.Hide();
         }
     }
 }

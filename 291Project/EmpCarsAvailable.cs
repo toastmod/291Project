@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -21,15 +14,15 @@ namespace _291Project
 
             reader = DBridge.run_query("SELECT * FROM Cars WHERE Cars.Branch_ID = " + Program.context_branchid);
             avail_dt.Load(reader);
-            dataGridView2.DataSource = avail_dt;
+            CarSearchDataView.DataSource = avail_dt;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void CarSearchDataView_click(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -48,7 +41,7 @@ namespace _291Project
             reader = DBridge.run_query("SELECT * FROM Cars WHERE Cars.Branch_ID = " + Program.context_branchid);
             avail_dt.Clear();
             avail_dt.Load(reader);
-            dataGridView2.DataSource = avail_dt;
+            CarSearchDataView.DataSource = avail_dt;
         }
     }
 }

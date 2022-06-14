@@ -11,17 +11,18 @@
 
 ### Current Assignments:
 - **Dylan**
-
+  - Set up Reports UC
+  - Set up Add Car, Car Search, and Cars Due UCs.
 - **Andrew**
   - Hook up Branch Selector to DB
-  - Prepare for DB connections: Reservations, Cars, Customers, Reports
-  - As soon as one of these are ready, start on connecting it to DB.
+    - Get ID - City in branch selector
+    - Fix bug with not refreshing table after user changes branch.
+  - Hook up Customer table to Manage Customers 
 - **Hamza**
   - Employee Menu -> Reservation Menu -> Set up user controls for the three options.
     - They'll require DB connections, but focus on getting their UI set up, then we can connect them together on Tuesday.
-  - If you finish these quickly, set up Employee Menu -> Manage Customers User Control.
 - **Grant**
-  - Set up UI for Customer User controls, that are linked from the buttons on the Customer Menu form.
+  - Customer Menu, set up the UI for these UC's
     - Request a Reservation
     - View Curr Reservation
     - View Past Reservation
