@@ -60,24 +60,24 @@
             this.tableLayoutPanel1.Controls.Add(this.emp_logout_btn, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 126F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(175, 1197);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 118F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(162, 1122);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(7, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.button1.Location = new System.Drawing.Point(6, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 109);
+            this.button1.Size = new System.Drawing.Size(146, 102);
             this.button1.TabIndex = 1;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
@@ -86,10 +86,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(7, 374);
-            this.button2.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.button2.Location = new System.Drawing.Point(6, 352);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 109);
+            this.button2.Size = new System.Drawing.Size(146, 102);
             this.button2.TabIndex = 2;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
@@ -97,10 +97,10 @@
             // 
             // Back_btn
             // 
-            this.Back_btn.Location = new System.Drawing.Point(6, 127);
+            this.Back_btn.Location = new System.Drawing.Point(6, 120);
             this.Back_btn.Margin = new System.Windows.Forms.Padding(6);
             this.Back_btn.Name = "Back_btn";
-            this.Back_btn.Size = new System.Drawing.Size(158, 109);
+            this.Back_btn.Size = new System.Drawing.Size(146, 102);
             this.Back_btn.TabIndex = 3;
             this.Back_btn.Text = "Back";
             this.Back_btn.UseVisualStyleBackColor = true;
@@ -109,10 +109,10 @@
             // emp_logout_btn
             // 
             this.emp_logout_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emp_logout_btn.Location = new System.Drawing.Point(7, 248);
-            this.emp_logout_btn.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.emp_logout_btn.Location = new System.Drawing.Point(6, 234);
+            this.emp_logout_btn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.emp_logout_btn.Name = "emp_logout_btn";
-            this.emp_logout_btn.Size = new System.Drawing.Size(158, 109);
+            this.emp_logout_btn.Size = new System.Drawing.Size(146, 102);
             this.emp_logout_btn.TabIndex = 2;
             this.emp_logout_btn.Text = "Log Out";
             this.emp_logout_btn.UseVisualStyleBackColor = true;
@@ -121,10 +121,10 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(7, 426);
-            this.button3.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.button3.Location = new System.Drawing.Point(6, 400);
+            this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(1010, 196);
+            this.button3.Size = new System.Drawing.Size(932, 184);
             this.button3.TabIndex = 3;
             this.button3.Text = "Manage Cars";
             this.button3.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             this.tableLayoutPanel2.Controls.Add(this.button5, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button6, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.button7, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(401, 177);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(370, 166);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -146,7 +146,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1025, 843);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(946, 790);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // button5
@@ -155,7 +155,7 @@
             this.button5.Location = new System.Drawing.Point(6, 6);
             this.button5.Margin = new System.Windows.Forms.Padding(6);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(1013, 196);
+            this.button5.Size = new System.Drawing.Size(934, 184);
             this.button5.TabIndex = 4;
             this.button5.Text = "Manage Reservations";
             this.button5.UseVisualStyleBackColor = true;
@@ -164,10 +164,10 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(6, 216);
+            this.button6.Location = new System.Drawing.Point(6, 203);
             this.button6.Margin = new System.Windows.Forms.Padding(6);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(1013, 196);
+            this.button6.Size = new System.Drawing.Size(934, 184);
             this.button6.TabIndex = 5;
             this.button6.Text = "Create Report";
             this.button6.UseVisualStyleBackColor = true;
@@ -176,10 +176,10 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(6, 636);
+            this.button7.Location = new System.Drawing.Point(6, 597);
             this.button7.Margin = new System.Windows.Forms.Padding(6);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(1013, 201);
+            this.button7.Size = new System.Drawing.Size(934, 187);
             this.button7.TabIndex = 6;
             this.button7.Text = "Manage Customers";
             this.button7.UseVisualStyleBackColor = true;
@@ -188,10 +188,10 @@
             // Emp_id_box
             // 
             this.Emp_id_box.AutoSize = true;
-            this.Emp_id_box.Location = new System.Drawing.Point(254, 51);
+            this.Emp_id_box.Location = new System.Drawing.Point(234, 48);
             this.Emp_id_box.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Emp_id_box.Name = "Emp_id_box";
-            this.Emp_id_box.Size = new System.Drawing.Size(120, 32);
+            this.Emp_id_box.Size = new System.Drawing.Size(105, 30);
             this.Emp_id_box.TabIndex = 6;
             this.Emp_id_box.Text = "Welcome!";
             this.Emp_id_box.Click += new System.EventHandler(this.Emp_id_box_Click);
@@ -200,10 +200,10 @@
             // 
             this.mainMenuBranchDropdown.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mainMenuBranchDropdown.FormattingEnabled = true;
-            this.mainMenuBranchDropdown.Location = new System.Drawing.Point(1361, 43);
+            this.mainMenuBranchDropdown.Location = new System.Drawing.Point(1256, 40);
             this.mainMenuBranchDropdown.Margin = new System.Windows.Forms.Padding(6);
             this.mainMenuBranchDropdown.Name = "mainMenuBranchDropdown";
-            this.mainMenuBranchDropdown.Size = new System.Drawing.Size(232, 37);
+            this.mainMenuBranchDropdown.Size = new System.Drawing.Size(214, 35);
             this.mainMenuBranchDropdown.TabIndex = 7;
             this.mainMenuBranchDropdown.Text = "Select Branch...";
             this.mainMenuBranchDropdown.SelectedIndexChanged += new System.EventHandler(this.MainMenuBranchDropdown_SelectedIndexChanged);
@@ -211,39 +211,41 @@
             // EmpCarMenu
             // 
             this.EmpCarMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.EmpCarMenu.Location = new System.Drawing.Point(401, 149);
-            this.EmpCarMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmpCarMenu.Location = new System.Drawing.Point(370, 140);
+            this.EmpCarMenu.Margin = new System.Windows.Forms.Padding(4);
             this.EmpCarMenu.Name = "EmpCarMenu";
-            this.EmpCarMenu.Size = new System.Drawing.Size(1025, 883);
+            this.EmpCarMenu.Size = new System.Drawing.Size(946, 828);
             this.EmpCarMenu.TabIndex = 8;
             this.EmpCarMenu.Load += new System.EventHandler(this.EmpCarMenu_Load);
             // 
             // EmpReservationMenu1
             // 
             this.EmpReservationMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.EmpReservationMenu1.Location = new System.Drawing.Point(371, 128);
-            this.EmpReservationMenu1.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
+            this.EmpReservationMenu1.Location = new System.Drawing.Point(342, 120);
+            this.EmpReservationMenu1.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.EmpReservationMenu1.Name = "EmpReservationMenu1";
-            this.EmpReservationMenu1.Size = new System.Drawing.Size(1055, 905);
+            this.EmpReservationMenu1.Size = new System.Drawing.Size(974, 848);
             this.EmpReservationMenu1.TabIndex = 9;
             this.EmpReservationMenu1.Load += new System.EventHandler(this.EmpReservationMenu1_Load);
             // 
             // empCustomerManagement1
             // 
             this.empCustomerManagement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.empCustomerManagement1.Location = new System.Drawing.Point(149, 70);
+            this.empCustomerManagement1.Enabled = false;
+            this.empCustomerManagement1.Location = new System.Drawing.Point(138, 66);
+            this.empCustomerManagement1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.empCustomerManagement1.Name = "empCustomerManagement1";
-            this.empCustomerManagement1.Size = new System.Drawing.Size(660, 450);
+            this.empCustomerManagement1.Size = new System.Drawing.Size(609, 422);
             this.empCustomerManagement1.TabIndex = 10;
             this.empCustomerManagement1.Visible = false;
             this.empCustomerManagement1.Load += new System.EventHandler(this.empCustomerManagement1_Load);
             // 
             // EmployeeMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.ClientSize = new System.Drawing.Size(1642, 1197);
+            this.ClientSize = new System.Drawing.Size(1516, 1122);
             this.Controls.Add(this.mainMenuBranchDropdown);
             this.Controls.Add(this.Emp_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -252,7 +254,7 @@
             this.Controls.Add(this.EmpReservationMenu1);
             this.Controls.Add(this.empCustomerManagement1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "EmployeeMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
