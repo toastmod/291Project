@@ -12,9 +12,14 @@ namespace _291Project
         {
             InitializeComponent();
 
-            reader = DBridge.run_query("SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, CarStatus.Status FROM Cars, CarStatus WHERE Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = " + Program.context_branchid);
+            reader = DBridge.run_query(EmpCarsAvailable.gen_querystr());
             avail_dt.Load(reader);
             CarSearchDataView.DataSource = avail_dt;
+        }
+
+        private static string gen_querystr()
+        {
+            return $"SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, Branches.City, CarStatus.Status FROM Cars, CarStatus, Branches WHERE Branches.Branch_ID = Cars.Branch_ID AND Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = ${Program.context_branchid}";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -38,7 +43,7 @@ namespace _291Project
         public void UpdateBranch()
         {
             reader.Close();
-            reader = DBridge.run_query("SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, CarStatus.Status FROM Cars, CarStatus WHERE Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = " + Program.context_branchid);
+            reader = DBridge.run_query(EmpCarsAvailable.gen_querystr());
             avail_dt.Clear();
             avail_dt.Load(reader);
             CarSearchDataView.DataSource = avail_dt;
