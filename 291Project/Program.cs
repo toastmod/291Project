@@ -25,5 +25,23 @@ namespace _291Project
             //Application.Run(new CSignUpForm());
             Application.Run(new Splash());
         }
+
+        public static bool UCBack(dynamic uc)
+        {
+            if(uc == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;                
+            }
+        }
+
+        public static void println(String s)
+        {
+            System.Diagnostics.Debug.WriteLine(s);
+        }
+
     }
 }

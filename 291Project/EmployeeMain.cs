@@ -37,9 +37,10 @@ namespace _291Project
         private void button3_Click(object sender, EventArgs e)
         {
             //DBridge.init();
-            EmpCarMenu.BringToFront();
             EmpCarMenu.Show();
+            EmpCarMenu.BringToFront();
             EmpCarMenu.Enabled = true;
+            EmpCarMenu.Visible = true;
         }
 
 
@@ -97,6 +98,16 @@ namespace _291Project
         {
             Program.context_branchid = mainMenuBranchDropdown.SelectedItem.ToString();
             Console.WriteLine("BRANCHID WAS SET TO " + Program.context_branchid);
+        }
+
+        private void Back_btn_Click(object sender, EventArgs e)
+        {
+            EmpCarMenu.GoBack();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

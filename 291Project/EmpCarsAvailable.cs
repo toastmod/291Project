@@ -31,5 +31,13 @@ namespace _291Project
         {
 
         }
+
+        public void GoBack()
+        {
+            Program.println("Going back from CarsAvailable");
+            this.Enabled = false;
+            this.Hide();
+
+        }
     }
 }
