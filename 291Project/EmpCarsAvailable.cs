@@ -22,11 +22,6 @@ namespace _291Project
             return $"SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, Branches.City, CarStatus.Status FROM Cars, CarStatus, Branches WHERE Branches.Branch_ID = Cars.Branch_ID AND Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = ${Program.context_branchid}";
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void CarSearchDataView_click(object sender, DataGridViewCellEventArgs e)
         {
 
