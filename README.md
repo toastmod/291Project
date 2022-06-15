@@ -10,22 +10,35 @@
   - Does not overlap with any current reservation.
 
 ### Current Assignments:
+Dylan:
+
+
+Hamza:
+Andrew:
+Generate rest of the schemas
+Query filters for employee cars available screen
+Employee reports graph
+Grant:
+Customer screen database connection/tables
+Employee Reservation Management (same as customer, with additional CID filter)
+Filters for the Customer side
+
 - **Dylan**
-  - Set up Reports UC
-  - Set up Add Car, Car Search, and Cars Due UCs.
+  - Customer management system.
+  - Car Returning and branch functions
 - **Andrew**
-  - Hook up Branch Selector to DB
-    - Get ID - City in branch selector
-    - Fix bug with not refreshing table after user changes branch.
-  - Hook up Customer table to Manage Customers 
+  - Get ID - City in branch selector
+  - Generate rest of the schemas
+  - Query filters for employee cars available screen
+  - Employee reports graph
 - **Hamza**
-  - Employee Menu -> Reservation Menu -> Set up user controls for the three options.
-    - They'll require DB connections, but focus on getting their UI set up, then we can connect them together on Tuesday.
+  - Reports
 - **Grant**
-  - Customer Menu, set up the UI for these UC's
-    - Request a Reservation
-    - View Curr Reservation
-    - View Past Reservation
+  - Linking filters to reservation search.
+  - Customer screen database connection/tables
+  - Employee Reservation Management (same as customer, with additional CID filter)
+  - Filters for the Customer side
+
 
 
 If you have completed your assignment, message the group chat and we'll assign
