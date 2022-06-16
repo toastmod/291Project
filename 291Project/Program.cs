@@ -23,7 +23,7 @@ namespace _291Project
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new CSignUpForm());
-            Application.Run(new Splash());
+            Application.Run(new LoginSplash());
         }
 
         public static bool UCBack(dynamic uc)

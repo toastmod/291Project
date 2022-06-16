@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 namespace _291Project
 {
-    partial class CSignUpForm : Form
+    partial class EmpAddCustomer : Form
     {
         /// <summary>
         ///  Required designer variable.
@@ -36,7 +36,7 @@ namespace _291Project
             this.line1 = new System.Windows.Forms.TextBox();
             this.PhoneNum = new System.Windows.Forms.TextBox();
             this.address_label = new System.Windows.Forms.Label();
-            this.create = new System.Windows.Forms.Button();
+            this.SubmitCustomerBtn = new System.Windows.Forms.Button();
             this.line2 = new System.Windows.Forms.TextBox();
             this.postalcode = new System.Windows.Forms.TextBox();
             this.Province = new System.Windows.Forms.TextBox();
@@ -48,7 +48,13 @@ namespace _291Project
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DOB = new System.Windows.Forms.DateTimePicker();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.License = new System.Windows.Forms.TextBox();
+            this.LicenseLabel = new System.Windows.Forms.Label();
+            this.GenderLabel = new System.Windows.Forms.Label();
+            this.Gender = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // first
@@ -94,7 +100,7 @@ namespace _291Project
             // line1
             // 
             this.line1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.line1.Location = new System.Drawing.Point(144, 123);
+            this.line1.Location = new System.Drawing.Point(152, 262);
             this.line1.Margin = new System.Windows.Forms.Padding(2);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(148, 23);
@@ -104,7 +110,7 @@ namespace _291Project
             // PhoneNum
             // 
             this.PhoneNum.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNum.Location = new System.Drawing.Point(144, 265);
+            this.PhoneNum.Location = new System.Drawing.Point(152, 404);
             this.PhoneNum.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneNum.Name = "PhoneNum";
             this.PhoneNum.Size = new System.Drawing.Size(148, 23);
@@ -114,30 +120,30 @@ namespace _291Project
             // address_label
             // 
             this.address_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.address_label.Location = new System.Drawing.Point(21, 103);
+            this.address_label.Location = new System.Drawing.Point(29, 242);
             this.address_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.address_label.Name = "address_label";
             this.address_label.Size = new System.Drawing.Size(113, 30);
             this.address_label.TabIndex = 6;
             this.address_label.Text = "Address:";
             // 
-            // create
+            // SubmitCustomerBtn
             // 
-            this.create.BackColor = System.Drawing.Color.Transparent;
-            this.create.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.create.Location = new System.Drawing.Point(84, 317);
-            this.create.Margin = new System.Windows.Forms.Padding(2);
-            this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(172, 35);
-            this.create.TabIndex = 8;
-            this.create.Text = "Create Account";
-            this.create.UseVisualStyleBackColor = false;
-            this.create.Click += new System.EventHandler(this.create_Click_1);
+            this.SubmitCustomerBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SubmitCustomerBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SubmitCustomerBtn.Location = new System.Drawing.Point(92, 456);
+            this.SubmitCustomerBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.SubmitCustomerBtn.Name = "SubmitCustomerBtn";
+            this.SubmitCustomerBtn.Size = new System.Drawing.Size(172, 35);
+            this.SubmitCustomerBtn.TabIndex = 8;
+            this.SubmitCustomerBtn.Text = "Add Customer";
+            this.SubmitCustomerBtn.UseVisualStyleBackColor = false;
+            this.SubmitCustomerBtn.Click += new System.EventHandler(this.create_Click_1);
             // 
             // line2
             // 
             this.line2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.line2.Location = new System.Drawing.Point(144, 152);
+            this.line2.Location = new System.Drawing.Point(152, 291);
             this.line2.Margin = new System.Windows.Forms.Padding(2);
             this.line2.Name = "line2";
             this.line2.Size = new System.Drawing.Size(148, 23);
@@ -147,7 +153,7 @@ namespace _291Project
             // postalcode
             // 
             this.postalcode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.postalcode.Location = new System.Drawing.Point(144, 181);
+            this.postalcode.Location = new System.Drawing.Point(152, 320);
             this.postalcode.Margin = new System.Windows.Forms.Padding(2);
             this.postalcode.Name = "postalcode";
             this.postalcode.Size = new System.Drawing.Size(148, 23);
@@ -157,7 +163,7 @@ namespace _291Project
             // Province
             // 
             this.Province.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Province.Location = new System.Drawing.Point(144, 209);
+            this.Province.Location = new System.Drawing.Point(152, 348);
             this.Province.Margin = new System.Windows.Forms.Padding(2);
             this.Province.Name = "Province";
             this.Province.Size = new System.Drawing.Size(148, 23);
@@ -167,7 +173,7 @@ namespace _291Project
             // City
             // 
             this.City.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.City.Location = new System.Drawing.Point(144, 238);
+            this.City.Location = new System.Drawing.Point(152, 377);
             this.City.Margin = new System.Windows.Forms.Padding(2);
             this.City.Name = "City";
             this.City.Size = new System.Drawing.Size(148, 23);
@@ -177,7 +183,7 @@ namespace _291Project
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(83, 121);
+            this.label1.Location = new System.Drawing.Point(91, 260);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 30);
@@ -187,7 +193,7 @@ namespace _291Project
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(83, 150);
+            this.label2.Location = new System.Drawing.Point(91, 289);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 30);
@@ -197,7 +203,7 @@ namespace _291Project
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(55, 181);
+            this.label3.Location = new System.Drawing.Point(63, 320);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 30);
@@ -207,7 +213,7 @@ namespace _291Project
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(67, 211);
+            this.label4.Location = new System.Drawing.Point(75, 350);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 30);
@@ -217,7 +223,7 @@ namespace _291Project
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(84, 236);
+            this.label5.Location = new System.Drawing.Point(92, 375);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 30);
@@ -227,7 +233,7 @@ namespace _291Project
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(21, 263);
+            this.label6.Location = new System.Drawing.Point(29, 402);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(159, 30);
@@ -245,27 +251,94 @@ namespace _291Project
             this.label7.Text = "DOB:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // dateTimePicker1
+            // DOB
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(144, 69);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(148, 23);
-            this.dateTimePicker1.TabIndex = 20;
+            this.DOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DOB.Location = new System.Drawing.Point(144, 69);
+            this.DOB.Name = "DOB";
+            this.DOB.Size = new System.Drawing.Size(148, 23);
+            this.DOB.TabIndex = 20;
             // 
-            // CSignUpForm
+            // Email
+            // 
+            this.Email.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Email.Location = new System.Drawing.Point(144, 99);
+            this.Email.Margin = new System.Windows.Forms.Padding(2);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(148, 25);
+            this.Email.TabIndex = 22;
+            // 
+            // EmailLabel
+            // 
+            this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EmailLabel.Location = new System.Drawing.Point(55, 99);
+            this.EmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(141, 30);
+            this.EmailLabel.TabIndex = 21;
+            this.EmailLabel.Text = "Email:";
+            // 
+            // License
+            // 
+            this.License.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.License.Location = new System.Drawing.Point(144, 129);
+            this.License.Margin = new System.Windows.Forms.Padding(2);
+            this.License.Name = "License";
+            this.License.Size = new System.Drawing.Size(148, 25);
+            this.License.TabIndex = 24;
+            // 
+            // LicenseLabel
+            // 
+            this.LicenseLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LicenseLabel.Location = new System.Drawing.Point(55, 129);
+            this.LicenseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LicenseLabel.Name = "LicenseLabel";
+            this.LicenseLabel.Size = new System.Drawing.Size(141, 30);
+            this.LicenseLabel.TabIndex = 23;
+            this.LicenseLabel.Text = "License #:";
+            // 
+            // GenderLabel
+            // 
+            this.GenderLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GenderLabel.Location = new System.Drawing.Point(55, 165);
+            this.GenderLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.GenderLabel.Name = "GenderLabel";
+            this.GenderLabel.Size = new System.Drawing.Size(141, 30);
+            this.GenderLabel.TabIndex = 25;
+            this.GenderLabel.Text = "Gender:";
+            // 
+            // Gender
+            // 
+            this.Gender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Gender.FormattingEnabled = true;
+            this.Gender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Other"});
+            this.Gender.Location = new System.Drawing.Point(144, 162);
+            this.Gender.Name = "Gender";
+            this.Gender.Size = new System.Drawing.Size(148, 25);
+            this.Gender.TabIndex = 26;
+            // 
+            // EmpAddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(349, 375);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(328, 543);
+            this.Controls.Add(this.Gender);
+            this.Controls.Add(this.GenderLabel);
+            this.Controls.Add(this.License);
+            this.Controls.Add(this.LicenseLabel);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.EmailLabel);
+            this.Controls.Add(this.DOB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.City);
             this.Controls.Add(this.Province);
             this.Controls.Add(this.postalcode);
             this.Controls.Add(this.line2);
-            this.Controls.Add(this.create);
+            this.Controls.Add(this.SubmitCustomerBtn);
             this.Controls.Add(this.PhoneNum);
             this.Controls.Add(this.line1);
             this.Controls.Add(this.LastName);
@@ -280,9 +353,9 @@ namespace _291Project
             this.Controls.Add(this.label5);
             this.Controls.Add(this.address_label);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "CSignUpForm";
+            this.Name = "EmpAddCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NCR - Customer Sign Up";
+            this.Text = "NCR - Add Customer";
             this.Load += new System.EventHandler(this.CSignUpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -298,7 +371,7 @@ namespace _291Project
         private TextBox line1;
         private TextBox PhoneNum;
         private Label address_label;
-        private Button create;
+        private Button SubmitCustomerBtn;
         private TextBox line2;
         private TextBox postalcode;
         private TextBox Province;
@@ -310,6 +383,12 @@ namespace _291Project
         private Label label5;
         private Label label6;
         private Label label7;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DOB;
+        private TextBox Email;
+        private Label EmailLabel;
+        private TextBox License;
+        private Label LicenseLabel;
+        private Label GenderLabel;
+        private ComboBox Gender;
     }
 }

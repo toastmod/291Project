@@ -37,6 +37,13 @@ namespace _291Project
             ((System.ComponentModel.ISupportInitialize)(this.CarSearchDataView)).BeginInit();
             this.SuspendLayout();
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 4;
+            // 
             // CarSearchDataView
             // 
             this.CarSearchDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -78,6 +85,7 @@ namespace _291Project
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmpCarsAvailable";
             this.Size = new System.Drawing.Size(660, 450);
+            this.Load += new System.EventHandler(this.EmpCarsAvailable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CarSearchDataView)).EndInit();
             this.ResumeLayout(false);

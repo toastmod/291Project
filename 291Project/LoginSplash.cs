@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace _291Project
 {
-    public partial class Splash : Form
+    public partial class LoginSplash : Form
     {
 
-        public Splash()
+        public LoginSplash()
         {
             InitializeComponent();
         }

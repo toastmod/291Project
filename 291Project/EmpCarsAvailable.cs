@@ -1,6 +1,6 @@
 ﻿using System.Data;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace _291Project
 {
@@ -42,6 +42,11 @@ namespace _291Project
             avail_dt.Clear();
             avail_dt.Load(reader);
             CarSearchDataView.DataSource = avail_dt;
+        }
+
+        private void EmpCarsAvailable_Load(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

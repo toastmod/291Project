@@ -5,12 +5,12 @@ namespace _291Project
 {
     public partial class CustomerMainMenu : Form
     {
-        public Splash splashscreen;
+        public LoginSplash splashscreen;
 
         public string CustomerDisplayName { get; set; }
-        public CustomerMainMenu(Splash splashscreen)
+        public CustomerMainMenu(LoginSplash splashscreen)
         {
-     
+
             this.splashscreen = splashscreen;
             InitializeComponent();
 
@@ -82,6 +82,11 @@ namespace _291Project
         {
             custViewPastRes1.BringToFront();
             custViewPastRes1.Show();
+        }
+
+        private void custViewPastRes1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
