@@ -84,7 +84,7 @@ namespace _291Project
             this.FirstName.Margin = new System.Windows.Forms.Padding(2);
             this.FirstName.Name = "FirstName";
             this.FirstName.Size = new System.Drawing.Size(148, 25);
-            this.FirstName.TabIndex = 2;
+            this.FirstName.TabIndex = 1;
             this.FirstName.TextChanged += new System.EventHandler(this.FirstName_TextChanged);
             // 
             // LastName
@@ -94,7 +94,7 @@ namespace _291Project
             this.LastName.Margin = new System.Windows.Forms.Padding(2);
             this.LastName.Name = "LastName";
             this.LastName.Size = new System.Drawing.Size(148, 25);
-            this.LastName.TabIndex = 3;
+            this.LastName.TabIndex = 2;
             this.LastName.TextChanged += new System.EventHandler(this.LastName_TextChanged);
             // 
             // line1
@@ -104,7 +104,7 @@ namespace _291Project
             this.line1.Margin = new System.Windows.Forms.Padding(2);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(148, 23);
-            this.line1.TabIndex = 4;
+            this.line1.TabIndex = 7;
             this.line1.TextChanged += new System.EventHandler(this.line1_TextChanged);
             // 
             // PhoneNum
@@ -114,7 +114,7 @@ namespace _291Project
             this.PhoneNum.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneNum.Name = "PhoneNum";
             this.PhoneNum.Size = new System.Drawing.Size(148, 23);
-            this.PhoneNum.TabIndex = 5;
+            this.PhoneNum.TabIndex = 12;
             this.PhoneNum.TextChanged += new System.EventHandler(this.PhoneNum_TextChanged);
             // 
             // address_label
@@ -135,7 +135,7 @@ namespace _291Project
             this.SubmitCustomerBtn.Margin = new System.Windows.Forms.Padding(2);
             this.SubmitCustomerBtn.Name = "SubmitCustomerBtn";
             this.SubmitCustomerBtn.Size = new System.Drawing.Size(172, 35);
-            this.SubmitCustomerBtn.TabIndex = 8;
+            this.SubmitCustomerBtn.TabIndex = 13;
             this.SubmitCustomerBtn.Text = "Add Customer";
             this.SubmitCustomerBtn.UseVisualStyleBackColor = false;
             this.SubmitCustomerBtn.Click += new System.EventHandler(this.create_Click_1);
@@ -147,7 +147,7 @@ namespace _291Project
             this.line2.Margin = new System.Windows.Forms.Padding(2);
             this.line2.Name = "line2";
             this.line2.Size = new System.Drawing.Size(148, 23);
-            this.line2.TabIndex = 9;
+            this.line2.TabIndex = 8;
             this.line2.TextChanged += new System.EventHandler(this.line2_TextChanged);
             // 
             // postalcode
@@ -157,7 +157,7 @@ namespace _291Project
             this.postalcode.Margin = new System.Windows.Forms.Padding(2);
             this.postalcode.Name = "postalcode";
             this.postalcode.Size = new System.Drawing.Size(148, 23);
-            this.postalcode.TabIndex = 10;
+            this.postalcode.TabIndex = 9;
             this.postalcode.TextChanged += new System.EventHandler(this.postalcode_TextChanged);
             // 
             // Province
@@ -167,7 +167,7 @@ namespace _291Project
             this.Province.Margin = new System.Windows.Forms.Padding(2);
             this.Province.Name = "Province";
             this.Province.Size = new System.Drawing.Size(148, 23);
-            this.Province.TabIndex = 11;
+            this.Province.TabIndex = 10;
             this.Province.TextChanged += new System.EventHandler(this.Province_TextChanged);
             // 
             // City
@@ -177,7 +177,7 @@ namespace _291Project
             this.City.Margin = new System.Windows.Forms.Padding(2);
             this.City.Name = "City";
             this.City.Size = new System.Drawing.Size(148, 23);
-            this.City.TabIndex = 12;
+            this.City.TabIndex = 11;
             this.City.TextChanged += new System.EventHandler(this.City_TextChanged);
             // 
             // label1
@@ -257,7 +257,7 @@ namespace _291Project
             this.DOB.Location = new System.Drawing.Point(144, 69);
             this.DOB.Name = "DOB";
             this.DOB.Size = new System.Drawing.Size(148, 23);
-            this.DOB.TabIndex = 20;
+            this.DOB.TabIndex = 3;
             // 
             // Email
             // 
@@ -266,12 +266,12 @@ namespace _291Project
             this.Email.Margin = new System.Windows.Forms.Padding(2);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(148, 25);
-            this.Email.TabIndex = 22;
+            this.Email.TabIndex = 4;
             // 
             // EmailLabel
             // 
             this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EmailLabel.Location = new System.Drawing.Point(55, 99);
+            this.EmailLabel.Location = new System.Drawing.Point(81, 99);
             this.EmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(141, 30);
@@ -285,22 +285,22 @@ namespace _291Project
             this.License.Margin = new System.Windows.Forms.Padding(2);
             this.License.Name = "License";
             this.License.Size = new System.Drawing.Size(148, 25);
-            this.License.TabIndex = 24;
+            this.License.TabIndex = 5;
             // 
             // LicenseLabel
             // 
             this.LicenseLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LicenseLabel.Location = new System.Drawing.Point(55, 129);
+            this.LicenseLabel.Location = new System.Drawing.Point(17, 129);
             this.LicenseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LicenseLabel.Name = "LicenseLabel";
             this.LicenseLabel.Size = new System.Drawing.Size(141, 30);
             this.LicenseLabel.TabIndex = 23;
-            this.LicenseLabel.Text = "License #:";
+            this.LicenseLabel.Text = "Driver\'s License #:";
             // 
             // GenderLabel
             // 
             this.GenderLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.GenderLabel.Location = new System.Drawing.Point(55, 165);
+            this.GenderLabel.Location = new System.Drawing.Point(75, 162);
             this.GenderLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.GenderLabel.Name = "GenderLabel";
             this.GenderLabel.Size = new System.Drawing.Size(141, 30);
@@ -318,7 +318,7 @@ namespace _291Project
             this.Gender.Location = new System.Drawing.Point(144, 162);
             this.Gender.Name = "Gender";
             this.Gender.Size = new System.Drawing.Size(148, 25);
-            this.Gender.TabIndex = 26;
+            this.Gender.TabIndex = 6;
             // 
             // EmpAddCustomer
             // 

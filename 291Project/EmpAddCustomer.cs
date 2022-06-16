@@ -114,7 +114,7 @@ namespace _291Project
                 line2.Text = "NULL"; //! Temporary. This doesn't work.
             };
 
-            String AddCustomerQuery = $"INSERT INTO Customers (customer_ID, membership_type, first_name, last_name, email, dob, gender, driver_license_no, phone_number, address_1, address_2, city, postal_code, province) VALUES ({CID + 1}, 0, '{FirstName.Text}', '{LastName.Text}', '{Email.Text}', '{DOB.Text}', '{Gender.Text}', '{License.Text}', '{PhoneNum.Text}', '{line1.Text}', '{line2.Text}', '{City.Text}', '{postalcode.Text}', '{Province.Text}');";
+            String AddCustomerQuery = $"INSERT INTO Customers (customer_ID, membership_type, first_name, last_name, email, dob, gender, driver_license_no, phone_number, address_1, address_2, city, postal_code, province) VALUES ({CID + 1}, 1, '{FirstName.Text}', '{LastName.Text}', '{Email.Text}', '{DOB.Text}', '{Gender.Text}', '{License.Text}', '{PhoneNum.Text}', '{line1.Text}', '{line2.Text}', '{City.Text}', '{postalcode.Text}', '{Province.Text}');";
 
             MessageBox.Show($"{AddCustomerQuery}", "Failed to Add Customer",
             MessageBoxButtons.OK, MessageBoxIcon.Error);
