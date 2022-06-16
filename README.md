@@ -10,18 +10,6 @@
   - Does not overlap with any current reservation.
 
 ### Current Assignments:
-Dylan:
-
-
-Hamza:
-Andrew:
-Generate rest of the schemas
-Query filters for employee cars available screen
-Employee reports graph
-Grant:
-Customer screen database connection/tables
-Employee Reservation Management (same as customer, with additional CID filter)
-Filters for the Customer side
 
 - **Dylan**
   - Customer management system.
