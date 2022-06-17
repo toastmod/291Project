@@ -11,19 +11,32 @@ namespace _291Project
         public DataTable avail_dt = new DataTable();
         public SqlDataReader reader = null;
         public EmpAddCustomer AddCustomer = null;
+        private static bool filters;
+
         public EmpCustomerManagement()
         {
             InitializeComponent();
-            reader = DBridge.run_query(EmpCustomerManagement.GenQueryStr());
+            filters = false;
+            reader = DBridge.run_query(query: GenQueryStr());
             reader = DBridge.run_query(GenQueryStr());
             avail_dt.Load(reader);
             CustomerDataView.DataSource = avail_dt;
             CustomerDataView.Rows[0].Selected = false;
         }
 
-        private static string GenQueryStr()
+        private string GenQueryStr()
         {
-            return "SELECT c.customer_ID, CONCAT(first_name, ' ', last_name) as \"Name\", mt.rank as \"Membership\", c.phone_number, c.driver_license_no, c.gender, c.address_1, c.city, c.postal_code, c.province  FROM Customers c, MembershipType mt WHERE c.membership_type = mt.Membership_ID";
+            if (!filters)
+            {
+                return "select c.customer_id, concat(first_name, ' ', last_name) as \"name\", mt.rank as \"membership\", c.phone_number, c.driver_license_no, c.gender, c.address_1, c.city, c.postal_code, c.province  from customers c, membershiptype mt where c.membership_type = mt.membership_id";
+            }
+            else return FilteredQuery();
+        }
+
+        private string FilteredQuery()
+        {
+            string Query = "select c.customer_id, concat(first_name, ' ', last_name) as \"name\", mt.rank as \"membership\", c.phone_number, c.driver_license_no, c.gender, c.address_1, c.city, c.postal_code, c.province  from customers c, membershiptype mt WHERE c.membership_type = mt.membership_id";
+            return Query;
         }
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -42,11 +55,12 @@ namespace _291Project
             else
             {
                 string customerID = GetCustomerID();
+                string customerName = GetCustomerName();
                 if (CustomerAlreadyTerminated(customerID))
                 {
                     return;
                 }
-                DialogResult result1 = MessageBox.Show($"You would like to deactivate Customer {customerID}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
+                DialogResult result1 = MessageBox.Show($"Are you sure you would like to deactivate Customer: {customerName}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
                                                        "Confirm Member Termination",
                                                        MessageBoxButtons.YesNo);
 
@@ -67,9 +81,9 @@ namespace _291Project
             if (membershipstatus == "0")
             {
                 MessageBox.Show($"Member {customerID} already terminated.");
-                return true;
+                return true; // Can't terminate whats already terminated!
             }
-            return false;
+            return false; // Customer account active
         }
 
         private string GetCustomerMemberStatus(string customerID)
@@ -86,10 +100,19 @@ namespace _291Project
         }
 
         private string GetCustomerID()
+        // Takes in selected row and gets the value from Customer_ID field.
         {
             int selectedrowindex = CustomerDataView.SelectedCells[0].RowIndex; // Get row index 
             DataGridViewRow selectedRow = CustomerDataView.Rows[selectedrowindex]; // get row
             string cellValue = Convert.ToString(selectedRow.Cells["Customer_ID"].Value); // Get Customer ID
+            return cellValue;
+        }
+
+        private string GetCustomerName()
+        {
+            int selectedrowindex = CustomerDataView.SelectedCells[0].RowIndex; // Get row index 
+            DataGridViewRow selectedRow = CustomerDataView.Rows[selectedrowindex]; // get row
+            string cellValue = Convert.ToString(selectedRow.Cells["Name"].Value); // Get Customer ID
             return cellValue;
         }
 
@@ -102,7 +125,7 @@ namespace _291Project
 
         private void FilterBtn_Click(object sender, EventArgs e)
         {
-
+            filters = !filters;
         }
 
         private void AddCustBtn_Click(object sender, EventArgs e)
@@ -136,7 +159,7 @@ namespace _291Project
         public void RefreshView()
         {
             reader.Close();
-            reader = DBridge.run_query(EmpCustomerManagement.GenQueryStr());
+            reader = DBridge.run_query(GenQueryStr());
             avail_dt.Clear();
             avail_dt.Load(reader);
             CustomerDataView.DataSource = avail_dt;
