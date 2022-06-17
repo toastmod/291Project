@@ -23,7 +23,7 @@ namespace _291Project
 
         private static string GenQueryStr()
         {
-            return $"SELECT * FROM Customers";
+            return "SELECT c.customer_ID, CONCAT(first_name, ' ', last_name) as \"Name\", mt.rank as \"Membership\", c.phone_number, c.driver_license_no, c.gender, c.address_1, c.city, c.postal_code, c.province  FROM Customers c, MembershipType mt WHERE c.membership_type = mt.Membership_ID";
         }
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -41,16 +41,63 @@ namespace _291Project
 
             else
             {
-                MessageBox.Show($"{CustomerDataView.SelectedRows[0].ToString()}", "Terminate Membership");
+                string customerID = GetCustomerID();
+                if (CustomerAlreadyTerminated(customerID))
+                {
+                    return;
+                }
+                DialogResult result1 = MessageBox.Show($"You would like to deactivate Customer {customerID}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
+                                                       "Confirm Member Termination",
+                                                       MessageBoxButtons.YesNo);
 
+                if (result1 == DialogResult.Yes)
+                {
+                    DelCustomer(customerID);
+                }
                 //DelCustomer()
             }
 
         }
 
-        private void DelCustomer(object sender, EventArgs e)
+        private bool CustomerAlreadyTerminated(string customerID)
+        {
+            string membershipstatus = GetCustomerMemberStatus(customerID);
+
+
+            if (membershipstatus == "0")
+            {
+                MessageBox.Show($"Member {customerID} already terminated.");
+                return true;
+            }
+            return false;
+        }
+
+        private string GetCustomerMemberStatus(string customerID)
         {
 
+            SqlDataReader reader = DBridge.run_query($"SELECT membership_type FROM Customers WHERE customer_ID = {customerID}");
+            string membershipstatus = "null";
+
+            if (reader.Read())
+            {
+                membershipstatus = (reader[0].ToString());
+            }
+            return membershipstatus;
+        }
+
+        private string GetCustomerID()
+        {
+            int selectedrowindex = CustomerDataView.SelectedCells[0].RowIndex; // Get row index 
+            DataGridViewRow selectedRow = CustomerDataView.Rows[selectedrowindex]; // get row
+            string cellValue = Convert.ToString(selectedRow.Cells["Customer_ID"].Value); // Get Customer ID
+            return cellValue;
+        }
+
+        private void DelCustomer(string customer_id)
+        {
+
+            DBridge.run_query($"UPDATE Customers SET membership_type = 0 WHERE customer_ID = {customer_id}");
+            RefreshView();
         }
 
         private void FilterBtn_Click(object sender, EventArgs e)
@@ -86,7 +133,7 @@ namespace _291Project
 
         }
 
-        private void RefreshBtn_Click(object sender, EventArgs e)
+        public void RefreshView()
         {
             reader.Close();
             reader = DBridge.run_query(EmpCustomerManagement.GenQueryStr());
@@ -95,6 +142,11 @@ namespace _291Project
             CustomerDataView.DataSource = avail_dt;
             CustomerDataView.CurrentRow.Selected = false;
 
+
+        }
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            RefreshView();
         }
     }
 }

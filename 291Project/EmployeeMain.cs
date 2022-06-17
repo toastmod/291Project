@@ -72,6 +72,7 @@ namespace _291Project
             EmpReservationMenu1.Hide();
             EmpReservationMenu1.Enabled = false;
             EmpMainMenuBtnPanel.Enabled = true;
+            mainMenuBranchDropdown.Show();
             BringToFront();
 
 
@@ -127,9 +128,10 @@ namespace _291Project
         private void EmpManageCustomersBtn(object sender, EventArgs e)
         {
             HideAllUCs();
-            EmpMainMenuBtnPanel.Enabled = false; // Bug where buttons are active and can be selected even when visible.
+            EmpMainMenuBtnPanel.Enabled = false;
             empCustomerManagement1.BringToFront();
-            empCustomerManagement1.Enabled = true; // Bug where buttons are active and can be selected even when visible.
+            empCustomerManagement1.Enabled = true;
+            mainMenuBranchDropdown.Hide();
             empCustomerManagement1.Show();
         }
 
@@ -147,6 +149,7 @@ namespace _291Project
         private void empCustomerManagement1_Load_1(object sender, EventArgs e)
         {
             empCustomerManagement1.Hide();
+            empCustomerManagement1.RefreshView();
         }
     }
 }
