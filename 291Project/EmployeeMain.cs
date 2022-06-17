@@ -20,10 +20,10 @@ namespace _291Project
             HideAllUCs();
 
             // load branch IDs into drop down
-            var reader = DBridge.run_query("SELECT Branch_ID from Branches");
+            var reader = DBridge.run_query("SELECT CONCAT(Branch_ID, ' - ', City) as 'Branch' FROM Branches");
             while (reader.Read())
             {
-                mainMenuBranchDropdown.Items.Add(reader["Branch_ID"].ToString());
+                mainMenuBranchDropdown.Items.Add(reader["Branch"].ToString());
             }
 
             // if a branch ID is already loaded in the context, set it to that ID item.
@@ -67,8 +67,8 @@ namespace _291Project
         {
             EmpCarMenu.Hide();
             EmpCarMenu.Enabled = false;
-            EmpCustomerManagement.Hide();
-            EmpCustomerManagement.Enabled = false;
+            empCustomerManagement1.Hide();
+            empCustomerManagement1.Enabled = false;
             EmpReservationMenu1.Hide();
             EmpReservationMenu1.Enabled = false;
             EmpMainMenuBtnPanel.Enabled = true;
@@ -103,9 +103,12 @@ namespace _291Project
 
         }
 
+
         private void MainMenuBranchDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             Program.context_branchid = mainMenuBranchDropdown.SelectedItem.ToString();
+            Program.context_branchid = Program.ExtractLeadingNumbers(Program.context_branchid);
             Program.println("BRANCHID WAS SET TO " + Program.context_branchid);
             EmpCarMenu.UpdateBranch();
 
@@ -125,15 +128,11 @@ namespace _291Project
         {
             HideAllUCs();
             EmpMainMenuBtnPanel.Enabled = false; // Bug where buttons are active and can be selected even when visible.
-            EmpCustomerManagement.BringToFront();
-            EmpCustomerManagement.Enabled = true; // Bug where buttons are active and can be selected even when visible.
-            EmpCustomerManagement.Show();
+            empCustomerManagement1.BringToFront();
+            empCustomerManagement1.Enabled = true; // Bug where buttons are active and can be selected even when visible.
+            empCustomerManagement1.Show();
         }
 
-        private void empCustomerManagement1_Load(object sender, EventArgs e)
-        {
-            EmpCustomerManagement.Hide();
-        }
         private void HideAllUCs()
         {
 
@@ -141,8 +140,13 @@ namespace _291Project
             EmpReservationMenu1.Enabled = false;
             EmpCarMenu.Hide();
             EmpCarMenu.Enabled = false;
-            EmpCustomerManagement.Hide();
-            EmpCustomerManagement.Enabled = false;
+            empCustomerManagement1.Hide();
+            empCustomerManagement1.Enabled = false;
+        }
+
+        private void empCustomerManagement1_Load_1(object sender, EventArgs e)
+        {
+            empCustomerManagement1.Hide();
         }
     }
 }

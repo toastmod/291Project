@@ -15,8 +15,10 @@ namespace _291Project
         {
             InitializeComponent();
             reader = DBridge.run_query(EmpCustomerManagement.GenQueryStr());
+            reader = DBridge.run_query(GenQueryStr());
             avail_dt.Load(reader);
             CustomerDataView.DataSource = avail_dt;
+            CustomerDataView.Rows[0].Selected = false;
         }
 
         private static string GenQueryStr()
@@ -29,6 +31,24 @@ namespace _291Project
         }
 
         private void DelCustBtn_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount =
+          CustomerDataView.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount == 0)
+            {
+                MessageBox.Show("Please select a customer to terminate.", "Terminate Membership");
+            }
+
+            else
+            {
+                MessageBox.Show($"{CustomerDataView.SelectedRows[0].ToString()}", "Terminate Membership");
+
+                //DelCustomer()
+            }
+
+        }
+
+        private void DelCustomer(object sender, EventArgs e)
         {
 
         }
@@ -73,6 +93,7 @@ namespace _291Project
             avail_dt.Clear();
             avail_dt.Load(reader);
             CustomerDataView.DataSource = avail_dt;
+            CustomerDataView.CurrentRow.Selected = false;
 
         }
     }

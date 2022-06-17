@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _291Project
@@ -28,13 +25,13 @@ namespace _291Project
 
         public static bool UCBack(dynamic uc)
         {
-            if(uc == null)
+            if (uc == null)
             {
                 return false;
             }
             else
             {
-                return true;                
+                return true;
             }
         }
 
@@ -43,5 +40,18 @@ namespace _291Project
             System.Diagnostics.Debug.WriteLine(s);
         }
 
+        public static string ExtractLeadingNumbers(String s)
+        {
+            string result = "";
+
+            for (int i = 0; i < s.Length; i++) // loop over the complete input
+            {
+                if (char.IsDigit(s[i])) //check if the current char is digit
+                    result += s[i];
+                else
+                    break; //Stop the loop after the first character
+            }
+            return result;
+        }
     }
 }

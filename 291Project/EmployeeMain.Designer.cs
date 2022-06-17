@@ -36,14 +36,14 @@
             this.emp_logout_btn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.EmpMainMenuBtnPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.Emp_id_box = new System.Windows.Forms.Label();
             this.mainMenuBranchDropdown = new System.Windows.Forms.ComboBox();
             this.EmpCarMenu = new _291Project.EmpCarMenu();
             this.EmpReservationMenu1 = new _291Project.EmpReservationMenu();
-            this.EmpCustomerManagement = new _291Project.EmpCustomerManagement();
+            this.empCustomerManagement1 = new _291Project.EmpCustomerManagement();
             this.tableLayoutPanel1.SuspendLayout();
             this.EmpMainMenuBtnPanel.SuspendLayout();
             this.SuspendLayout();
@@ -135,9 +135,9 @@
             this.EmpMainMenuBtnPanel.ColumnCount = 1;
             this.EmpMainMenuBtnPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.EmpMainMenuBtnPanel.Controls.Add(this.button3, 0, 2);
-            this.EmpMainMenuBtnPanel.Controls.Add(this.button5, 0, 0);
             this.EmpMainMenuBtnPanel.Controls.Add(this.button6, 0, 1);
             this.EmpMainMenuBtnPanel.Controls.Add(this.button7, 0, 3);
+            this.EmpMainMenuBtnPanel.Controls.Add(this.button5, 0, 0);
             this.EmpMainMenuBtnPanel.Location = new System.Drawing.Point(216, 83);
             this.EmpMainMenuBtnPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EmpMainMenuBtnPanel.Name = "EmpMainMenuBtnPanel";
@@ -148,18 +148,6 @@
             this.EmpMainMenuBtnPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.EmpMainMenuBtnPanel.Size = new System.Drawing.Size(552, 395);
             this.EmpMainMenuBtnPanel.TabIndex = 5;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(4, 3);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(544, 92);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Manage Reservations";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.ResMenuBtn);
             // 
             // button6
             // 
@@ -185,6 +173,18 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.EmpManageCustomersBtn);
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.Location = new System.Drawing.Point(4, 3);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(544, 92);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Manage Reservations";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.ResMenuBtn);
+            // 
             // Emp_id_box
             // 
             this.Emp_id_box.AutoSize = true;
@@ -200,10 +200,11 @@
             // 
             this.mainMenuBranchDropdown.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mainMenuBranchDropdown.FormattingEnabled = true;
-            this.mainMenuBranchDropdown.Location = new System.Drawing.Point(733, 20);
+            this.mainMenuBranchDropdown.Location = new System.Drawing.Point(707, 16);
             this.mainMenuBranchDropdown.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.mainMenuBranchDropdown.MaxDropDownItems = 20;
             this.mainMenuBranchDropdown.Name = "mainMenuBranchDropdown";
-            this.mainMenuBranchDropdown.Size = new System.Drawing.Size(126, 26);
+            this.mainMenuBranchDropdown.Size = new System.Drawing.Size(164, 26);
             this.mainMenuBranchDropdown.TabIndex = 7;
             this.mainMenuBranchDropdown.Text = "Select Branch...";
             this.mainMenuBranchDropdown.SelectedIndexChanged += new System.EventHandler(this.MainMenuBranchDropdown_SelectedIndexChanged);
@@ -228,16 +229,15 @@
             this.EmpReservationMenu1.TabIndex = 9;
             this.EmpReservationMenu1.Load += new System.EventHandler(this.EmpReservationMenu1_Load);
             // 
-            // EmpCustomerManagement
+            // empCustomerManagement1
             // 
-            this.EmpCustomerManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.EmpCustomerManagement.Enabled = false;
-            this.EmpCustomerManagement.Location = new System.Drawing.Point(168, 52);
-            this.EmpCustomerManagement.Name = "EmpCustomerManagement";
-            this.EmpCustomerManagement.Size = new System.Drawing.Size(641, 458);
-            this.EmpCustomerManagement.TabIndex = 10;
-            this.EmpCustomerManagement.Visible = false;
-            this.EmpCustomerManagement.Load += new System.EventHandler(this.empCustomerManagement1_Load);
+            this.empCustomerManagement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
+            this.empCustomerManagement1.Location = new System.Drawing.Point(160, 60);
+            this.empCustomerManagement1.Name = "empCustomerManagement1";
+            this.empCustomerManagement1.Size = new System.Drawing.Size(644, 450);
+            this.empCustomerManagement1.TabIndex = 10;
+            this.empCustomerManagement1.Visible = false;
+            this.empCustomerManagement1.Load += new System.EventHandler(this.empCustomerManagement1_Load_1);
             // 
             // EmployeeMain
             // 
@@ -251,7 +251,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.EmpCarMenu);
             this.Controls.Add(this.EmpReservationMenu1);
-            this.Controls.Add(this.EmpCustomerManagement);
+            this.Controls.Add(this.empCustomerManagement1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
@@ -284,5 +284,6 @@
         private System.Windows.Forms.Button Back_btn;
         private EmpCustomerManagement EmpCustomerManagement;
         private System.Windows.Forms.TableLayoutPanel EmpMainMenuBtnPanel;
+        private EmpCustomerManagement empCustomerManagement1;
     }
 }
