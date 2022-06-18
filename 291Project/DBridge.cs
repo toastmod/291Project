@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -17,7 +13,7 @@ namespace _291Project
 
         public static void init()
         {
-            if(!initialized)
+            if (!initialized)
             {
                 Console.WriteLine("Initializing Database connection.");
                 myConnection = new SqlConnection("Server=tcp:291project.database.windows.net,1433;Initial Catalog=291db;Persist Security Info=False;User ID=coolperson;Password=coolcool321@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
@@ -42,7 +38,7 @@ namespace _291Project
             DBridge.init();
             myCommand.CommandText = query;
 
-            if(myReader != null)
+            if (myReader != null)
             {
                 myReader.Close();
             }

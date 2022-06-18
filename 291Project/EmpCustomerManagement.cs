@@ -34,10 +34,17 @@ namespace _291Project
             else return FilteredQuery();
         }
 
-        private string FilteredQuery() // Temporary until filters_on form is working.
+        private string FilteredQuery()
         {
-            string Query = "select c.customer_id, concat(first_name, ' ', last_name) as \"name\", mt.rank as \"membership\", c.phone_number, c.driver_license_no, c.gender, c.address_1, c.city, c.postal_code, c.province  from customers c, membershiptype mt WHERE c.membership_type = mt.membership_id";
-            return Query;
+            string baseQuery = "select c.customer_id, concat(first_name, ' ', last_name) as \"name\", mt.rank as \"membership\", c.phone_number, c.driver_license_no, c.gender, c.address_1, c.city, c.postal_code, c.province  from customers c, membershiptype mt WHERE c.membership_type = mt.membership_id";
+
+            // Check and process text boxes from FilterForm
+            if (filters_on)
+            {
+
+            }
+
+            return baseQuery;
         }
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -57,7 +64,7 @@ namespace _291Project
             {
                 string customerID = GetCustomerID();
                 string customerName = GetCustomerName();
-                if (CustomerAlreadyTerminated(customerID))
+                if (CustomerAlreadyTerminated(customerID, customerName))
                 {
                     return; // Stop stop they're already dead!!
                 }
@@ -73,14 +80,14 @@ namespace _291Project
 
         }
 
-        private bool CustomerAlreadyTerminated(string customerID)
+        private bool CustomerAlreadyTerminated(string customerID, string customerName)
         {
             string membershipstatus = GetCustomerMemberStatus(customerID);
 
 
             if (membershipstatus == "0")
             {
-                MessageBox.Show($"Member {customerID} already terminated.");
+                MessageBox.Show($"{customerName}'s membership is already terminated.");
                 return true; // Can't terminate whats already terminated!
             }
             return false; // Customer account active
@@ -128,6 +135,8 @@ namespace _291Project
             if (FilterForm == null)
             {
                 FilterForm = new EmpCusManagementFilter(this);
+                FilterForm.Parent = this;
+                FilterForm.Show();
             }
             else
             {
@@ -141,9 +150,9 @@ namespace _291Project
             catch
             {
                 FilterForm = new EmpCusManagementFilter(this);
+                FilterForm.Parent = this;
                 FilterForm.Show();
             }
-            //filters_on = !filters_on;
 
         }
 
