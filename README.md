@@ -15,7 +15,6 @@
   - Customer management system.
   - Car Returning and branch functions
 - **Andrew**
-  - Get ID - City in branch selector
   - Generate rest of the schemas
   - Query filters for employee cars available screen
   - Employee reports graph
