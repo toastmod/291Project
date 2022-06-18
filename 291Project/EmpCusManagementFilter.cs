@@ -20,7 +20,7 @@ namespace _291Project
         public EmpCusManagementFilter(EmpCustomerManagement parentmenu)
         {
             InitializeComponent();
-            parentmenu.filters_on = true;
+            //parentmenu.filters_on = true;
         }
 
         private void SubmitFilterBtn(object sender, System.EventArgs e)
