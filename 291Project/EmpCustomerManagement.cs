@@ -135,7 +135,6 @@ namespace _291Project
             if (FilterForm == null)
             {
                 FilterForm = new EmpCusManagementFilter(this);
-                FilterForm.Parent = this;
                 FilterForm.Show();
             }
             else
