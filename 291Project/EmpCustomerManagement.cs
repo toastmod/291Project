@@ -11,12 +11,13 @@ namespace _291Project
         public DataTable avail_dt = new DataTable();
         public SqlDataReader reader = null;
         public EmpAddCustomer AddCustomer = null;
-        private static bool filters;
+        public EmpCusManagementFilter FilterForm = null;
+        public bool filters_on;
 
         public EmpCustomerManagement()
         {
             InitializeComponent();
-            filters = false;
+            filters_on = false;
             reader = DBridge.run_query(query: GenQueryStr());
             reader = DBridge.run_query(GenQueryStr());
             avail_dt.Load(reader);
@@ -26,14 +27,14 @@ namespace _291Project
 
         private string GenQueryStr()
         {
-            if (!filters)
+            if (!filters_on)
             {
                 return "select c.customer_id, concat(first_name, ' ', last_name) as \"name\", mt.rank as \"membership\", c.phone_number, c.driver_license_no, c.gender, c.address_1, c.city, c.postal_code, c.province  from customers c, membershiptype mt where c.membership_type = mt.membership_id";
             }
             else return FilteredQuery();
         }
 
-        private string FilteredQuery()
+        private string FilteredQuery() // Temporary until filters_on form is working.
         {
             string Query = "select c.customer_id, concat(first_name, ' ', last_name) as \"name\", mt.rank as \"membership\", c.phone_number, c.driver_license_no, c.gender, c.address_1, c.city, c.postal_code, c.province  from customers c, membershiptype mt WHERE c.membership_type = mt.membership_id";
             return Query;
@@ -58,7 +59,7 @@ namespace _291Project
                 string customerName = GetCustomerName();
                 if (CustomerAlreadyTerminated(customerID))
                 {
-                    return;
+                    return; // Stop stop they're already dead!!
                 }
                 DialogResult result1 = MessageBox.Show($"Are you sure you would like to deactivate Customer: {customerName}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
                                                        "Confirm Member Termination",
@@ -66,9 +67,8 @@ namespace _291Project
 
                 if (result1 == DialogResult.Yes)
                 {
-                    DelCustomer(customerID);
+                    DelCustomer(customerID); // Assign their membership type to 0
                 }
-                //DelCustomer()
             }
 
         }
@@ -125,7 +125,26 @@ namespace _291Project
 
         private void FilterBtn_Click(object sender, EventArgs e)
         {
-            filters = !filters;
+            if (FilterForm == null)
+            {
+                FilterForm = new EmpCusManagementFilter(this);
+            }
+            else
+            {
+                FilterForm.BringToFront(); // Brings prompt to front if window open and user presses btn again
+            }
+
+            try // horrible hacky method to create a new instance if user closed window with 'X'.
+            {
+                FilterForm.Show();
+            }
+            catch
+            {
+                FilterForm = new EmpCusManagementFilter(this);
+                FilterForm.Show();
+            }
+            //filters_on = !filters_on;
+
         }
 
         private void AddCustBtn_Click(object sender, EventArgs e)
@@ -170,6 +189,11 @@ namespace _291Project
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
             RefreshView();
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
