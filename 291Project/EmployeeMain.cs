@@ -67,8 +67,8 @@ namespace _291Project
         {
             EmpCarMenu.Hide();
             EmpCarMenu.Enabled = false;
-            empCustomerManagement1.Hide();
-            empCustomerManagement1.Enabled = false;
+            empCustomerManagement.Hide();
+            empCustomerManagement.Enabled = false;
             EmpReservationMenu1.Hide();
             EmpReservationMenu1.Enabled = false;
             EmpMainMenuBtnPanel.Enabled = true;
@@ -129,10 +129,10 @@ namespace _291Project
         {
             HideAllUCs();
             EmpMainMenuBtnPanel.Enabled = false;
-            empCustomerManagement1.BringToFront();
-            empCustomerManagement1.Enabled = true;
+            empCustomerManagement.BringToFront();
+            empCustomerManagement.Enabled = true;
             mainMenuBranchDropdown.Hide();
-            empCustomerManagement1.Show();
+            empCustomerManagement.Show();
         }
 
         private void HideAllUCs()
@@ -142,14 +142,14 @@ namespace _291Project
             EmpReservationMenu1.Enabled = false;
             EmpCarMenu.Hide();
             EmpCarMenu.Enabled = false;
-            empCustomerManagement1.Hide();
-            empCustomerManagement1.Enabled = false;
+            empCustomerManagement.Hide();
+            empCustomerManagement.Enabled = false;
         }
 
         private void empCustomerManagement1_Load_1(object sender, EventArgs e)
         {
-            empCustomerManagement1.Hide();
-            empCustomerManagement1.RefreshView();
+            empCustomerManagement.Hide();
+            empCustomerManagement.RefreshView();
         }
     }
 }

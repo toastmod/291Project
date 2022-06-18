@@ -43,7 +43,7 @@
             this.mainMenuBranchDropdown = new System.Windows.Forms.ComboBox();
             this.EmpCarMenu = new _291Project.EmpCarMenu();
             this.EmpReservationMenu1 = new _291Project.EmpReservationMenu();
-            this.empCustomerManagement1 = new _291Project.EmpCustomerManagement();
+            this.empCustomerManagement = new _291Project.EmpCustomerManagement();
             this.tableLayoutPanel1.SuspendLayout();
             this.EmpMainMenuBtnPanel.SuspendLayout();
             this.SuspendLayout();
@@ -229,15 +229,15 @@
             this.EmpReservationMenu1.TabIndex = 9;
             this.EmpReservationMenu1.Load += new System.EventHandler(this.EmpReservationMenu1_Load);
             // 
-            // empCustomerManagement1
+            // empCustomerManagement
             // 
-            this.empCustomerManagement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.empCustomerManagement1.Location = new System.Drawing.Point(160, 60);
-            this.empCustomerManagement1.Name = "empCustomerManagement1";
-            this.empCustomerManagement1.Size = new System.Drawing.Size(644, 450);
-            this.empCustomerManagement1.TabIndex = 10;
-            this.empCustomerManagement1.Visible = false;
-            this.empCustomerManagement1.Load += new System.EventHandler(this.empCustomerManagement1_Load_1);
+            this.empCustomerManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
+            this.empCustomerManagement.Location = new System.Drawing.Point(160, 60);
+            this.empCustomerManagement.Name = "empCustomerManagement";
+            this.empCustomerManagement.Size = new System.Drawing.Size(644, 450);
+            this.empCustomerManagement.TabIndex = 10;
+            this.empCustomerManagement.Visible = false;
+            this.empCustomerManagement.Load += new System.EventHandler(this.empCustomerManagement1_Load_1);
             // 
             // EmployeeMain
             // 
@@ -251,7 +251,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.EmpCarMenu);
             this.Controls.Add(this.EmpReservationMenu1);
-            this.Controls.Add(this.empCustomerManagement1);
+            this.Controls.Add(this.empCustomerManagement);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
@@ -284,6 +284,6 @@
         private System.Windows.Forms.Button Back_btn;
         private EmpCustomerManagement EmpCustomerManagement;
         private System.Windows.Forms.TableLayoutPanel EmpMainMenuBtnPanel;
-        private EmpCustomerManagement empCustomerManagement1;
+        private EmpCustomerManagement empCustomerManagement;
     }
 }

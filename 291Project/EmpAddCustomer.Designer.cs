@@ -100,7 +100,7 @@ namespace _291Project
             // line1
             // 
             this.line1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.line1.Location = new System.Drawing.Point(157, 216);
+            this.line1.Location = new System.Drawing.Point(144, 215);
             this.line1.Margin = new System.Windows.Forms.Padding(2);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(148, 23);
@@ -110,7 +110,7 @@ namespace _291Project
             // PhoneNum
             // 
             this.PhoneNum.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNum.Location = new System.Drawing.Point(157, 358);
+            this.PhoneNum.Location = new System.Drawing.Point(144, 357);
             this.PhoneNum.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneNum.Name = "PhoneNum";
             this.PhoneNum.Size = new System.Drawing.Size(148, 23);
@@ -120,7 +120,7 @@ namespace _291Project
             // address_label
             // 
             this.address_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.address_label.Location = new System.Drawing.Point(34, 196);
+            this.address_label.Location = new System.Drawing.Point(21, 195);
             this.address_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.address_label.Name = "address_label";
             this.address_label.Size = new System.Drawing.Size(113, 30);
@@ -131,7 +131,7 @@ namespace _291Project
             // 
             this.SubmitCustomerBtn.BackColor = System.Drawing.Color.Transparent;
             this.SubmitCustomerBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SubmitCustomerBtn.Location = new System.Drawing.Point(97, 410);
+            this.SubmitCustomerBtn.Location = new System.Drawing.Point(84, 409);
             this.SubmitCustomerBtn.Margin = new System.Windows.Forms.Padding(2);
             this.SubmitCustomerBtn.Name = "SubmitCustomerBtn";
             this.SubmitCustomerBtn.Size = new System.Drawing.Size(172, 35);
@@ -143,7 +143,7 @@ namespace _291Project
             // line2
             // 
             this.line2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.line2.Location = new System.Drawing.Point(157, 245);
+            this.line2.Location = new System.Drawing.Point(144, 244);
             this.line2.Margin = new System.Windows.Forms.Padding(2);
             this.line2.Name = "line2";
             this.line2.Size = new System.Drawing.Size(148, 23);
@@ -153,7 +153,7 @@ namespace _291Project
             // postalcode
             // 
             this.postalcode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.postalcode.Location = new System.Drawing.Point(157, 274);
+            this.postalcode.Location = new System.Drawing.Point(144, 273);
             this.postalcode.Margin = new System.Windows.Forms.Padding(2);
             this.postalcode.Name = "postalcode";
             this.postalcode.Size = new System.Drawing.Size(148, 23);
@@ -163,7 +163,7 @@ namespace _291Project
             // Province
             // 
             this.Province.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Province.Location = new System.Drawing.Point(157, 302);
+            this.Province.Location = new System.Drawing.Point(144, 301);
             this.Province.Margin = new System.Windows.Forms.Padding(2);
             this.Province.Name = "Province";
             this.Province.Size = new System.Drawing.Size(148, 23);
@@ -173,7 +173,7 @@ namespace _291Project
             // City
             // 
             this.City.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.City.Location = new System.Drawing.Point(157, 331);
+            this.City.Location = new System.Drawing.Point(144, 330);
             this.City.Margin = new System.Windows.Forms.Padding(2);
             this.City.Name = "City";
             this.City.Size = new System.Drawing.Size(148, 23);
@@ -183,7 +183,7 @@ namespace _291Project
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(96, 214);
+            this.label1.Location = new System.Drawing.Point(83, 213);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 30);
@@ -193,7 +193,7 @@ namespace _291Project
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(96, 243);
+            this.label2.Location = new System.Drawing.Point(83, 242);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 30);
@@ -203,7 +203,7 @@ namespace _291Project
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(68, 274);
+            this.label3.Location = new System.Drawing.Point(55, 273);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 30);
@@ -213,7 +213,7 @@ namespace _291Project
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(80, 304);
+            this.label4.Location = new System.Drawing.Point(67, 303);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 30);
@@ -223,7 +223,7 @@ namespace _291Project
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(97, 329);
+            this.label5.Location = new System.Drawing.Point(84, 328);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 30);
@@ -233,7 +233,7 @@ namespace _291Project
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(34, 356);
+            this.label6.Location = new System.Drawing.Point(21, 355);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(159, 30);

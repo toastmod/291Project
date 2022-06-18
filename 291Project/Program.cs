@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace _291Project
@@ -40,6 +41,11 @@ namespace _291Project
             System.Diagnostics.Debug.WriteLine(s);
         }
 
+        public static void debug(String s)
+        {
+            MessageBox.Show(s);
+        }
+
         public static string ExtractLeadingNumbers(String s)
         {
             string result = "";
@@ -52,6 +58,11 @@ namespace _291Project
                     break; //Stop the loop after the first character
             }
             return result;
+        }
+
+        public static string SanitizeTextInput(String s)
+        {
+            return Regex.Replace(s, "[^a-zA-Z\x20]", String.Empty);
         }
     }
 }
