@@ -6,71 +6,73 @@ using System.Windows.Forms;
 namespace _291Project
 {
     public partial class EmpCustomerManagement : UserControl
+    // Accessed through EmpMainMenu
+    // Provides a view into the Customer database, allows management and search of users. 
+    // Dynamic filters are added by the user, and programatically added to the query used for the dataview.
     {
 
-        public DataTable avail_dt = new();
-        public SqlDataReader reader = null;
-        public EmpAddCustomer AddCustomer = null;
-        bool customer_id_search;
-        bool customer_name_search;
-        bool terminated_member_view;
+        public DataTable avail_dt = new();        // Shows data from DB
+        public SqlDataReader reader = null;       // Receives data from DB
+        public EmpAddCustomer AddCustomer = null; // WF for adding a customer
+        bool customer_id_filter;                  // Turns true when ID field is filled and valid 
+        bool c_name_filter;                       // Turns true when name field is filled and valid. 
+        bool terminated_member_view;              // Turns true when "Show Terminated Customers" checkbox is checked.
 
         public EmpCustomerManagement()
         {
             InitializeComponent();
-            customer_id_search = false;
-            customer_name_search = false;
+            customer_id_filter = false;
+            c_name_filter = false;
             terminated_member_view = false;
-            reader = DBridge.run_query(query: GenQueryStr());
+            reader = DBridge.run_query(query: GenQueryStr()); // Run Base query. All customers sans terminated members.
             reader = DBridge.run_query(GenQueryStr());
             avail_dt.Load(reader);
-            CustomerDataView.DataSource = avail_dt;
-            CustomerDataView.Rows[0].Selected = false;
+            CustomerDataView.DataSource = avail_dt;           // Show results in DataView.
+            CustomerDataView.Rows[0].Selected = false;        // Added to prevent autoselection of first row.
         }
 
         private string GenQueryStr()
         {
             string query = "select c.customer_id, concat(first_name, ' ', last_name) as \"name\", mt.rank as \"membership\", c.phone_number, c.driver_license_no, c.gender, c.address_1, c.city, c.postal_code, c.province  from customers c, membershiptype mt WHERE c.membership_type = mt.membership_id";
 
-            // Add customerID and terminated customer filters
+            // Check filter bools and apply proper text to base query if true.
+            if (customer_id_filter)
+            {
+                query += $" AND c.customer_id = {Program.ExtractLeadingNumbers(CustomerIDFilter.Text)}";
+            }
             if (!terminated_member_view)
             {
                 query += " AND c.membership_type != 0";
             }
-            if (customer_id_search)
-            {
-                query += $" AND c.customer_id = {Program.ExtractLeadingNumbers(CustomerIDFilter.Text)}";
-            }
-            if (customer_name_search)
+            if (c_name_filter)
             {
                 query += $" AND (first_name LIKE '%{Program.SanitizeTextInput(CusNameFilter.Text)}%' OR last_name LIKE '%{Program.SanitizeTextInput(CusNameFilter.Text)}%')";
-                Program.debug(query);
             }
 
             return query;
         }
 
         private void DelCustBtn_Click(object sender, EventArgs e)
+        // Allows Employee to terminate Customer accounts. 
+        // Sets their membership_id to 0, e.g. Terminated
         {
-            int selectedRowCount =
-          CustomerDataView.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount == 0)
+            if (CustomerDataView.Rows.GetRowCount(DataGridViewElementStates.Selected) == 0) // if no customer selected
             {
                 MessageBox.Show("Please select a customer to terminate.", "Terminate Membership");
             }
-
             else
             {
                 string customerID = GetCustomerID();
                 string customerName = GetCustomerName();
                 if (CustomerAlreadyTerminated(customerID, customerName))
                 {
+                    MessageBox.Show($"{customerName}'s membership is already terminated.");
                     return; // Stop stop they're already dead!!
                 }
+                // Otherwise show confirmation box
                 DialogResult result1 = MessageBox.Show($"Are you sure you would like to deactivate Customer: {customerName}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
                                                        "Confirm Member Termination",
                                                        MessageBoxButtons.YesNo);
-
                 if (result1 == DialogResult.Yes)
                 {
                     DelCustomer(customerID); // Assign their membership type to 0
@@ -80,19 +82,19 @@ namespace _291Project
         }
 
         private static bool CustomerAlreadyTerminated(string customerID, string customerName)
+        // Helper function to check Customer Membership Status, returns true if already terminated.
         {
             string membershipstatus = GetCustomerMemberStatus(customerID);
             if (membershipstatus == "0")
             {
-                MessageBox.Show($"{customerName}'s membership is already terminated.");
                 return true; // Can't terminate whats already terminated!
             }
             return false; // Customer account active
         }
 
         private static string GetCustomerMemberStatus(string customerID)
+        // Helper function for CustomerAlready Terminated, checks Customer Status and returns it in String format.
         {
-
             SqlDataReader reader = DBridge.run_query($"SELECT membership_type FROM Customers WHERE customer_ID = {customerID}");
             string membershipstatus = "null";
 
@@ -113,6 +115,7 @@ namespace _291Project
         }
 
         private string GetCustomerName()
+        // Takes in selected row and gets the value from Name field.
         {
             int selectedrowindex = CustomerDataView.SelectedCells[0].RowIndex; // Get row index 
             DataGridViewRow selectedRow = CustomerDataView.Rows[selectedrowindex]; // get row
@@ -121,8 +124,8 @@ namespace _291Project
         }
 
         private void DelCustomer(string customer_id)
+        // Helper to set selected Customer's membership type to 0, e.g. Terminated.
         {
-
             DBridge.run_query($"UPDATE Customers SET membership_type = 0 WHERE customer_ID = {customer_id}");
             RefreshView();
         }
@@ -152,7 +155,6 @@ namespace _291Project
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         public void RefreshView()
@@ -162,7 +164,11 @@ namespace _291Project
             avail_dt.Clear();
             avail_dt.Load(reader);
             CustomerDataView.DataSource = avail_dt;
-            CustomerDataView.CurrentRow.Selected = false;
+            if (CustomerDataView.Rows.Count != 0)
+            {
+                CustomerDataView.CurrentRow.Selected = false;
+            }
+
 
 
         }
@@ -177,6 +183,7 @@ namespace _291Project
         }
 
         private static bool IdIsValid(String id)
+        // Helper for CusIdFilter_TextChanged, checks textbox field for leading integers.
         {
             id = Program.ExtractLeadingNumbers(id);
             if (string.IsNullOrEmpty(id)) { return false; }
@@ -184,15 +191,17 @@ namespace _291Project
         }
 
         private void CusIDFilter_TextChanged(object sender, EventArgs e)
+        // Checks validity of textbox, if true: turns customer_id_filter on. Otherwise turns off customer_id_filter.
         {
             if (IdIsValid(CustomerIDFilter.Text))
             {
-                customer_id_search = true;
+                customer_id_filter = true;
             }
-            else { customer_id_search = false; }
+            else { customer_id_filter = false; }
         }
 
         private void ShowTermMemBox_CheckedChanged(object sender, EventArgs e)
+        // Checks "Show Terminated Customers" box for status, sets filter accordingly.
         {
             if (ShowTermMemBox.Checked) { terminated_member_view = true; }
             else { terminated_member_view = false; }
@@ -200,14 +209,15 @@ namespace _291Project
         }
 
         private void CusNameFilter_TextChanged(object sender, EventArgs e)
+        // Checks validity of textbox, if true: turns c_name_filter  on. Otherwise turns off n_name_filter.
         {
             if (Program.SanitizeTextInput(CusNameFilter.Text).Length > 0) // if name valid after sanitization
             {
-                customer_name_search = true;
+                c_name_filter = true; // Turn on the customer name filter
             }
             else
             {
-                customer_name_search = false;
+                c_name_filter = false;
             }
 
         }
