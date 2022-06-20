@@ -42,7 +42,7 @@
             this.CustViewCurrent_dt.Name = "CustViewCurrent_dt";
             this.CustViewCurrent_dt.RowHeadersWidth = 72;
             this.CustViewCurrent_dt.RowTemplate.Height = 37;
-            this.CustViewCurrent_dt.Size = new System.Drawing.Size(1307, 705);
+            this.CustViewCurrent_dt.Size = new System.Drawing.Size(1270, 705);
             this.CustViewCurrent_dt.TabIndex = 0;
             // 
             // cust_id
@@ -85,7 +85,7 @@
             this.Controls.Add(this.cust_id);
             this.Controls.Add(this.CustViewCurrent_dt);
             this.Name = "CustViewCurrentRes";
-            this.Size = new System.Drawing.Size(1398, 1072);
+            this.Size = new System.Drawing.Size(1359, 1072);
             this.Load += new System.EventHandler(this.CustViewCurrentRes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CustViewCurrent_dt)).EndInit();
             this.ResumeLayout(false);
