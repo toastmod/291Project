@@ -64,29 +64,39 @@ namespace _291Project
 
         private void Req_res_button_Click(object sender, EventArgs e)
         {
-        }
+		}
 
-        private void req_res_button_Click_1(object sender, EventArgs e)
-        {
-            custRequestRes1.BringToFront();
-            custRequestRes1.Show();
-        }
+		private void req_res_button_Click_1(object sender, EventArgs e)
+		{
+			custRequestRes1.BringToFront();
+			custRequestRes1.Show();
+		}
 
-        private void view_curr_res_button_Click(object sender, EventArgs e)
-        {
-            custViewCurrentRes1.BringToFront();
-            custViewCurrentRes1.Show();
-        }
+		private void view_curr_res_button_Click(object sender, EventArgs e)
+		{
+			custViewCurrentRes1.BringToFront();
+			custViewCurrentRes1.Show();
+		}
 
-        private void past_res_button_Click(object sender, EventArgs e)
-        {
-            custViewPastRes1.BringToFront();
-            custViewPastRes1.Show();
-        }
+		private void past_res_button_Click(object sender, EventArgs e)
+		{
+			custViewPastRes1.BringToFront();
+			custViewPastRes1.Show();
+		}
 
-        private void custViewPastRes1_Load(object sender, EventArgs e)
-        {
+		private void custViewPastRes1_Load(object sender, EventArgs e)
+		{
 
-        }
+		}
+
+		private void Back_btn_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void custViewPastRes1_Load_1(object sender, EventArgs e)
+		{
+
+		}
     }
 }

@@ -48,18 +48,21 @@ namespace _291Project
             }
         }
 
-        public void GoBack()
+        
+        public bool GoBack()
         {
             Program.println("Going back from CarsMenu");
             if(carsavail_uc != null)
             {
                 carsavail_uc.GoBack();
                 carsavail_uc = null;
+                return false;
             }
             else
             {
                 this.Enabled = false;
                 this.Hide();
+                return true;
             }
         }
 

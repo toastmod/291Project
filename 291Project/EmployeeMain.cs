@@ -117,7 +117,34 @@ namespace _291Project
 
         private void Back_btn_Click(object sender, EventArgs e)
         {
-            EmpCarMenu.GoBack();
+
+            // Each UC has a GoBack function returning a bool
+            // true = The UC closed successfully
+            // false = UC did not close, another UC was recursively closed.
+
+            var im_here = false;
+
+            if (EmpCarMenu.Enabled)
+            {
+                im_here = EmpCarMenu.GoBack();
+            }
+
+            if (EmpReservationMenu1.Enabled)
+            {
+                im_here = EmpReservationMenu1.GoBack();
+            }
+
+            if (empCustomerManagement.Enabled)
+            {
+                im_here = empCustomerManagement.GoBack();
+            }
+
+
+            // if the user made it back here, enable the menu again.
+            if (im_here)
+            {
+                this.Enabled = true;
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

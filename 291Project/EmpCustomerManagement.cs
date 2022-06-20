@@ -211,5 +211,20 @@ namespace _291Project
             }
 
         }
+
+        public bool GoBack()
+        {
+            // if the Add Customer window is open, close it.
+            if (AddCustomer.Enabled)
+            {
+                AddCustomer.Close();
+            }
+
+            // hide this UC
+            this.Hide();
+            this.Enabled = false;
+
+            return true;
+        }
     }
 }
