@@ -34,7 +34,6 @@
             this.Back_btn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.past_res_button = new System.Windows.Forms.Button();
             this.view_curr_res_button = new System.Windows.Forms.Button();
             this.req_res_button = new System.Windows.Forms.Button();
             this.Customer_id_box = new System.Windows.Forms.Label();
@@ -119,7 +118,6 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.past_res_button, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.view_curr_res_button, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.req_res_button, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(377, 205);
@@ -133,18 +131,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1092, 706);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // past_res_button
-            // 
-            this.past_res_button.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.past_res_button.Location = new System.Drawing.Point(5, 472);
-            this.past_res_button.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.past_res_button.Name = "past_res_button";
-            this.past_res_button.Size = new System.Drawing.Size(1081, 226);
-            this.past_res_button.TabIndex = 0;
-            this.past_res_button.Text = "View Past Reservations";
-            this.past_res_button.UseVisualStyleBackColor = true;
-            this.past_res_button.Click += new System.EventHandler(this.past_res_button_Click);
-            // 
             // view_curr_res_button
             // 
             this.view_curr_res_button.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -153,7 +139,7 @@
             this.view_curr_res_button.Name = "view_curr_res_button";
             this.view_curr_res_button.Size = new System.Drawing.Size(1081, 220);
             this.view_curr_res_button.TabIndex = 1;
-            this.view_curr_res_button.Text = "View Current Reservation";
+            this.view_curr_res_button.Text = "View Reservations";
             this.view_curr_res_button.UseVisualStyleBackColor = true;
             this.view_curr_res_button.Click += new System.EventHandler(this.view_curr_res_button_Click);
             // 
@@ -191,7 +177,7 @@
             // 
             // custViewCurrentRes1
             // 
-            this.custViewCurrentRes1.Location = new System.Drawing.Point(172, 0);
+            this.custViewCurrentRes1.Location = new System.Drawing.Point(159, 6);
             this.custViewCurrentRes1.Name = "custViewCurrentRes1";
             this.custViewCurrentRes1.Size = new System.Drawing.Size(1473, 1197);
             this.custViewCurrentRes1.TabIndex = 4;
@@ -236,7 +222,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label Customer_id_box;
-        private System.Windows.Forms.Button past_res_button;
         private System.Windows.Forms.Button view_curr_res_button;
         private System.Windows.Forms.Button req_res_button;
         private System.Windows.Forms.Button Back_btn;
