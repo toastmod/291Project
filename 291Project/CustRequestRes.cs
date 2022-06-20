@@ -11,13 +11,17 @@ using System.Windows.Forms;
 
 namespace _291Project
 {
+    
     public partial class CustRequestRes : UserControl
+
     {
+        bool branch_change;
         public DataTable CustRes_dt = new DataTable();
         public SqlDataReader reader = null;
         public CustRequestRes()
         {
             InitializeComponent();
+            branch_change = false;
             reader = DBridge.run_query(CustRequestRes.gen_querystr());
             CustRes_dt.Load(reader);
             ReservationTable.DataSource = CustRes_dt;
@@ -70,7 +74,7 @@ namespace _291Project
         public void UpdateBranch()
         {
             reader.Close();
-            reader = DBridge.run_query($"SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, Branches.City, CarStatus.Status FROM Cars, CarStatus, Branches WHERE Branches.Branch_ID = Cars.Branch_ID AND Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = ${Program.context_branchid}");
+            reader = DBridge.run_query($"SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, Branches.City, CarStatus.Status FROM Cars, CarStatus, Branches WHERE Branches.Branch_ID = Cars.Branch_ID AND Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = ${Program.ExtractLeadingNumbers(Branch.Text)}");
             CustRes_dt.Clear();
             CustRes_dt.Load(reader);
             ReservationTable.DataSource = CustRes_dt;
@@ -85,6 +89,15 @@ namespace _291Project
             ReservationTable.DataSource = CustRes_dt;
         }
 
+
+        private static bool IdIsValid(String id)
+        // Helper for CusIdFilter_TextChanged, checks textbox field for leading integers.
+        {
+            id = Program.ExtractLeadingNumbers(id);
+            if (string.IsNullOrEmpty(id)) { return false; }
+            else { return true; }
+        }
+
         private void Provinces_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -92,8 +105,12 @@ namespace _291Project
 
         private void Branches_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            
+
+            if (IdIsValid(Branches.Text))
+            {
+                branch_change = true;
+            }
+            else { branch_change = false; }
 
         }
 
@@ -104,8 +121,8 @@ namespace _291Project
 
         private void UpdateResScreen_Click(object sender, EventArgs e)
         {
-            UpdateProvince();
-            //UpdateBranch();
+            //UpdateProvince();
+            UpdateBranch();
             
         }
     }
