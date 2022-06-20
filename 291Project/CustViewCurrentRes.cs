@@ -21,9 +21,6 @@ namespace _291Project
 
             InitializeComponent();
             customer_id = false;
-            //reader = DBridge.run_query("");
-            //ViewCurrent_dt.Load(reader);
-            //CustViewCurrent_dt.DataSource = ViewCurrent_dt;
 
         }
 
@@ -34,9 +31,9 @@ namespace _291Project
 
         private string GenQueryStr()
         {
-            string query = "select c.customer_id, concat(first_name, ' ', last_name) as \"Name\", " +
+            string query = "select DISTINCT c.customer_id as \"ID\", concat(first_name, ' ', last_name) as \"Name\", " +
                 "concat(r.From_Day, '/', r.From_Month, '/', r.From_Year) as \"Date From\", " +
-                "concat(r.To_Day, '/', r.To_Month, '/', r.To_Year) as \"Date To\", r.Branch_ID, cr.Car_ID from " +
+                "concat(r.To_Day, '/', r.To_Month, '/', r.To_Year) as \"Date To\", r.Branch_ID as \"Branch ID\", cr.Car_ID as \"Car ID\" from " +
                 "customers c, membershiptype mt, cars cr, reservations r WHERE cr.Car_ID = r.Car_ID AND r.From_Year < r.To_Year AND " +
                 "r.Customer_ID = c.customer_ID";
 
@@ -78,7 +75,6 @@ namespace _291Project
 
         public void RefreshView()
         {
-            //reader.Close();
             reader = DBridge.run_query(GenQueryStr());
             ViewCurrent_dt.Clear();
             ViewCurrent_dt.Load(reader);

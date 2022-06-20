@@ -122,7 +122,7 @@ namespace _291Project
         private void UpdateResScreen_Click(object sender, EventArgs e)
         {
             //UpdateProvince();
-            UpdateBranch();
+            //UpdateBranch();
             
         }
     }
