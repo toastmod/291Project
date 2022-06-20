@@ -48,32 +48,36 @@ namespace _291Project
             this.tableLayoutPanel1.Controls.Add(this.car_search_btn, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.cars_avail_btn, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.cars_due_btn, 0, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 13);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 28);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 399);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1044, 851);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // add_car_btn
             // 
             this.add_car_btn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.add_car_btn.Location = new System.Drawing.Point(3, 3);
+            this.add_car_btn.Location = new System.Drawing.Point(6, 6);
+            this.add_car_btn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.add_car_btn.Name = "add_car_btn";
-            this.add_car_btn.Size = new System.Drawing.Size(556, 93);
+            this.add_car_btn.Size = new System.Drawing.Size(1032, 198);
             this.add_car_btn.TabIndex = 0;
             this.add_car_btn.Text = "Add Car";
             this.add_car_btn.UseVisualStyleBackColor = true;
+            this.add_car_btn.Click += new System.EventHandler(this.add_car_btn_Click);
             // 
             // car_search_btn
             // 
             this.car_search_btn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.car_search_btn.Location = new System.Drawing.Point(3, 102);
+            this.car_search_btn.Location = new System.Drawing.Point(6, 218);
+            this.car_search_btn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.car_search_btn.Name = "car_search_btn";
-            this.car_search_btn.Size = new System.Drawing.Size(556, 93);
+            this.car_search_btn.Size = new System.Drawing.Size(1032, 198);
             this.car_search_btn.TabIndex = 1;
             this.car_search_btn.Text = "Car Search";
             this.car_search_btn.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@ namespace _291Project
             // cars_avail_btn
             // 
             this.cars_avail_btn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cars_avail_btn.Location = new System.Drawing.Point(3, 201);
+            this.cars_avail_btn.Location = new System.Drawing.Point(6, 430);
+            this.cars_avail_btn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cars_avail_btn.Name = "cars_avail_btn";
-            this.cars_avail_btn.Size = new System.Drawing.Size(556, 93);
+            this.cars_avail_btn.Size = new System.Drawing.Size(1032, 198);
             this.cars_avail_btn.TabIndex = 2;
             this.cars_avail_btn.Text = "Cars Available";
             this.cars_avail_btn.UseVisualStyleBackColor = true;
@@ -92,9 +97,10 @@ namespace _291Project
             // cars_due_btn
             // 
             this.cars_due_btn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cars_due_btn.Location = new System.Drawing.Point(3, 300);
+            this.cars_due_btn.Location = new System.Drawing.Point(6, 642);
+            this.cars_due_btn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cars_due_btn.Name = "cars_due_btn";
-            this.cars_due_btn.Size = new System.Drawing.Size(556, 96);
+            this.cars_due_btn.Size = new System.Drawing.Size(1032, 203);
             this.cars_due_btn.TabIndex = 3;
             this.cars_due_btn.Text = "Cars Due";
             this.cars_due_btn.UseVisualStyleBackColor = true;
@@ -102,13 +108,13 @@ namespace _291Project
             // 
             // EmpCarMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmpCarMenu";
-            this.Size = new System.Drawing.Size(568, 424);
+            this.Size = new System.Drawing.Size(1055, 905);
             this.Load += new System.EventHandler(this.EmpCarMenu_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

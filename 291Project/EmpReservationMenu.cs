@@ -27,20 +27,18 @@ namespace _291Project
         private void emp_curr_res_Click(object sender, EventArgs e)
         {
 
-            if (cur_res_uc == null)
-            {
-                cur_res_uc = new EmpCurrentRes();
-                this.Controls.Add(cur_res_uc);
-            }
+            //if (empCurrentRes1 == null)
+            //{
+            //    cur_res_uc = new EmpCurrentRes();
+            //    this.Controls.Add(cur_res_uc);
+            //}
 
-            cur_res_uc.Dock = DockStyle.Fill;
-            cur_res_uc.Enabled = true;
-            cur_res_uc.Visible = true;
-            cur_res_uc.Show();
-            cur_res_uc.BringToFront();
-            this.Enabled = false;
-
-
+            empCurrentRes1.Show();
+            empCurrentRes1.BringToFront();
+            empCurrentRes1.Enabled = true;
+            empCurrentRes1.Visible = true;
+            //empCurrentRes1.Dock = DockStyle.Fill;
+            //this.Enabled = false;
 
         }
 
@@ -52,11 +50,12 @@ namespace _291Project
 		public bool GoBack() 
 		{
 
-            if(cur_res_uc != null)
+            if(!empCurrentRes1.Enabled)
             {
-                cur_res_uc.GoBack();
-                cur_res_uc = null;
+                empCurrentRes1.GoBack();
                 this.Enabled = true;
+                this.BringToFront();
+                this.Show();
                 return false;
             }
             else
@@ -68,5 +67,9 @@ namespace _291Project
             }
 		}
 
+        private void EmpReservationMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

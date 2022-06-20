@@ -23,6 +23,8 @@ namespace _291Project
             reader = DBridge.run_query($"WITH ReservationsAfter as (SELECT * FROM (SELECT * FROM(SELECT * FROM Reservations as R WHERE ${date.Year} >= R.From_Year) as R1 WHERE ${date.Month} >= R1.From_Month) as R2 WHERE ${date.Day} >= R2.From_Day) SELECT * FROM (SELECT * FROM (SELECT * FROM (SELECT * FROM ReservationsAfter as RA WHERE ${date.Year} < RA.To_Year) as RA1 WHERE ${date.Month} < RA1.To_Month) as RA2) as RA3 WHERE ${date.Day} < RA3.To_Day");
             dt.Load(reader);
             dataGridView1.DataSource = dt;
+            this.Dock = DockStyle.Fill;
+            this.Hide();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -73,6 +73,11 @@ namespace _291Project
                 carsavail_uc.UpdateBranch();
             }
         }
+
+        private void add_car_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

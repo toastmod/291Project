@@ -47,14 +47,16 @@ namespace _291Project
             EmpCarMenu.BringToFront();
             EmpCarMenu.Enabled = true;
             EmpCarMenu.Visible = true;
+            EmpMainMenuBtnPanel.Enabled = false;
         }
 
         private void ResMenuBtn(object sender, EventArgs e)
         {
-            HideAllUCs();
-            EmpReservationMenu1.Enabled = true;
-            EmpReservationMenu1.BringToFront();
+            //HideAllUCs();
             EmpReservationMenu1.Show();
+            EmpReservationMenu1.BringToFront();
+            EmpReservationMenu1.Enabled = true;
+            //EmpMainMenuBtnPanel.Enabled = false;
 
         }
 
@@ -101,7 +103,7 @@ namespace _291Project
         private void EmpReservationMenu1_Load(object sender, EventArgs e)
         {
             EmpReservationMenu1.Hide();
-
+            EmpReservationMenu1.Enabled = false;
         }
 
 
@@ -122,21 +124,24 @@ namespace _291Project
             // true = The UC closed successfully
             // false = UC did not close, another UC was recursively closed.
 
-            var im_here = false;
+            var im_here = true;
 
             if (EmpCarMenu.Enabled)
             {
                 im_here = EmpCarMenu.GoBack();
+                Program.println("EmpCarMenu: "+im_here.ToString());
             }
 
             if (EmpReservationMenu1.Enabled)
             {
                 im_here = EmpReservationMenu1.GoBack();
+                Program.println("EmpResMenu: "+im_here.ToString());
             }
 
             if (empCustomerManagement.Enabled)
             {
                 im_here = empCustomerManagement.GoBack();
+                Program.println("EmpCustMgmt: "+im_here.ToString());
             }
 
 
@@ -144,6 +149,9 @@ namespace _291Project
             if (im_here)
             {
                 this.Enabled = true;
+                this.BringToFront();
+                this.Show();
+                this.EmpMainMenuBtnPanel.Enabled = true;
             }
         }
 

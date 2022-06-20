@@ -182,7 +182,7 @@ impl Gen for Day {
     fn gen() -> String {
         let mut r = rand::thread_rng();
         
-        let mut day: usize = r.gen_range(1..30);
+        let mut day: usize = r.gen_range(1..31);
         // let mut month: usize = r.gen_range(1, 13);
         // let mut year: usize = r.gen_range(2018, 2023);
 
@@ -282,9 +282,28 @@ fn gen_date_span(min: usize, max: usize) -> ((Vec<String>,Vec<String>,Vec<String
     let mut to_years = vec![String::from("To_Year")];
     
     for i in 1..from_days.len() {
-        let mut n: usize = r.gen_range(min..max+1);
-        let a = from_days[i].parse::<usize>().unwrap() + n;
-        to_days.push(String::from(format!("{}",a)));
+        let mut n_days: usize = r.gen_range(min..max+1);
+
+        let day = from_days[i].parse::<usize>().unwrap() + n_days;
+        let mut n_months = 0usize;
+        while day > 30 {
+            day -= 30;
+            n_months += 1;
+        }
+
+        let month = from_months[i].parse::<usize>().unwrap() + n_months;
+
+        let mut n_years= 0usize;
+        while month > 12 {
+            day -= 12;
+            n_years += 1;
+        }
+
+        to_days.push(String::from(format!("{}",day)));
+        to_months.push(String::from(format!("{}",month)));
+        to_years.push(String::from(format!("{}",from_years[i].clone())));
+        
+
     }
 
     (
@@ -371,11 +390,19 @@ fn main() {
     // ]);
 
 
+    let ((froms),(tos)) = gen_date_span(3, 20);
+
     gen_write("Reservations.csv", vec![
         gen_ordered("Res_ID", ROWS),
-        gen_col::<Day>("From_Day", ROWS),
-        gen_col::<Month>("From_Month", ROWS),
-        gen_col::<Year>("From_Year", ROWS),
+        froms.0,
+        froms.1,
+        froms.2,
+        tos.0,
+        tos.1,
+        tos.2,
+        // gen_col::<Day>("From_Day", ROWS),
+        // gen_col::<Month>("From_Month", ROWS),
+        // gen_col::<Year>("From_Year", ROWS),
         // gen_col::<Day>("To_Day", ROWS),
         // gen_col::<Month>("To_Month", ROWS),
         // gen_col::<Year>("To_Year", ROWS),
