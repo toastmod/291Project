@@ -157,7 +157,7 @@ namespace _291Project
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            // create report button
         }
 
         private void EmpManageCustomersBtn(object sender, EventArgs e)
