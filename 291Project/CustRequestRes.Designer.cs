@@ -28,99 +28,144 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.Province = new System.Windows.Forms.Label();
-            this.Branch = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.ReservationTable = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.rates = new System.Windows.Forms.TextBox();
+            this.cartypes = new System.Windows.Forms.ComboBox();
+            this.Branches = new System.Windows.Forms.ComboBox();
+            this.Provinces = new System.Windows.Forms.ComboBox();
+            this.Maxrate = new System.Windows.Forms.Label();
+            this.Cartype = new System.Windows.Forms.Label();
+            this.Branch = new System.Windows.Forms.Label();
+            this.Province = new System.Windows.Forms.Label();
+            this.UpdateResScreen = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.ReservationTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // ReservationTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 72;
-            this.dataGridView1.RowTemplate.Height = 37;
-            this.dataGridView1.Size = new System.Drawing.Size(1328, 696);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1119, 725);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 38);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1119, 804);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(212, 38);
-            this.comboBox2.TabIndex = 3;
-            // 
-            // Province
-            // 
-            this.Province.AutoSize = true;
-            this.Province.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Province.Location = new System.Drawing.Point(961, 727);
-            this.Province.Name = "Province";
-            this.Province.Size = new System.Drawing.Size(132, 36);
-            this.Province.TabIndex = 4;
-            this.Province.Text = "Province:";
-            this.Province.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // Branch
-            // 
-            this.Branch.AutoSize = true;
-            this.Branch.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Branch.Location = new System.Drawing.Point(982, 806);
-            this.Branch.Name = "Branch";
-            this.Branch.Size = new System.Drawing.Size(111, 36);
-            this.Branch.TabIndex = 5;
-            this.Branch.Text = "Branch:";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(26, 987);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(209, 91);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Filters";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.ReservationTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ReservationTable.Location = new System.Drawing.Point(77, 6);
+            this.ReservationTable.Name = "ReservationTable";
+            this.ReservationTable.RowHeadersWidth = 72;
+            this.ReservationTable.RowTemplate.Height = 37;
+            this.ReservationTable.Size = new System.Drawing.Size(1197, 696);
+            this.ReservationTable.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(292, 987);
+            this.button1.Location = new System.Drawing.Point(1065, 762);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(209, 91);
             this.button1.TabIndex = 7;
             this.button1.Text = "Request Car";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // rates
+            // 
+            this.rates.Location = new System.Drawing.Point(257, 970);
+            this.rates.Name = "rates";
+            this.rates.Size = new System.Drawing.Size(212, 35);
+            this.rates.TabIndex = 24;
+            // 
+            // cartypes
+            // 
+            this.cartypes.FormattingEnabled = true;
+            this.cartypes.Location = new System.Drawing.Point(257, 906);
+            this.cartypes.Name = "cartypes";
+            this.cartypes.Size = new System.Drawing.Size(212, 38);
+            this.cartypes.TabIndex = 21;
+            this.cartypes.SelectedIndexChanged += new System.EventHandler(this.cartypes_SelectedIndexChanged);
+            // 
+            // Branches
+            // 
+            this.Branches.FormattingEnabled = true;
+            this.Branches.Location = new System.Drawing.Point(257, 835);
+            this.Branches.Name = "Branches";
+            this.Branches.Size = new System.Drawing.Size(212, 38);
+            this.Branches.TabIndex = 20;
+            this.Branches.SelectedIndexChanged += new System.EventHandler(this.Branches_SelectedIndexChanged);
+            // 
+            // Provinces
+            // 
+            this.Provinces.FormattingEnabled = true;
+            this.Provinces.Location = new System.Drawing.Point(257, 764);
+            this.Provinces.Name = "Provinces";
+            this.Provinces.Size = new System.Drawing.Size(212, 38);
+            this.Provinces.TabIndex = 19;
+            this.Provinces.SelectedIndexChanged += new System.EventHandler(this.Provinces_SelectedIndexChanged);
+            // 
+            // Maxrate
+            // 
+            this.Maxrate.AutoSize = true;
+            this.Maxrate.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Maxrate.Location = new System.Drawing.Point(14, 968);
+            this.Maxrate.Name = "Maxrate";
+            this.Maxrate.Size = new System.Drawing.Size(195, 36);
+            this.Maxrate.TabIndex = 18;
+            this.Maxrate.Text = "Max rate/day:";
+            // 
+            // Cartype
+            // 
+            this.Cartype.AutoSize = true;
+            this.Cartype.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cartype.Location = new System.Drawing.Point(76, 906);
+            this.Cartype.Name = "Cartype";
+            this.Cartype.Size = new System.Drawing.Size(133, 36);
+            this.Cartype.TabIndex = 15;
+            this.Cartype.Text = "Car Type:";
+            // 
+            // Branch
+            // 
+            this.Branch.AutoSize = true;
+            this.Branch.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Branch.Location = new System.Drawing.Point(98, 833);
+            this.Branch.Name = "Branch";
+            this.Branch.Size = new System.Drawing.Size(111, 36);
+            this.Branch.TabIndex = 14;
+            this.Branch.Text = "Branch:";
+            // 
+            // Province
+            // 
+            this.Province.AutoSize = true;
+            this.Province.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Province.Location = new System.Drawing.Point(77, 762);
+            this.Province.Name = "Province";
+            this.Province.Size = new System.Drawing.Size(132, 36);
+            this.Province.TabIndex = 13;
+            this.Province.Text = "Province:";
+            // 
+            // UpdateResScreen
+            // 
+            this.UpdateResScreen.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UpdateResScreen.Location = new System.Drawing.Point(1065, 914);
+            this.UpdateResScreen.Name = "UpdateResScreen";
+            this.UpdateResScreen.Size = new System.Drawing.Size(209, 91);
+            this.UpdateResScreen.TabIndex = 25;
+            this.UpdateResScreen.Text = "Update";
+            this.UpdateResScreen.UseVisualStyleBackColor = true;
+            this.UpdateResScreen.Click += new System.EventHandler(this.UpdateResScreen_Click);
+            // 
             // CustRequestRes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.UpdateResScreen);
+            this.Controls.Add(this.rates);
+            this.Controls.Add(this.cartypes);
+            this.Controls.Add(this.Branches);
+            this.Controls.Add(this.Provinces);
+            this.Controls.Add(this.Maxrate);
+            this.Controls.Add(this.Cartype);
             this.Controls.Add(this.Branch);
             this.Controls.Add(this.Province);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ReservationTable);
             this.Name = "CustRequestRes";
             this.Size = new System.Drawing.Size(1351, 1111);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.CustRequestRes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ReservationTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,12 +173,16 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label Province;
-        private System.Windows.Forms.Label Branch;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView ReservationTable;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox rates;
+        private System.Windows.Forms.ComboBox cartypes;
+        private System.Windows.Forms.ComboBox Branches;
+        private System.Windows.Forms.ComboBox Provinces;
+        private System.Windows.Forms.Label Maxrate;
+        private System.Windows.Forms.Label Cartype;
+        private System.Windows.Forms.Label Branch;
+        private System.Windows.Forms.Label Province;
+        private System.Windows.Forms.Button UpdateResScreen;
     }
 }
