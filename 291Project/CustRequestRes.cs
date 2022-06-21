@@ -105,26 +105,52 @@ namespace _291Project
 
         private string date_query()
         {
-            String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate\" " +
-                "FROM Cars c, CarTypes ct, Branches b, CarStatus cs, Reservations r " +
-                "WHERE c.Car_Type = ct.CarType AND b.Branch_ID = c.Branch_ID AND c.CarStatusID = 1" +
-                "AND r.Car_ID = c.Car_ID" +
+            String query = "" +
+                "WITH ResDated as (" +
+                "   SELECT r.Car_ID as Car_ID, " +
+                "   (" +
+                "       CONVERT(" +
+                "           datetime,CONCAT(" +
+                "               CONVERT(VARCHAR(4),r.From_Year)," +
+                "               '/'," +
+                "               RIGHT('00'+CONVERT(VARCHAR(2),r.From_Month),2)," +
+                "               '/'," +
+                "               RIGHT('00'+CONVERT(VARCHAR(2),r.From_Day),2)" +
+                "           )" +
+                "       )" +
+                "   ) as FDATE, (" +
+                "       CONVERT(" +
+                "           datetime,CONCAT(" +
+                "               CONVERT(VARCHAR(4),r.To_Year)," +
+                "               '/'," +
+                "               RIGHT('00'+CONVERT(VARCHAR(2),r.To_Month),2)," +
+                "               '/'," +
+                "               RIGHT('00'+CONVERT(VARCHAR(2),r.To_Day),2)" +
+                "           )" +
+                "       )" +
+                "   ) as TDATE " +
+                "   FROM Reservations r" +
+                ")" +
+                "" +
+                "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate\" " +
+                "FROM Cars c, CarTypes ct, Branches b, CarStatus cs, ResDated r " +
+                "WHERE c.Car_Type = ct.CarType AND b.Branch_ID = c.Branch_ID AND c.CarStatusID = 1 " +
+                "AND r.Car_ID = c.Car_ID " +
                 $"AND (" +
                         // from/to reserved is ahead of requested from/to
                         $"(" +
-                            $"(DATEFROMPARTS(r.From_Year, r.From_Month, r.From_Day) > DATEFROMPARTS({from_year}, {from_month}, {from_day}))" +
+                            $"(r.FDATE > DATEFROMPARTS({from_year}, {from_month}, {from_day}))" +
                             $"AND" +
-                            $"(DATEFROMPARTS(r.To_Year, r.To_Month, r.To_Day) > DATEFROMPARTS({to_year}, {to_month}, {to_day}))" +
-                        $"(" +
-                    $"XOR" +
+                            $"(r.TDATE > DATEFROMPARTS({to_year}, {to_month}, {to_day}))" +
+                        $")" +
+                    $"OR" +
                         // from/to reserved is behind requested from/to
                         "(" +
-                            $"(DATEFROMPARTS(r.From_Year, r.From_Month, r.From_Day) < DATEFROMPARTS({from_year}, {from_month}, {from_day}))" +
+                            $"(r.FDATE < DATEFROMPARTS({from_year}, {from_month}, {from_day}))" +
                             $"AND" +
-                            $"(DATEFROMPARTS(r.To_Year, r.To_Month, r.To_Day) < DATEFROMPARTS({to_year} ,{to_month}, {to_day}))" +
+                            $"(r.TDATE < DATEFROMPARTS({to_year} ,{to_month}, {to_day}))" +
                         ")" +
                     $")";
-            Program.debug(query);
             if (province_filter)
             {
                 query += $" AND b.Province LIKE '{Provinces.SelectedItem.ToString()}'";
