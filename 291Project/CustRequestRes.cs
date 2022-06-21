@@ -23,15 +23,6 @@ namespace _291Project
         {
             this.asEmployee = asEmployee;
             InitializeComponent();
-            if (asEmployee)
-            {
-                //label1.Text = "Reservation ID to accept";
-            }
-            else
-            {
-                //label1.Text = "Car ID to request";
-            }
-
             branch_change = false;
             reader = DBridge.run_query(CustRequestRes.gen_querystr());
             CustRes_dt.Load(reader);
@@ -169,8 +160,7 @@ namespace _291Project
         {
 
         }
-
-
+        
         private void ResTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -209,20 +199,36 @@ namespace _291Project
         {
             if (ResTable.Rows.GetRowCount(DataGridViewElementStates.Selected) == 0) // if no car selected
             {
-                MessageBox.Show("Please select a car to reserve.", "Rental Request Invalid");
-            }
-            else
-            {
-                string resID = GetCarID();
-                string carID = GetResID();
+                // probably cancel the selected ID
                 if (this.asEmployee)
                 {
                     // Submit request as an employee?
+                    var from_day = dateTimePicker1.Value.Day;
+                    var from_month = dateTimePicker1.Value.Month;
+                    var from_year = dateTimePicker1.Value.Year;
+
+                    var to_day = dateTimePicker2.Value.Day;
+                    var to_month = dateTimePicker2.Value.Month;
+                    var to_year = dateTimePicker2.Value.Year;
+
+                    // Submit request as a customer? not sure what the difference might but...
+                    //DBridge.insert_row(
+                    //    "Reservations",
+                    //    $"{int.Parse(GetResID())+1},{from_day},{from_month},{from_year},{to_day},{to_month},{to_year},{GetCarID()}"
+                    //);
+
                 }
                 else
                 {
                     // Submit request as a customer? not sure what the difference might but...
                 }
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a car to reserve.", "Rental Request Invalid");
+                string resID = GetCarID();
+                string carID = GetResID();
             }
 
             //if (CustomerAlreadyTerminated(customerID, customerName))
@@ -250,7 +256,6 @@ namespace _291Project
             this.Enabled = false;
         }
 
-
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -267,6 +272,11 @@ namespace _291Project
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
