@@ -60,11 +60,9 @@ namespace _291Project
 
         private static string gen_querystr()
         {
-            return ($"SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, CarStatus.Status, Branches.City, Branches.Province " +
-                $"FROM Cars, CarStatus, Branches WHERE Branches.City = 'Edmonton' AND Branches.Branch_ID = Cars.Branch_ID AND " +
-                $"Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = 0 OR Cars.Branch_ID = 1 OR Cars.Branch_ID = 2 OR " +
-                $"Cars.Branch_ID = 3 OR Cars.Branch_ID = 4 OR Cars.Branch_ID = 5 OR Cars.Branch_ID = 6 OR Cars.Branch_ID = 7 OR " +
-                $"Cars.Branch_ID = 8 OR Cars.Branch_ID = 9 OR Cars.Branch_ID = 10");
+            String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate\" FROM Cars c, CarTypes ct, Branches b, CarStatus cs WHERE c.Car_Type = ct.CarType AND b.Branch_ID = c.Branch_ID AND c.CarStatusID = 1";
+            return query;
+
         }
 
         private string GenQueryStr()
@@ -155,7 +153,7 @@ namespace _291Project
         {
             int selectedrowindex = ResTable.SelectedCells[0].RowIndex; // Get row index 
             DataGridViewRow selectedRow = ResTable.Rows[selectedrowindex]; // get row
-            string carID = Convert.ToString(selectedRow.Cells["Car_ID"].Value); // Get Customer ID
+            string carID = Convert.ToString(selectedRow.Cells["ID"].Value); // Get Customer ID
             MessageBox.Show($"Selected Value: {carID}.", "Rental Request Debug");
             return carID;
         }
