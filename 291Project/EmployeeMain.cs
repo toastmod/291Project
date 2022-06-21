@@ -40,14 +40,16 @@ namespace _291Project
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ManageCars_Btn(object sender, EventArgs e)
         {
-            //DBridge.init();
+            EmpCarMenu.cars_avail_btn_Click(this, e);
             EmpCarMenu.Show();
             EmpCarMenu.BringToFront();
-            EmpCarMenu.Enabled = true;
             EmpCarMenu.Visible = true;
             EmpMainMenuBtnPanel.Enabled = false;
+
+            EmpCarMenu.Enabled = true;
+            //DBridge.init();
         }
 
         private void ResMenuBtn(object sender, EventArgs e)
@@ -112,6 +114,7 @@ namespace _291Project
 
             Program.context_branchid = mainMenuBranchDropdown.SelectedItem.ToString();
             Program.context_branchid = Program.ExtractLeadingNumbers(Program.context_branchid);
+            Program.context_branchid_used = true;
             Program.println("BRANCHID WAS SET TO " + Program.context_branchid);
             EmpCarMenu.UpdateBranch();
 
@@ -129,19 +132,20 @@ namespace _291Project
             if (EmpCarMenu.Enabled)
             {
                 im_here = EmpCarMenu.GoBack();
-                Program.println("EmpCarMenu: "+im_here.ToString());
+                im_here = EmpCarMenu.GoBack();
+                Program.println("EmpCarMenu: " + im_here.ToString());
             }
 
             if (EmpReservationMenu1.Enabled)
             {
                 im_here = EmpReservationMenu1.GoBack();
-                Program.println("EmpResMenu: "+im_here.ToString());
+                Program.println("EmpResMenu: " + im_here.ToString());
             }
 
             if (empCustomerManagement.Enabled)
             {
                 im_here = empCustomerManagement.GoBack();
-                Program.println("EmpCustMgmt: "+im_here.ToString());
+                Program.println("EmpCustMgmt: " + im_here.ToString());
             }
 
 

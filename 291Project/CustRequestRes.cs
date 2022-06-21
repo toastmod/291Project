@@ -102,7 +102,7 @@ namespace _291Project
 
         private string date_query()
         {
-            String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate\" " +
+            String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate (per day)\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate (per day)\" " +
                 "FROM Cars c, CarTypes ct, Branches b, CarStatus cs, Reservations r " +
                 "WHERE c.Car_Type = ct.CarType AND b.Branch_ID = c.Branch_ID AND c.CarStatusID = 1" +
                 "AND r.Car_ID = c.Car_ID" +
@@ -140,11 +140,11 @@ namespace _291Project
 
         private string gen_querystr()
         {
-            if(
+            if (
                 (from_day == null || from_month == null || from_year == null)
                 ||
                 (to_day == null || to_month == null || to_year == null)
-                
+
             )
             {
                 return default_query();
@@ -459,6 +459,11 @@ namespace _291Project
                 rate_filter = false;
 
             }
+        }
+
+        private void Province_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
