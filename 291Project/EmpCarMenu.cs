@@ -30,29 +30,23 @@ namespace _291Project
 
         }
 
-        private void cars_avail_btn_Click(object sender, EventArgs e)
+        public void cars_avail_btn_Click(object sender, EventArgs e)
         {
-            if(Program.context_branchid != null)
-            {
-                carsavail_uc = new EmpCarsAvailable();
-                this.Controls.Add(carsavail_uc);
-                carsavail_uc.Show();
-                carsavail_uc.BringToFront();
-                carsavail_uc.Enabled = true;
-                carsavail_uc.Visible = true;
-                                
-            }
-            else
-            {
-                MessageBox.Show("Please select a Branch.", "Error");
-            }
+            carsavail_uc = new EmpCarsAvailable();
+            this.Controls.Add(carsavail_uc);
+            carsavail_uc.Show();
+            carsavail_uc.BringToFront();
+            carsavail_uc.Enabled = true;
+            carsavail_uc.Visible = true;
+
         }
 
-        
+
+
         public bool GoBack()
         {
             Program.println("Going back from CarsMenu");
-            if(carsavail_uc != null)
+            if (carsavail_uc != null)
             {
                 carsavail_uc.GoBack();
                 carsavail_uc = null;

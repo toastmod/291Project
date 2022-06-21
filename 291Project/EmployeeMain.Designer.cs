@@ -128,7 +128,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Manage Cars";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.ManageCars_Btn);
             // 
             // EmpMainMenuBtnPanel
             // 
@@ -212,10 +212,10 @@
             // EmpCarMenu
             // 
             this.EmpCarMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.EmpCarMenu.Location = new System.Drawing.Point(216, 70);
-            this.EmpCarMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.EmpCarMenu.Location = new System.Drawing.Point(136, 47);
+            this.EmpCarMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EmpCarMenu.Name = "EmpCarMenu";
-            this.EmpCarMenu.Size = new System.Drawing.Size(552, 414);
+            this.EmpCarMenu.Size = new System.Drawing.Size(735, 472);
             this.EmpCarMenu.TabIndex = 8;
             this.EmpCarMenu.Load += new System.EventHandler(this.EmpCarMenu_Load);
             // 

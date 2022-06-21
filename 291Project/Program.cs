@@ -10,6 +10,7 @@ namespace _291Project
         public static bool context_customer = false;
         public static String context_userid = null;
         public static String context_branchid = null;
+        public static bool context_branchid_used = false;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
