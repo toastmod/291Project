@@ -78,10 +78,19 @@ namespace _291Project
             }
             else if (login_id[0] == 'E') // redirect to employee menu
             {
-                EmployeeMain eMain = new EmployeeMain(this);
-                eMain.EmployeeDisplayName = userlogin;
-                eMain.Show();
-                this.Visible = false;
+
+                Program.context_userid = userlogin.Substring(1);
+                Program.println($"Logging in as customer: {Program.context_userid}");
+                var reader = DBridge.run_query($"SELECT FirstName FROM Employees WHERE Emp_ID = {Program.context_userid}");
+                if (reader.Read())
+                {
+                    var empname = reader["FirstName"].ToString();
+                    Program.context_customer = false;
+                    EmployeeMain eMain = new EmployeeMain(this);
+                    eMain.EmployeeDisplayName = empname;
+                    eMain.Show();
+                    this.Visible = false;
+                }
             }
             else // Error if not beginning w C or E (temp)
             {
