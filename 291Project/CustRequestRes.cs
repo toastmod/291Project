@@ -163,7 +163,6 @@ namespace _291Project
             {
                 query += $" AND c.Car_Type LIKE '{cartypes.SelectedItem.ToString()}'";
             }
-            Program.debug(query);
             return query;
 
         }
@@ -173,12 +172,10 @@ namespace _291Project
         {
             if((datefrom_selected == false) || (dateto_selected == false))
             {
-                Program.debug("Date picker vars are null. Using default query.");
                 return default_query();
             }
             else
             {
-                Program.debug("Using date query.");
                 return date_query();
             }
         }
