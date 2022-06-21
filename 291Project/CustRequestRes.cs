@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -159,6 +160,7 @@ namespace _291Project
         {
 
         }
+        
         private void ResTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
