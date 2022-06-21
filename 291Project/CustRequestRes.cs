@@ -275,7 +275,6 @@ namespace _291Project
             {
                 resID = tempreader[0].ToString(); // 
             }
-            MessageBox.Show($"Selected Value: {resID}.", "Rental Request Debug");
             return resID;
         }
 
@@ -285,7 +284,6 @@ namespace _291Project
             int selectedrowindex = ResTable.SelectedCells[0].RowIndex; // Get row index 
             DataGridViewRow selectedRow = ResTable.Rows[selectedrowindex]; // get row
             string carID = Convert.ToString(selectedRow.Cells["ID"].Value); // Get Customer ID
-            MessageBox.Show($"Selected Value: {carID}.", "Rental Request Debug");
             return carID;
         }
 
