@@ -14,6 +14,10 @@ namespace _291Project
         public DataTable CustRes_dt = new DataTable();
         public SqlDataReader reader = null;
         public bool asEmployee = false;
+        bool province_filter = false;
+        bool cartype_filter = false;
+        bool branch_filter = false;
+        bool rate_filter = false;
 
         /// <summary>
         /// Override for initializing this UC as an employee.
@@ -23,8 +27,17 @@ namespace _291Project
         {
             this.asEmployee = asEmployee;
             InitializeComponent();
+            if (asEmployee)
+            {
+                //label1.Text = "Reservation ID to accept";
+            }
+            else
+            {
+                //label1.Text = "Car ID to request";
+            }
+
             branch_change = false;
-            reader = DBridge.run_query(CustRequestRes.gen_querystr());
+            reader = DBridge.run_query(gen_querystr());
             CustRes_dt.Load(reader);
             ResTable.DataSource = CustRes_dt;
 
@@ -50,48 +63,24 @@ namespace _291Project
         }
 
 
-        private static string gen_querystr()
+        private string gen_querystr()
         {
             String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate\" FROM Cars c, CarTypes ct, Branches b, CarStatus cs WHERE c.Car_Type = ct.CarType AND b.Branch_ID = c.Branch_ID AND c.CarStatusID = 1";
-            return query;
-
-        }
-
-        private string GenQueryStr()
-        {
-            string query = "select DISTINCT c.customer_id as \"ID\", concat(first_name, ' ', last_name) as \"Name\", " +
-                "concat(r.From_Day, '/', r.From_Month, '/', r.From_Year) as \"Date From\", " +
-                "concat(r.To_Day, '/', r.To_Month, '/', r.To_Year) as \"Date To\", r.Branch_ID as \"Branch ID\", cr.Car_ID as \"Car ID\" from " +
-                "customers c, membershiptype mt, cars cr, reservations r WHERE cr.Car_ID = r.Car_ID AND r.From_Year < r.To_Year AND " +
-                "r.Customer_ID = c.customer_ID";
-
-            // Check filter bools and apply proper text to base query if true.
-            if (branch_change)
+            if (province_filter)
             {
-                query += $" AND c.customer_id = {Program.ExtractLeadingNumbers(Branches.Text)}";
+                query += $" AND b.Province LIKE '{Provinces.SelectedItem.ToString()}'";
             }
-
-            return query;
-        }
-
-        private string GenQueryStr_withdate(String dateFrom, String dateTo)
-        {
-            string query = "select DISTINCT c.customer_id as \"ID\", concat(first_name, ' ', last_name) as \"Name\", " +
-                "concat(r.From_Day, '/', r.From_Month, '/', r.From_Year) as \"Date From\", " +
-                "concat(r.To_Day, '/', r.To_Month, '/', r.To_Year) as \"Date To\", r.Branch_ID as \"Branch ID\", cr.Car_ID as \"Car ID\" from " +
-                "customers c, membershiptype mt, cars cr, reservations r WHERE cr.Car_ID = r.Car_ID AND r.From_Year < r.To_Year AND " +
-                "r.Customer_ID = c.customer_ID" +
-                $"AND [Date From] ";
-
-            // Check filter bools and apply proper text to base query if true.
-            if (branch_change)
+            if (branch_filter)
             {
-                query += $" AND c.customer_id = {Program.ExtractLeadingNumbers(Branches.Text)}";
+                query += $" AND b.branch_ID = {Program.ExtractLeadingNumbers(Branches.SelectedItem.ToString())}";
             }
-
+            if (cartype_filter)
+            {
+                query += $" AND c.Car_Type LIKE '{cartypes.SelectedItem.ToString()}'";
+            }
             return query;
-        }
 
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -119,19 +108,38 @@ namespace _291Project
 
         private void Provinces_SelectedIndexChanged(object sender, EventArgs e)
         {
+            {
+                if (Provinces.SelectedIndex != -1)
+                {
+                    province_filter = true;
+                    RefreshView();
+                }
+                else province_filter = false;
+            }
+
 
         }
 
         private void Branches_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            RefreshView();
+            if (Branches.SelectedIndex != -1)
+            {
+                branch_filter = true;
+                RefreshView();
+            }
+            else branch_filter = false;
 
         }
 
         private void cartypes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (cartypes.SelectedIndex != -1)
+            {
+                cartype_filter = true;
+                RefreshView();
+            }
+            else cartype_filter = false;
         }
 
 
@@ -143,13 +151,20 @@ namespace _291Project
         }
         public void RefreshView()
         {
-            reader = DBridge.run_query(GenQueryStr());
+            reader = DBridge.run_query(gen_querystr());
             CustRes_dt.Clear();
             CustRes_dt.Load(reader);
             ResTable.DataSource = CustRes_dt;
-            if (ResTable.Rows.Count != 0)
+            try
             {
-                ResTable.CurrentRow.Selected = false;
+                if (ResTable.Rows.Count != 0)
+                {
+                    ResTable.CurrentRow.Selected = false;
+                }
+            }
+            catch
+            {
+                return;
             }
 
         }
@@ -164,18 +179,6 @@ namespace _291Project
             MessageBox.Show($"Selected Value: {resID}.", "Rental Request Debug");
             return resID;
         }
-
-        private string GetMaxEmployeeID()
-        {
-            string empID = "null";
-            SqlDataReader tempreader = DBridge.run_query("SELECT MAX(Emp_ID) FROM Employees");
-            if (tempreader.Read())
-            {
-                empID = tempreader[0].ToString();  
-            }
-            return empID;
-        }
-
 
         private string GetCarID()
         // Takes in selected row and gets the value from Customer_ID field.
@@ -192,11 +195,89 @@ namespace _291Project
         {
 
         }
-        
         private void ResTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void RequestBtn_Click_1(object sender, EventArgs e)
+        {
+            if (ResTable.Rows.GetRowCount(DataGridViewElementStates.Selected) == 0) // if no car selected
+            {
+                MessageBox.Show("Please select a car to reserve.", "Rental Request Invalid");
+            }
+            else
+            {
+                string resID = GetCarID();
+                string carID = GetResID();
+                //if (CustomerAlreadyTerminated(customerID, customerName))
+                //{
+                //MessageBox.Show($"{customerName}'s membership is already terminated.");
+                //return; // Stop stop they're already dead!!
+                //}
+                // Otherwise show confirmation box
+                //DialogResult result1 = MessageBox.Show($"Are you sure you would like to deactivate Customer: {customerName}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
+                //"Confirm Member Termination",
+                //MessageBoxButtons.YesNo);
+                //if (result1 == DialogResult.Yes)
+                //{
+                //DelCustomer(customerID); // Assign their membership type to 0
+                //}
+
+
+            }
+
+        }
+
+
+
+
+        public void GoBack()
+        {
+            this.Hide();
+            this.Enabled = false;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rates_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+        private string GetMaxEmployeeID()
+        {
+            string empID = "null";
+            SqlDataReader tempreader = DBridge.run_query("SELECT MAX(Emp_ID) FROM Employees");
+            if (tempreader.Read())
+            {
+                empID = tempreader[0].ToString();
+            }
+            return empID;
+        }
+
 
 
         private void RequestBtn_click(object sender, EventArgs e)
@@ -240,7 +321,7 @@ namespace _291Project
                     }
                     else
                     {
-                        MessageBox.Show("Fatal Error, could not read Employee ID from Car's Branch ID.","Debug Message");
+                        MessageBox.Show("Fatal Error, could not read Employee ID from Car's Branch ID.", "Debug Message");
                     }
 
                 }
@@ -266,31 +347,6 @@ namespace _291Project
 
 
 
-        public void GoBack()
-        {
-            this.Hide();
-            this.Enabled = false;
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
