@@ -49,23 +49,36 @@
             // ResTable
             // 
             this.ResTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
             this.ResTable.Location = new System.Drawing.Point(84, 6);
             this.ResTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+            this.ResTable.Location = new System.Drawing.Point(45, 3);
+            this.ResTable.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.ResTable.Name = "ResTable";
             this.ResTable.RowHeadersWidth = 72;
             this.ResTable.RowTemplate.Height = 37;
             this.ResTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ResTable.Size = new System.Drawing.Size(1296, 742);
             this.ResTable.TabIndex = 0;
+
             this.ResTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ResTable_CellContentClick);
             // 
             // RequestBtn
             // 
             this.RequestBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.RequestBtn.Location = new System.Drawing.Point(1079, 1067);
             this.RequestBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RequestBtn.Name = "RequestBtn";
             this.RequestBtn.Size = new System.Drawing.Size(227, 98);
+=======
+            this.RequestBtn.Location = new System.Drawing.Point(581, 500);
+            this.RequestBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RequestBtn.Name = "RequestBtn";
+            this.RequestBtn.Size = new System.Drawing.Size(122, 45);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.RequestBtn.TabIndex = 7;
             this.RequestBtn.Text = "Request Car";
             this.RequestBtn.UseVisualStyleBackColor = true;
@@ -73,8 +86,13 @@
             // 
             // rates
             // 
+<<<<<<< HEAD
             this.rates.Location = new System.Drawing.Point(279, 1013);
             this.rates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+            this.rates.Location = new System.Drawing.Point(150, 475);
+            this.rates.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.rates.Name = "rates";
             this.rates.Size = new System.Drawing.Size(318, 39);
             this.rates.TabIndex = 24;
@@ -82,8 +100,13 @@
             // cartypes
             // 
             this.cartypes.FormattingEnabled = true;
+<<<<<<< HEAD
             this.cartypes.Location = new System.Drawing.Point(279, 937);
             this.cartypes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+            this.cartypes.Location = new System.Drawing.Point(150, 439);
+            this.cartypes.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.cartypes.Name = "cartypes";
             this.cartypes.Size = new System.Drawing.Size(318, 40);
             this.cartypes.TabIndex = 21;
@@ -92,8 +115,13 @@
             // Branches
             // 
             this.Branches.FormattingEnabled = true;
+<<<<<<< HEAD
             this.Branches.Location = new System.Drawing.Point(279, 860);
             this.Branches.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+            this.Branches.Location = new System.Drawing.Point(150, 403);
+            this.Branches.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.Branches.Name = "Branches";
             this.Branches.Size = new System.Drawing.Size(318, 40);
             this.Branches.TabIndex = 20;
@@ -102,8 +130,13 @@
             // Provinces
             // 
             this.Provinces.FormattingEnabled = true;
+<<<<<<< HEAD
             this.Provinces.Location = new System.Drawing.Point(279, 789);
             this.Provinces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+            this.Provinces.Location = new System.Drawing.Point(150, 370);
+            this.Provinces.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.Provinces.Name = "Provinces";
             this.Provinces.Size = new System.Drawing.Size(318, 40);
             this.Provinces.TabIndex = 19;
@@ -156,10 +189,18 @@
             // UpdateResScreen
             // 
             this.UpdateResScreen.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.UpdateResScreen.Location = new System.Drawing.Point(323, 1067);
             this.UpdateResScreen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateResScreen.Name = "UpdateResScreen";
             this.UpdateResScreen.Size = new System.Drawing.Size(227, 98);
+=======
+            this.UpdateResScreen.Location = new System.Drawing.Point(174, 500);
+
+            this.UpdateResScreen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.UpdateResScreen.Name = "UpdateResScreen";
+            this.UpdateResScreen.Size = new System.Drawing.Size(122, 45);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.UpdateResScreen.TabIndex = 25;
             this.UpdateResScreen.Text = "Refresh";
             this.UpdateResScreen.UseVisualStyleBackColor = true;
@@ -189,8 +230,13 @@
             // 
             // dateTimePicker1
             // 
+<<<<<<< HEAD
             this.dateTimePicker1.Location = new System.Drawing.Point(1001, 860);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+            this.dateTimePicker1.Location = new System.Drawing.Point(539, 403);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(379, 39);
             this.dateTimePicker1.TabIndex = 30;
@@ -198,8 +244,13 @@
             // 
             // dateTimePicker2
             // 
+<<<<<<< HEAD
             this.dateTimePicker2.Location = new System.Drawing.Point(1001, 939);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+            this.dateTimePicker2.Location = new System.Drawing.Point(540, 440);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(379, 39);
             this.dateTimePicker2.TabIndex = 31;
@@ -221,11 +272,16 @@
             this.Controls.Add(this.Cartype);
             this.Controls.Add(this.Branch);
             this.Controls.Add(this.Province);
-            this.Controls.Add(this.RequestBtn);
             this.Controls.Add(this.ResTable);
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CustRequestRes";
             this.Size = new System.Drawing.Size(1463, 1186);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Name = "CustRequestRes";
+            this.Size = new System.Drawing.Size(788, 555);
+>>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
             this.Load += new System.EventHandler(this.CustRequestRes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ResTable)).EndInit();
             this.ResumeLayout(false);
