@@ -49,8 +49,8 @@ namespace _291Project
 
         public static void insert_row(String table, String tuple)
         {
-                var cmd = new SqlCommand();
-                cmd.CommandText = $"INSERT INTO {table} VALUES ({tuple})";
+                run_query($"INSERT INTO {table} VALUES ({tuple})");
+                
 
         }
 

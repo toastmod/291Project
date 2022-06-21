@@ -287,7 +287,7 @@ namespace _291Project
         {
             int selectedrowindex = ResTable.SelectedCells[0].RowIndex; // Get row index 
             DataGridViewRow selectedRow = ResTable.Rows[selectedrowindex]; // get row
-            string carID = Convert.ToString(selectedRow.Cells["Car_ID"].Value); // Get Customer ID
+            string carID = Convert.ToString(selectedRow.Cells["ID"].Value); // Get Customer ID
             MessageBox.Show($"Selected Value: {carID}.", "Rental Request Debug");
             return carID;
         }
@@ -312,6 +312,7 @@ namespace _291Project
             {
                 string resID = GetCarID();
                 string carID = GetResID();
+
                 //if (CustomerAlreadyTerminated(customerID, customerName))
                 //{
                 //MessageBox.Show($"{customerName}'s membership is already terminated.");
@@ -410,14 +411,20 @@ namespace _291Project
                     var to_month = dateTimePicker2.Value.Month;
                     var to_year = dateTimePicker2.Value.Year;
 
+                    var carid = GetCarID();
 
-                    var reader = DBridge.run_query($"SELECT TOP 1 E.Emp_ID,C.Branch_ID FROM Employees E, Cars C WHERE C.Car_ID = {GetCarID()} AND C.Branch_ID = E.Branch_ID ORDER BY NEWID()");
+                    var reader = DBridge.run_query($"SELECT TOP 1 E.Emp_ID,C.Branch_ID FROM Employees E, Cars C WHERE C.Car_ID = {carid} AND C.Branch_ID = E.Branch_ID ORDER BY NEWID()");
+
 
                     if (reader.Read())
                     {
+                        var empid = reader["Emp_ID"].ToString();
+                        
+                        var bid = reader["Branch_ID"].ToString();
+
                         DBridge.insert_row(
                         "Reservations",
-                        $"{int.Parse(GetResID()) + 1},{from_day},{from_month},{from_year},{to_day},{to_month},{to_year},{GetCarID()},{reader["E.Emp_ID"].ToString()},{reader["C.Branch_ID"].ToString()},{Program.context_userid}"
+                        $"{int.Parse(GetResID()) + 1},{from_day},{from_month},{from_year},{to_day},{to_month},{to_year},{carid},{empid},{bid},{Program.context_userid},null"
                         );
 
                     }

@@ -75,7 +75,7 @@ namespace _291Project
 
         public void RefreshView()
         {
-            reader = DBridge.run_query(GenQueryStr());
+            reader = DBridge.run_query($"SELECT * FROM Reservations WHERE Customer_ID = {Program.context_userid}");
             ViewCurrent_dt.Clear();
             ViewCurrent_dt.Load(reader);
             CustViewCurrent_dt.DataSource = ViewCurrent_dt;
