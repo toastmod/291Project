@@ -73,6 +73,26 @@ namespace _291Project
 
             return query;
         }
+
+        private string GenQueryStr_withdate(String dateFrom, String dateTo)
+        {
+            string query = "select DISTINCT c.customer_id as \"ID\", concat(first_name, ' ', last_name) as \"Name\", " +
+                "concat(r.From_Day, '/', r.From_Month, '/', r.From_Year) as \"Date From\", " +
+                "concat(r.To_Day, '/', r.To_Month, '/', r.To_Year) as \"Date To\", r.Branch_ID as \"Branch ID\", cr.Car_ID as \"Car ID\" from " +
+                "customers c, membershiptype mt, cars cr, reservations r WHERE cr.Car_ID = r.Car_ID AND r.From_Year < r.To_Year AND " +
+                "r.Customer_ID = c.customer_ID" +
+                $"AND [Date From] ";
+
+            // Check filter bools and apply proper text to base query if true.
+            if (branch_change)
+            {
+                query += $" AND c.customer_id = {Program.ExtractLeadingNumbers(Branches.Text)}";
+            }
+
+            return query;
+        }
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -274,6 +294,13 @@ namespace _291Project
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            // From Date update
+            var from_day = dateTimePicker1.Value.Day;
+            var from_month = dateTimePicker1.Value.Month;
+            var from_year = dateTimePicker1.Value.Year;
+
+
+
 
         }
 
