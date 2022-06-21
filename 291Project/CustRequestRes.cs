@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _291Project
 {
-    
+
     public partial class CustRequestRes : UserControl
 
     {
@@ -24,7 +18,7 @@ namespace _291Project
             branch_change = false;
             reader = DBridge.run_query(CustRequestRes.gen_querystr());
             CustRes_dt.Load(reader);
-            ReservationTable.DataSource = CustRes_dt;
+            ResTable.DataSource = CustRes_dt;
 
 
             reader = DBridge.run_query("SELECT CONCAT(Branch_ID, ' - ', City) as 'Branch' FROM Branches");
@@ -80,14 +74,14 @@ namespace _291Project
 
         private void button3_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void CustRequestRes_Load(object sender, EventArgs e)
         {
 
         }
-       
+
 
         private static bool IdIsValid(String id)
         // Helper for CusIdFilter_TextChanged, checks textbox field for leading integers.
@@ -114,26 +108,88 @@ namespace _291Project
 
         }
 
-        public void RefreshView()
-        {
-            reader = DBridge.run_query(GenQueryStr());
-            CustRes_dt.Clear();
-            CustRes_dt.Load(reader);
-            ReservationTable.DataSource = CustRes_dt;
-            if (ReservationTable.Rows.Count != 0)
-            {
-                ReservationTable.CurrentRow.Selected = false;
-            }
 
-
-
-        }
 
         private void UpdateResScreen_Click(object sender, EventArgs e)
         {
             //UpdateProvince();
             //UpdateBranch();
-            
+        }
+        public void RefreshView()
+        {
+            reader = DBridge.run_query(GenQueryStr());
+            CustRes_dt.Clear();
+            CustRes_dt.Load(reader);
+            ResTable.DataSource = CustRes_dt;
+            if (ResTable.Rows.Count != 0)
+            {
+                ResTable.CurrentRow.Selected = false;
+            }
+
+        }
+        private string GetResID()
+        {
+            string resID = "null";
+            SqlDataReader tempreader = DBridge.run_query("SELECT MAX(Res_ID) FROM Reservations");
+            if (tempreader.Read())
+            {
+                resID = tempreader[0].ToString(); // 
+            }
+            MessageBox.Show($"Selected Value: {resID}.", "Rental Request Debug");
+            return resID;
+        }
+
+        private string GetCarID()
+        // Takes in selected row and gets the value from Customer_ID field.
+        {
+            int selectedrowindex = ResTable.SelectedCells[0].RowIndex; // Get row index 
+            DataGridViewRow selectedRow = ResTable.Rows[selectedrowindex]; // get row
+            string carID = Convert.ToString(selectedRow.Cells["Car_ID"].Value); // Get Customer ID
+            MessageBox.Show($"Selected Value: {carID}.", "Rental Request Debug");
+            return carID;
+        }
+
+
+        private void ReservationTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ResTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void RequestBtn_Click_1(object sender, EventArgs e)
+        {
+            if (ResTable.Rows.GetRowCount(DataGridViewElementStates.Selected) == 0) // if no car selected
+            {
+                MessageBox.Show("Please select a car to reserve.", "Rental Request Invalid");
+            }
+            else
+            {
+                string resID = GetCarID();
+                string carID = GetResID();
+                //if (CustomerAlreadyTerminated(customerID, customerName))
+                //{
+                //MessageBox.Show($"{customerName}'s membership is already terminated.");
+                //return; // Stop stop they're already dead!!
+                //}
+                // Otherwise show confirmation box
+                //DialogResult result1 = MessageBox.Show($"Are you sure you would like to deactivate Customer: {customerName}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
+                //"Confirm Member Termination",
+                //MessageBoxButtons.YesNo);
+                //if (result1 == DialogResult.Yes)
+                //{
+                //DelCustomer(customerID); // Assign their membership type to 0
+                //}
+
+
+            }
+
+
+
         }
     }
 }
+
