@@ -144,6 +144,18 @@ namespace _291Project
             return resID;
         }
 
+        private string GetMaxEmployeeID()
+        {
+            string empID = "null";
+            SqlDataReader tempreader = DBridge.run_query("SELECT MAX(Emp_ID) FROM Employees");
+            if (tempreader.Read())
+            {
+                empID = tempreader[0].ToString();  
+            }
+            return empID;
+        }
+
+
         private string GetCarID()
         // Takes in selected row and gets the value from Customer_ID field.
         {
@@ -178,10 +190,13 @@ namespace _291Project
             else
             {
 
-                // probably cancel the selected ID
                 if (this.asEmployee)
                 {
-                    // Submit request as an employee?
+                    // probably cancel the selected ID
+                }
+                else
+                {
+                    // Prepare dates
                     var from_day = dateTimePicker1.Value.Day;
                     var from_month = dateTimePicker1.Value.Month;
                     var from_year = dateTimePicker1.Value.Year;
@@ -190,16 +205,22 @@ namespace _291Project
                     var to_month = dateTimePicker2.Value.Month;
                     var to_year = dateTimePicker2.Value.Year;
 
-                    // Submit request as a customer? not sure what the difference might but...
-                    //DBridge.insert_row(
-                    //    "Reservations",
-                    //    $"{int.Parse(GetResID())+1},{from_day},{from_month},{from_year},{to_day},{to_month},{to_year},{GetCarID()}"
-                    //);
 
-                }
-                else
-                {
-                    // Submit request as a customer? not sure what the difference might but...
+                    var reader = DBridge.run_query($"SELECT TOP 1 E.Emp_ID,C.Branch_ID FROM Employees E, Cars C WHERE C.Car_ID = {GetCarID()} AND C.Branch_ID = E.Branch_ID ORDER BY NEWID()");
+
+                    if (reader.Read())
+                    {
+                        DBridge.insert_row(
+                        "Reservations",
+                        $"{int.Parse(GetResID()) + 1},{from_day},{from_month},{from_year},{to_day},{to_month},{to_year},{GetCarID()},{reader["E.Emp_ID"].ToString()},{reader["C.Branch_ID"].ToString()},{Program.context_userid}"
+                        );
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fatal Error, could not read Employee ID from Car's Branch ID.","Debug Message");
+                    }
+
                 }
 
             }
