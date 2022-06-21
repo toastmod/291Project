@@ -22,26 +22,6 @@ namespace _291Project
         {
             this.asEmployee = asEmployee;
             InitializeComponent();
-<<<<<<< HEAD
-            //if (asEmployee)
-            //{
-            //    label1.Text = "Reservation ID to accept";
-            //}
-            //else
-            //{
-            //    label1.Text = "Car ID to request";
-            //}
-=======
-            if (asEmployee)
-            {
-                //label1.Text = "Reservation ID to accept";
-            }
-            else
-            {
-                //label1.Text = "Car ID to request";
-            }
->>>>>>> b19a8cd7af587e5a7b89b56a9f80be594f3bdeba
-
             branch_change = false;
             reader = DBridge.run_query(CustRequestRes.gen_querystr());
             CustRes_dt.Load(reader);
