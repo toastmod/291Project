@@ -164,39 +164,20 @@ namespace _291Project
 
         }
 
-        private void RequestBtn_Click_1(object sender, EventArgs e)
-        {
-            if (ResTable.Rows.GetRowCount(DataGridViewElementStates.Selected) == 0) // if no car selected
-            {
-                MessageBox.Show("Please select a car to reserve.", "Rental Request Invalid");
-            }
-            else
-            {
-                string resID = GetCarID();
-                string carID = GetResID();
-                //if (CustomerAlreadyTerminated(customerID, customerName))
-                //{
-                //MessageBox.Show($"{customerName}'s membership is already terminated.");
-                //return; // Stop stop they're already dead!!
-                //}
-                // Otherwise show confirmation box
-                //DialogResult result1 = MessageBox.Show($"Are you sure you would like to deactivate Customer: {customerName}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
-                //"Confirm Member Termination",
-                //MessageBoxButtons.YesNo);
-                //if (result1 == DialogResult.Yes)
-                //{
-                //DelCustomer(customerID); // Assign their membership type to 0
-                //}
-
-
-            }
-
-        }
 
         private void RequestBtn_click(object sender, EventArgs e)
         {
             if (ResTable.Rows.GetRowCount(DataGridViewElementStates.Selected) == 0) // if no car selected
             {
+
+                MessageBox.Show("Please select a car to reserve.", "Rental Request Invalid");
+                string resID = GetCarID();
+                string carID = GetResID();
+
+            }
+            else
+            {
+
                 // probably cancel the selected ID
                 if (this.asEmployee)
                 {
@@ -221,12 +202,6 @@ namespace _291Project
                     // Submit request as a customer? not sure what the difference might but...
                 }
 
-            }
-            else
-            {
-                MessageBox.Show("Please select a car to reserve.", "Rental Request Invalid");
-                string resID = GetCarID();
-                string carID = GetResID();
             }
 
             //if (CustomerAlreadyTerminated(customerID, customerName))
@@ -278,6 +253,7 @@ namespace _291Project
         {
 
         }
+
     }
 }
 
