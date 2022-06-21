@@ -111,21 +111,21 @@ namespace _291Project
                 "   (" +
                 "       CONVERT(" +
                 "           datetime,CONCAT(" +
-                "               CONVERT(VARCHAR(4),r.From_Year)," +
+                "               RIGHT('00'+CONVERT(VARCHAR(2),r.From_Day),2)," +
                 "               '/'," +
                 "               RIGHT('00'+CONVERT(VARCHAR(2),r.From_Month),2)," +
                 "               '/'," +
-                "               RIGHT('00'+CONVERT(VARCHAR(2),r.From_Day),2)" +
+                "               CONVERT(VARCHAR(4),r.From_Year)" +
                 "           )" +
                 "       )" +
                 "   ) as FDATE, (" +
                 "       CONVERT(" +
                 "           datetime,CONCAT(" +
-                "               CONVERT(VARCHAR(4),r.To_Year)," +
+                "               RIGHT('00'+CONVERT(VARCHAR(2),r.To_Day),2)," +
                 "               '/'," +
                 "               RIGHT('00'+CONVERT(VARCHAR(2),r.To_Month),2)," +
                 "               '/'," +
-                "               RIGHT('00'+CONVERT(VARCHAR(2),r.To_Day),2)" +
+                "               CONVERT(VARCHAR(4),r.To_Year)" +
                 "           )" +
                 "       )" +
                 "   ) as TDATE " +
@@ -163,6 +163,7 @@ namespace _291Project
             {
                 query += $" AND c.Car_Type LIKE '{cartypes.SelectedItem.ToString()}'";
             }
+            Program.debug(query);
             return query;
 
         }
