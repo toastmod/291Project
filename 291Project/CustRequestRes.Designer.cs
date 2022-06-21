@@ -141,7 +141,6 @@
             this.Province.Size = new System.Drawing.Size(78, 22);
             this.Province.TabIndex = 13;
             this.Province.Text = "Province:";
-            this.Province.Click += new System.EventHandler(this.Province_Click);
             // 
             // UpdateResScreen
             // 
