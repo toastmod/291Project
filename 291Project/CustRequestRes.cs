@@ -123,6 +123,13 @@ namespace _291Project
 
         }
 
+
+
+        private void UpdateResScreen_Click(object sender, EventArgs e)
+        {
+            //UpdateProvince();
+            //UpdateBranch();
+        }
         public void RefreshView()
         {
             reader = DBridge.run_query(GenQueryStr());
@@ -134,7 +141,32 @@ namespace _291Project
                 ResTable.CurrentRow.Selected = false;
             }
 
+        }
+        private string GetResID()
+        {
+            string resID = "null";
+            SqlDataReader tempreader = DBridge.run_query("SELECT MAX(Res_ID) FROM Reservations");
+            if (tempreader.Read())
+            {
+                resID = tempreader[0].ToString(); // 
+            }
+            MessageBox.Show($"Selected Value: {resID}.", "Rental Request Debug");
+            return resID;
+        }
 
+        private string GetCarID()
+        // Takes in selected row and gets the value from Customer_ID field.
+        {
+            int selectedrowindex = ResTable.SelectedCells[0].RowIndex; // Get row index 
+            DataGridViewRow selectedRow = ResTable.Rows[selectedrowindex]; // get row
+            string carID = Convert.ToString(selectedRow.Cells["Car_ID"].Value); // Get Customer ID
+            MessageBox.Show($"Selected Value: {carID}.", "Rental Request Debug");
+            return carID;
+        }
+
+
+        private void ReservationTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
         private string GetResID()
@@ -159,10 +191,37 @@ namespace _291Project
             return carID;
         }
 
-        private void UpdateResScreen_Click(object sender, EventArgs e)
+        private void ResTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //UpdateProvince();
-            //UpdateBranch();
+
+        }
+
+        private void RequestBtn_Click_1(object sender, EventArgs e)
+        {
+            if (ResTable.Rows.GetRowCount(DataGridViewElementStates.Selected) == 0) // if no car selected
+            {
+                MessageBox.Show("Please select a car to reserve.", "Rental Request Invalid");
+            }
+            else
+            {
+                string resID = GetCarID();
+                string carID = GetResID();
+                //if (CustomerAlreadyTerminated(customerID, customerName))
+                //{
+                //MessageBox.Show($"{customerName}'s membership is already terminated.");
+                //return; // Stop stop they're already dead!!
+                //}
+                // Otherwise show confirmation box
+                //DialogResult result1 = MessageBox.Show($"Are you sure you would like to deactivate Customer: {customerName}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
+                //"Confirm Member Termination",
+                //MessageBoxButtons.YesNo);
+                //if (result1 == DialogResult.Yes)
+                //{
+                //DelCustomer(customerID); // Assign their membership type to 0
+                //}
+
+
+            }
 
         }
 
@@ -237,3 +296,4 @@ namespace _291Project
         }
     }
 }
+

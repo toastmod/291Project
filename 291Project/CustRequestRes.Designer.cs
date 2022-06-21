@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.ResTable = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RequestBtn = new System.Windows.Forms.Button();
             this.rates = new System.Windows.Forms.TextBox();
             this.cartypes = new System.Windows.Forms.ComboBox();
             this.Branches = new System.Windows.Forms.ComboBox();
@@ -57,18 +57,20 @@
             this.ResTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ResTable.Size = new System.Drawing.Size(698, 348);
             this.ResTable.TabIndex = 0;
+
+            this.ResTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ResTable_CellContentClick);
             // 
-            // button1
+            // RequestBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(581, 500);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 45);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Request Car";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.RequestBtn_click);
+            this.RequestBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RequestBtn.Location = new System.Drawing.Point(581, 500);
+            this.RequestBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RequestBtn.Name = "RequestBtn";
+            this.RequestBtn.Size = new System.Drawing.Size(122, 45);
+            this.RequestBtn.TabIndex = 7;
+            this.RequestBtn.Text = "Request Car";
+            this.RequestBtn.UseVisualStyleBackColor = true;
+            this.RequestBtn.Click += new System.EventHandler(this.RequestBtn_Click_1);
             // 
             // rates
             // 
@@ -145,7 +147,7 @@
             // 
             this.Province.AutoSize = true;
             this.Province.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Province.Location = new System.Drawing.Point(45, 369);
+            this.Province.Location = new System.Drawing.Point(45, 370);
             this.Province.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Province.Name = "Province";
             this.Province.Size = new System.Drawing.Size(78, 22);
@@ -156,6 +158,7 @@
             // 
             this.UpdateResScreen.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UpdateResScreen.Location = new System.Drawing.Point(174, 500);
+
             this.UpdateResScreen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.UpdateResScreen.Name = "UpdateResScreen";
             this.UpdateResScreen.Size = new System.Drawing.Size(122, 45);
@@ -196,7 +199,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(539, 441);
+            this.dateTimePicker2.Location = new System.Drawing.Point(540, 440);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(206, 23);
@@ -234,7 +237,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView ResTable;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RequestBtn;
         private System.Windows.Forms.TextBox rates;
         private System.Windows.Forms.ComboBox cartypes;
         private System.Windows.Forms.ComboBox Branches;
