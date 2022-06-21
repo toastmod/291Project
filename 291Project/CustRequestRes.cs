@@ -92,6 +92,9 @@ namespace _291Project
             {
                 query += $" AND ct.monthly_rate <= '{Program.ExtractLeadingNumbers(rates.Text)}'";
             }
+
+
+
             return query;
 
         }
