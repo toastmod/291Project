@@ -19,6 +19,9 @@ namespace _291Project
         bool branch_filter = false;
         bool rate_filter = false;
 
+        private bool datefrom_selected = false;
+        private bool dateto_selected = false;
+
         private int from_day;
         private int from_month;
         private int from_year;
@@ -102,25 +105,26 @@ namespace _291Project
 
         private string date_query()
         {
-            String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate (per day)\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate (per day)\" " +
+            String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate\" " +
                 "FROM Cars c, CarTypes ct, Branches b, CarStatus cs, Reservations r " +
                 "WHERE c.Car_Type = ct.CarType AND b.Branch_ID = c.Branch_ID AND c.CarStatusID = 1" +
                 "AND r.Car_ID = c.Car_ID" +
                 $"AND (" +
                         // from/to reserved is ahead of requested from/to
                         $"(" +
-                            $"(DATEFROMPARTS(r.From_Year, r.From_Month, r.From_Day) > DATEFROMPARTS({from_year},{from_month},{from_day}))" +
+                            $"(DATEFROMPARTS(r.From_Year, r.From_Month, r.From_Day) > DATEFROMPARTS({from_year}, {from_month}, {from_day}))" +
                             $"AND" +
-                            $"(DATEFROMPARTS(r.To_Year, r.To_Month, r.To_Day) > DATEFROMPARTS({to_year},{to_month},{to_day}))" +
+                            $"(DATEFROMPARTS(r.To_Year, r.To_Month, r.To_Day) > DATEFROMPARTS({to_year}, {to_month}, {to_day}))" +
                         $"(" +
                     $"XOR" +
                         // from/to reserved is behind requested from/to
                         "(" +
-                            $"(DATEFROMPARTS(r.From_Year, r.From_Month, r.From_Day) < DATEFROMPARTS({from_year},{from_month},{from_day}))" +
+                            $"(DATEFROMPARTS(r.From_Year, r.From_Month, r.From_Day) < DATEFROMPARTS({from_year}, {from_month}, {from_day}))" +
                             $"AND" +
-                            $"(DATEFROMPARTS(r.To_Year, r.To_Month, r.To_Day) < DATEFROMPARTS({to_year},{to_month},{to_day}))" +
+                            $"(DATEFROMPARTS(r.To_Year, r.To_Month, r.To_Day) < DATEFROMPARTS({to_year} ,{to_month}, {to_day}))" +
                         ")" +
                     $")";
+            Program.debug(query);
             if (province_filter)
             {
                 query += $" AND b.Province LIKE '{Provinces.SelectedItem.ToString()}'";
@@ -140,17 +144,14 @@ namespace _291Project
 
         private string gen_querystr()
         {
-            if (
-                (from_day == null || from_month == null || from_year == null)
-                ||
-                (to_day == null || to_month == null || to_year == null)
-
-            )
+            if((datefrom_selected == false) || (dateto_selected == false))
             {
+                Program.debug("Date picker vars are null. Using default query.");
                 return default_query();
             }
             else
             {
+                Program.debug("Using date query.");
                 return date_query();
             }
         }
@@ -221,6 +222,7 @@ namespace _291Project
         {
             //UpdateProvince();
             //UpdateBranch();
+            RefreshView();
         }
         public void RefreshView()
         {
@@ -424,10 +426,7 @@ namespace _291Project
             from_day = dateTimePicker1.Value.Day;
             from_month = dateTimePicker1.Value.Month;
             from_year = dateTimePicker1.Value.Year;
-
-
-
-
+            datefrom_selected = true;
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -436,6 +435,7 @@ namespace _291Project
             to_day = dateTimePicker2.Value.Day;
             to_month = dateTimePicker2.Value.Month;
             to_year = dateTimePicker2.Value.Year;
+            dateto_selected = true;
         }
 
         bool ratesValid(String s)
@@ -459,11 +459,6 @@ namespace _291Project
                 rate_filter = false;
 
             }
-        }
-
-        private void Province_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

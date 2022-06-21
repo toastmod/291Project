@@ -7,7 +7,7 @@ const car_types: [&str; 4] = ["CarType","SEDAN", "TRUCK", "VAN"];
 const car_statuses: [&str; 4] = ["Status","IN_REPAIR", "AVAIL", "RESERVED"];
 //const car_ids1: [&str; 13] = ["Car_ID"];
 //const repair_ids1: [&str; 13] = ["RepairID"];
-const res_statues: [&str; 3] = ["Status","REQUESTED", "ACCEPTED"];
+const res_statues: [&str; 4] = ["Status","REQUESTED", "IN_PROGRESS", "COMPLETED"];
 const membership_types: [&str; 3] = ["MembershipType","REG", "GOLD"]; 
 
 const AMT_OF_BRANCHES: usize = 11;
@@ -56,7 +56,7 @@ struct ReservationStatus;
 impl Gen for ReservationStatus {
     fn gen() -> String {
         let mut r = rand::thread_rng();
-        let mut rng: usize = r.gen_range(0..3);
+        let mut rng: usize = r.gen_range(0..res_statues.len());
         let mut s = String::from(format!("{}", rng)); 
         s
     }
@@ -195,7 +195,7 @@ impl Gen for Day {
     fn gen() -> String {
         let mut r = rand::thread_rng();
         
-        let mut day: usize = r.gen_range(1..31);
+        let mut day: usize = r.gen_range(1..29);
         // let mut month: usize = r.gen_range(1, 13);
         // let mut year: usize = r.gen_range(2018, 2023);
 
@@ -297,10 +297,10 @@ fn gen_date_span(min: usize, max: usize) -> ((Vec<String>,Vec<String>,Vec<String
     for i in 1..from_days.len() {
         let mut n_days: usize = r.gen_range(min..max+1);
 
-        let day = from_days[i].parse::<usize>().unwrap() + n_days;
+        let mut day = from_days[i].parse::<usize>().unwrap() + n_days;
         let mut n_months = 0usize;
-        while day > 30 {
-            day -= 30;
+        while day > 28 {
+            day -= 28;
             n_months += 1;
         }
 
