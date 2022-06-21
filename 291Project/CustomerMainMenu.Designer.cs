@@ -37,6 +37,7 @@
             this.view_curr_res_button = new System.Windows.Forms.Button();
             this.req_res_button = new System.Windows.Forms.Button();
             this.Customer_id_box = new System.Windows.Forms.Label();
+            this.custRequestRes1 = new _291Project.CustRequestRes(false);
             this.custViewCurrentRes1 = new _291Project.CustViewCurrentRes();
             this.custViewPastRes1 = new _291Project.custViewPastRes();
             this.tableLayoutPanel1.SuspendLayout();
@@ -55,22 +56,24 @@
             this.tableLayoutPanel1.Controls.Add(this.LogoutBtn, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(94, 561);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(174, 1197);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Location = new System.Drawing.Point(5, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 51);
+            this.button1.Size = new System.Drawing.Size(158, 109);
             this.button1.TabIndex = 1;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = true;
@@ -79,9 +82,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(3, 174);
+            this.button2.Location = new System.Drawing.Point(5, 369);
+            this.button2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 51);
+            this.button2.Size = new System.Drawing.Size(158, 109);
             this.button2.TabIndex = 2;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
@@ -89,9 +93,10 @@
             // 
             // Back_btn
             // 
-            this.Back_btn.Location = new System.Drawing.Point(3, 60);
+            this.Back_btn.Location = new System.Drawing.Point(5, 127);
+            this.Back_btn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Back_btn.Name = "Back_btn";
-            this.Back_btn.Size = new System.Drawing.Size(85, 51);
+            this.Back_btn.Size = new System.Drawing.Size(158, 109);
             this.Back_btn.TabIndex = 3;
             this.Back_btn.Text = "Back";
             this.Back_btn.UseVisualStyleBackColor = true;
@@ -100,9 +105,10 @@
             // LogoutBtn
             // 
             this.LogoutBtn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LogoutBtn.Location = new System.Drawing.Point(3, 117);
+            this.LogoutBtn.Location = new System.Drawing.Point(5, 248);
+            this.LogoutBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(85, 51);
+            this.LogoutBtn.Size = new System.Drawing.Size(158, 109);
             this.LogoutBtn.TabIndex = 2;
             this.LogoutBtn.Text = "Log Out";
             this.LogoutBtn.UseVisualStyleBackColor = true;
@@ -114,22 +120,24 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.view_curr_res_button, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.req_res_button, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(203, 96);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(377, 205);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(588, 331);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 239F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1092, 706);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // view_curr_res_button
             // 
             this.view_curr_res_button.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.view_curr_res_button.Location = new System.Drawing.Point(3, 112);
+            this.view_curr_res_button.Location = new System.Drawing.Point(5, 239);
+            this.view_curr_res_button.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.view_curr_res_button.Name = "view_curr_res_button";
-            this.view_curr_res_button.Size = new System.Drawing.Size(582, 103);
+            this.view_curr_res_button.Size = new System.Drawing.Size(1081, 220);
             this.view_curr_res_button.TabIndex = 1;
             this.view_curr_res_button.Text = "View Reservations";
             this.view_curr_res_button.UseVisualStyleBackColor = true;
@@ -138,9 +146,10 @@
             // req_res_button
             // 
             this.req_res_button.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.req_res_button.Location = new System.Drawing.Point(3, 3);
+            this.req_res_button.Location = new System.Drawing.Point(5, 6);
+            this.req_res_button.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.req_res_button.Name = "req_res_button";
-            this.req_res_button.Size = new System.Drawing.Size(582, 103);
+            this.req_res_button.Size = new System.Drawing.Size(1081, 220);
             this.req_res_button.TabIndex = 2;
             this.req_res_button.Text = "Request a Reservation";
             this.req_res_button.UseVisualStyleBackColor = true;
@@ -150,9 +159,10 @@
             // 
             this.Customer_id_box.AutoSize = true;
             this.Customer_id_box.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Customer_id_box.Location = new System.Drawing.Point(142, 19);
+            this.Customer_id_box.Location = new System.Drawing.Point(263, 41);
+            this.Customer_id_box.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Customer_id_box.Name = "Customer_id_box";
-            this.Customer_id_box.Size = new System.Drawing.Size(65, 18);
+            this.Customer_id_box.Size = new System.Drawing.Size(131, 33);
             this.Customer_id_box.TabIndex = 2;
             this.Customer_id_box.Text = "Welcome!";
             this.Customer_id_box.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,41 +170,39 @@
             // 
             // custRequestRes1
             // 
-            this.custRequestRes1.Location = new System.Drawing.Point(99, 0);
-            this.custRequestRes1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.custRequestRes1.Location = new System.Drawing.Point(183, 0);
             this.custRequestRes1.Name = "custRequestRes1";
-            this.custRequestRes1.Size = new System.Drawing.Size(787, 561);
+            this.custRequestRes1.Size = new System.Drawing.Size(1462, 1197);
             this.custRequestRes1.TabIndex = 3;
             // 
             // custViewCurrentRes1
             // 
-            this.custViewCurrentRes1.Location = new System.Drawing.Point(98, 3);
-            this.custViewCurrentRes1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.custViewCurrentRes1.Location = new System.Drawing.Point(159, 6);
             this.custViewCurrentRes1.Name = "custViewCurrentRes1";
-            this.custViewCurrentRes1.Size = new System.Drawing.Size(793, 561);
+            this.custViewCurrentRes1.Size = new System.Drawing.Size(1473, 1197);
             this.custViewCurrentRes1.TabIndex = 4;
             // 
             // custViewPastRes1
             // 
-            this.custViewPastRes1.Location = new System.Drawing.Point(108, 0);
-            this.custViewPastRes1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.custViewPastRes1.Location = new System.Drawing.Point(183, 0);
             this.custViewPastRes1.Name = "custViewPastRes1";
-            this.custViewPastRes1.Size = new System.Drawing.Size(787, 561);
+            this.custViewPastRes1.Size = new System.Drawing.Size(1462, 1197);
             this.custViewPastRes1.TabIndex = 5;
             this.custViewPastRes1.Load += new System.EventHandler(this.custViewPastRes1_Load_1);
             // 
             // CustomerMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(1641, 1197);
             this.Controls.Add(this.custViewPastRes1);
             this.Controls.Add(this.custViewCurrentRes1);
             this.Controls.Add(this.custRequestRes1);
             this.Controls.Add(this.Customer_id_box);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "CustomerMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Numved Car Rentals";
