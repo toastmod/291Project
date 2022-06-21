@@ -12,7 +12,7 @@ namespace _291Project
         bool branch_change;
         public DataTable CustRes_dt = new DataTable();
         public SqlDataReader reader = null;
-        public bool asEmployee = false; 
+        public bool asEmployee = false;
 
         /// <summary>
         /// Override for initializing this UC as an employee.
@@ -24,11 +24,11 @@ namespace _291Project
             InitializeComponent();
             if (asEmployee)
             {
-                label1.Text = "Reservation ID to accept";
+                //label1.Text = "Reservation ID to accept";
             }
             else
             {
-                label1.Text = "Car ID to request";
+                //label1.Text = "Car ID to request";
             }
 
             branch_change = false;
@@ -60,11 +60,9 @@ namespace _291Project
 
         private static string gen_querystr()
         {
-            return ($"SELECT Cars.Car_ID, Cars.Car_Type, Cars.Branch_ID, CarStatus.Status, Branches.City, Branches.Province " +
-                $"FROM Cars, CarStatus, Branches WHERE Branches.City = 'Edmonton' AND Branches.Branch_ID = Cars.Branch_ID AND " +
-                $"Cars.CarStatusID = CarStatus.CarStatusID AND Cars.Branch_ID = 0 OR Cars.Branch_ID = 1 OR Cars.Branch_ID = 2 OR " +
-                $"Cars.Branch_ID = 3 OR Cars.Branch_ID = 4 OR Cars.Branch_ID = 5 OR Cars.Branch_ID = 6 OR Cars.Branch_ID = 7 OR " +
-                $"Cars.Branch_ID = 8 OR Cars.Branch_ID = 9 OR Cars.Branch_ID = 10");
+            String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate\" FROM Cars c, CarTypes ct, Branches b, CarStatus cs WHERE c.Car_Type = ct.CarType AND b.Branch_ID = c.Branch_ID AND c.CarStatusID = 1";
+            return query;
+
         }
 
         private string GenQueryStr()
@@ -170,6 +168,27 @@ namespace _291Project
         {
 
         }
+        private string GetResID()
+        {
+            string resID = "null";
+            SqlDataReader tempreader = DBridge.run_query("SELECT MAX(Res_ID) FROM Reservations");
+            if (tempreader.Read())
+            {
+                resID = tempreader[0].ToString(); // 
+            }
+            MessageBox.Show($"Selected Value: {resID}.", "Rental Request Debug");
+            return resID;
+        }
+
+        private string GetCarID()
+        // Takes in selected row and gets the value from Customer_ID field.
+        {
+            int selectedrowindex = ResTable.SelectedCells[0].RowIndex; // Get row index 
+            DataGridViewRow selectedRow = ResTable.Rows[selectedrowindex]; // get row
+            string carID = Convert.ToString(selectedRow.Cells["ID"].Value); // Get Customer ID
+            MessageBox.Show($"Selected Value: {carID}.", "Rental Request Debug");
+            return carID;
+        }
 
         private void ResTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -203,21 +222,46 @@ namespace _291Project
 
             }
 
-
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void RequestBtn_click(object sender, EventArgs e)
         {
-            if(this.asEmployee)
+            if (ResTable.Rows.GetRowCount(DataGridViewElementStates.Selected) == 0) // if no car selected
             {
-                // Submit request as an employee?
+                MessageBox.Show("Please select a car to reserve.", "Rental Request Invalid");
             }
             else
             {
-                // Submit request as a customer? not sure what the difference might but...
+                string resID = GetCarID();
+                string carID = GetResID();
+                if (this.asEmployee)
+                {
+                    // Submit request as an employee?
+                }
+                else
+                {
+                    // Submit request as a customer? not sure what the difference might but...
+                }
             }
+
+            //if (CustomerAlreadyTerminated(customerID, customerName))
+            //{
+            //MessageBox.Show($"{customerName}'s membership is already terminated.");
+            //return; // Stop stop they're already dead!!
+            //}
+            // Otherwise show confirmation box
+            //DialogResult result1 = MessageBox.Show($"Are you sure you would like to deactivate Customer: {customerName}?\n\nWARNING: THERE IS NO WAY TO REVERSE TERMINATION",
+            //"Confirm Member Termination",
+            //MessageBoxButtons.YesNo);
+            //if (result1 == DialogResult.Yes)
+            //{
+            //DelCustomer(customerID); // Assign their membership type to 0
+            //}
+
+
         }
+
+
 
         public void GoBack()
         {

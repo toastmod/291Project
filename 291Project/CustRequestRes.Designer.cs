@@ -50,22 +50,23 @@
             // 
             this.ResTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResTable.Location = new System.Drawing.Point(45, 3);
-            this.ResTable.Margin = new System.Windows.Forms.Padding(2);
+            this.ResTable.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ResTable.Name = "ResTable";
             this.ResTable.RowHeadersWidth = 72;
             this.ResTable.RowTemplate.Height = 37;
             this.ResTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ResTable.Size = new System.Drawing.Size(698, 348);
             this.ResTable.TabIndex = 0;
+
             this.ResTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ResTable_CellContentClick);
             // 
             // RequestBtn
             // 
             this.RequestBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RequestBtn.Location = new System.Drawing.Point(581, 500);
-            this.RequestBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.RequestBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RequestBtn.Name = "RequestBtn";
-            this.RequestBtn.Size = new System.Drawing.Size(122, 46);
+            this.RequestBtn.Size = new System.Drawing.Size(122, 45);
             this.RequestBtn.TabIndex = 7;
             this.RequestBtn.Text = "Request Car";
             this.RequestBtn.UseVisualStyleBackColor = true;
@@ -74,7 +75,7 @@
             // rates
             // 
             this.rates.Location = new System.Drawing.Point(150, 475);
-            this.rates.Margin = new System.Windows.Forms.Padding(2);
+            this.rates.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.rates.Name = "rates";
             this.rates.Size = new System.Drawing.Size(173, 23);
             this.rates.TabIndex = 24;
@@ -83,7 +84,7 @@
             // 
             this.cartypes.FormattingEnabled = true;
             this.cartypes.Location = new System.Drawing.Point(150, 439);
-            this.cartypes.Margin = new System.Windows.Forms.Padding(2);
+            this.cartypes.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cartypes.Name = "cartypes";
             this.cartypes.Size = new System.Drawing.Size(173, 23);
             this.cartypes.TabIndex = 21;
@@ -93,7 +94,7 @@
             // 
             this.Branches.FormattingEnabled = true;
             this.Branches.Location = new System.Drawing.Point(150, 403);
-            this.Branches.Margin = new System.Windows.Forms.Padding(2);
+            this.Branches.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Branches.Name = "Branches";
             this.Branches.Size = new System.Drawing.Size(173, 23);
             this.Branches.TabIndex = 20;
@@ -103,7 +104,7 @@
             // 
             this.Provinces.FormattingEnabled = true;
             this.Provinces.Location = new System.Drawing.Point(150, 370);
-            this.Provinces.Margin = new System.Windows.Forms.Padding(2);
+            this.Provinces.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Provinces.Name = "Provinces";
             this.Provinces.Size = new System.Drawing.Size(173, 23);
             this.Provinces.TabIndex = 19;
@@ -157,9 +158,10 @@
             // 
             this.UpdateResScreen.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UpdateResScreen.Location = new System.Drawing.Point(174, 500);
-            this.UpdateResScreen.Margin = new System.Windows.Forms.Padding(2);
+
+            this.UpdateResScreen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.UpdateResScreen.Name = "UpdateResScreen";
-            this.UpdateResScreen.Size = new System.Drawing.Size(122, 46);
+            this.UpdateResScreen.Size = new System.Drawing.Size(122, 45);
             this.UpdateResScreen.TabIndex = 25;
             this.UpdateResScreen.Text = "Refresh";
             this.UpdateResScreen.UseVisualStyleBackColor = true;
@@ -190,15 +192,15 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(539, 403);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(206, 23);
             this.dateTimePicker1.TabIndex = 30;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(539, 440);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker2.Location = new System.Drawing.Point(540, 440);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(206, 23);
             this.dateTimePicker2.TabIndex = 31;
@@ -220,11 +222,11 @@
             this.Controls.Add(this.Cartype);
             this.Controls.Add(this.Branch);
             this.Controls.Add(this.Province);
-            this.Controls.Add(this.RequestBtn);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ResTable);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "CustRequestRes";
-            this.Size = new System.Drawing.Size(788, 556);
+            this.Size = new System.Drawing.Size(788, 555);
             this.Load += new System.EventHandler(this.CustRequestRes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ResTable)).EndInit();
             this.ResumeLayout(false);
