@@ -222,7 +222,6 @@
             this.Controls.Add(this.Cartype);
             this.Controls.Add(this.Branch);
             this.Controls.Add(this.Province);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.ResTable);
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "CustRequestRes";

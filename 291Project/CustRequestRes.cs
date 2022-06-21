@@ -169,27 +169,7 @@ namespace _291Project
         {
 
         }
-        private string GetResID()
-        {
-            string resID = "null";
-            SqlDataReader tempreader = DBridge.run_query("SELECT MAX(Res_ID) FROM Reservations");
-            if (tempreader.Read())
-            {
-                resID = tempreader[0].ToString(); // 
-            }
-            MessageBox.Show($"Selected Value: {resID}.", "Rental Request Debug");
-            return resID;
-        }
 
-        private string GetCarID()
-        // Takes in selected row and gets the value from Customer_ID field.
-        {
-            int selectedrowindex = ResTable.SelectedCells[0].RowIndex; // Get row index 
-            DataGridViewRow selectedRow = ResTable.Rows[selectedrowindex]; // get row
-            string carID = Convert.ToString(selectedRow.Cells["ID"].Value); // Get Customer ID
-            MessageBox.Show($"Selected Value: {carID}.", "Rental Request Debug");
-            return carID;
-        }
 
         private void ResTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -270,10 +250,6 @@ namespace _291Project
             this.Enabled = false;
         }
 
-        private void ReservationTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void label4_Click(object sender, EventArgs e)
         {
