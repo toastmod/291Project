@@ -377,6 +377,24 @@ namespace _291Project
         }
 
 
+        private bool CheckMembershipUpgrade()
+        {
+            String result;
+            int resnum;
+            var reader = DBridge.run_query($"SELECT count(*) FROM RESERVATIONS WHERE Customer_ID = {Program.context_userid} AND From_Year = {System.DateTime.Today.Year}");
+            if (reader.Read())
+            {
+                result = reader[0].ToString();
+                resnum = Int32.Parse(s: result);
+            if (resnum > 2) // upgrade to gold member
+            {
+                return true;
+            }
+            }
+            return false;
+                
+
+        }
 
         private void RequestBtn_click(object sender, EventArgs e)
         {
@@ -421,6 +439,7 @@ namespace _291Project
                         "Reservations",
                         $"{int.Parse(GetResID()) + 1},{from_day},{from_month},{from_year},{to_day},{to_month},{to_year},{carid},{empid},{bid},{Program.context_userid},null"
                         );
+                        CheckMembershipUpgrade();
 
                     }
                     else
