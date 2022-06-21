@@ -22,14 +22,14 @@ namespace _291Project
         {
             this.asEmployee = asEmployee;
             InitializeComponent();
-            if (asEmployee)
-            {
-                label1.Text = "Reservation ID to accept";
-            }
-            else
-            {
-                label1.Text = "Car ID to request";
-            }
+            //if (asEmployee)
+            //{
+            //    label1.Text = "Reservation ID to accept";
+            //}
+            //else
+            //{
+            //    label1.Text = "Car ID to request";
+            //}
 
             branch_change = false;
             reader = DBridge.run_query(CustRequestRes.gen_querystr());
@@ -211,11 +211,16 @@ namespace _291Project
         {
             if(this.asEmployee)
             {
-                // Submit request as an employee?
+                // probably cancel the selected ID
+                
             }
             else
             {
                 // Submit request as a customer? not sure what the difference might but...
+                DBridge.insert_row(
+                    "Reservations",
+                    ""
+                );
             }
         }
 
@@ -223,11 +228,6 @@ namespace _291Project
         {
             this.Hide();
             this.Enabled = false;
-        }
-
-        private void ReservationTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void label4_Click(object sender, EventArgs e)
