@@ -31,17 +31,18 @@ namespace _291Project
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CarSearchDataView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CarSearchDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.RowHeadersWidth = 72;
+            this.dataGridView1.Size = new System.Drawing.Size(411, 300);
             this.dataGridView1.TabIndex = 4;
             // 
             // CarSearchDataView
@@ -49,42 +50,24 @@ namespace _291Project
             this.CarSearchDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CarSearchDataView.Dock = System.Windows.Forms.DockStyle.Top;
             this.CarSearchDataView.Location = new System.Drawing.Point(0, 0);
+            this.CarSearchDataView.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.CarSearchDataView.Name = "CarSearchDataView";
+            this.CarSearchDataView.RowHeadersWidth = 72;
             this.CarSearchDataView.RowTemplate.Height = 25;
-            this.CarSearchDataView.Size = new System.Drawing.Size(660, 279);
+            this.CarSearchDataView.Size = new System.Drawing.Size(1131, 621);
             this.CarSearchDataView.TabIndex = 1;
             this.CarSearchDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CarSearchDataView_click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 285);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(84, 285);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // EmpCarsAvailable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(204)))), ((int)(((byte)(186)))));
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.CarSearchDataView);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EmpCarsAvailable";
-            this.Size = new System.Drawing.Size(660, 450);
+            this.Size = new System.Drawing.Size(1131, 900);
             this.Load += new System.EventHandler(this.EmpCarsAvailable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CarSearchDataView)).EndInit();
@@ -96,7 +79,5 @@ namespace _291Project
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView CarSearchDataView;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }
