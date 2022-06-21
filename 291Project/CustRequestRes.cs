@@ -362,7 +362,11 @@ namespace _291Project
         }
 
 
-
+        private void UpgradeCustomerMembership()
+        {// Only called when customer is elligible
+            DBridge.run_query($"UPDATE Customers SET membership_type = 2 WHERE customer_ID = {Program.context_userid}");
+            MessageBox.Show("You've been upgraded to a Gold Member! Thank you for your service!", "Congratulations!");
+        }
 
 
         private string GetMaxEmployeeID()
@@ -388,7 +392,16 @@ namespace _291Project
                 resnum = Int32.Parse(s: result);
             if (resnum > 2) // upgrade to gold member
             {
-                return true;
+            reader = DBridge.run_query($"SELECT membership_type FROM Customers WHERE Customer_ID = {Program.context_userid}");
+            if (reader.Read())
+                    {
+                        result = reader[0].ToString();
+                        resnum = Int32.Parse(result);
+                        if (resnum == 1)
+                        {
+                            return true;
+                        }
+                    }
             }
             }
             return false;
@@ -439,14 +452,18 @@ namespace _291Project
                         "Reservations",
                         $"{int.Parse(GetResID()) + 1},{from_day},{from_month},{from_year},{to_day},{to_month},{to_year},{carid},{empid},{bid},{Program.context_userid},null"
                         );
-                        CheckMembershipUpgrade();
+                        if (CheckMembershipUpgrade())
+                        {
+                            UpgradeCustomerMembership();
+                        }
 
+                        MessageBox.Show("Reservation has been made, thank you!", "Car Reserved");
+                        this.Hide();
                     }
                     else
                     {
                         MessageBox.Show("Fatal Error, could not read Employee ID from Car's Branch ID.", "Debug Message");
                     }
-
                 }
 
             }
