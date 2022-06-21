@@ -13,7 +13,7 @@ namespace _291Project
     public partial class EmpReservationMenu : UserControl
     {
 
-        private EmpCurrentRes cur_res_uc = null;
+        public CustRequestRes createResPanel = null; 
         public EmpReservationMenu()
         {
             InitializeComponent();
@@ -21,25 +21,24 @@ namespace _291Project
 
         private void emp_create_res_Click(object sender, EventArgs e)
         {
+            if(createResPanel == null)
+            {
+                createResPanel = new CustRequestRes(true);
+            }
 
+            createResPanel.Show();
+            createResPanel.BringToFront();
+            createResPanel.Enabled = true;
+            createResPanel.Visible = true;
+            
         }
 
         private void emp_curr_res_Click(object sender, EventArgs e)
         {
-
-            //if (empCurrentRes1 == null)
-            //{
-            //    cur_res_uc = new EmpCurrentRes();
-            //    this.Controls.Add(cur_res_uc);
-            //}
-
             empCurrentRes1.Show();
             empCurrentRes1.BringToFront();
             empCurrentRes1.Enabled = true;
             empCurrentRes1.Visible = true;
-            //empCurrentRes1.Dock = DockStyle.Fill;
-            //this.Enabled = false;
-
         }
 
         private void emp_past_res_Click(object sender, EventArgs e)
@@ -50,7 +49,22 @@ namespace _291Project
 		public bool GoBack() 
 		{
 
-            if(!empCurrentRes1.Enabled)
+            
+            if(createResPanel != null)
+            {
+                // close create res and return here
+                if(createResPanel.Enabled)
+                {
+                    createResPanel.GoBack();
+                    this.Enabled = true;
+                    this.BringToFront();
+                    this.Show();
+                    return false;
+                }
+            }
+
+            // close current res and return here
+            if(empCurrentRes1.Enabled)
             {
                 empCurrentRes1.GoBack();
                 this.Enabled = true;
@@ -58,14 +72,14 @@ namespace _291Project
                 this.Show();
                 return false;
             }
-            else
-            {
-                Program.println("Going back from EmpReservationMenu");
-                this.Hide();
-                this.Enabled = false;
-                return true;
-            }
-		}
+
+            // return home
+            Program.println("Going back from EmpReservationMenu");
+            this.Hide();
+            this.Enabled = false;
+            return true;
+
+        }
 
         private void EmpReservationMenu_Load(object sender, EventArgs e)
         {

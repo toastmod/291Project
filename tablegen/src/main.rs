@@ -7,7 +7,7 @@ const car_types: [&str; 4] = ["CarType","SEDAN", "TRUCK", "VAN"];
 const car_statuses: [&str; 4] = ["Status","IN_REPAIR", "AVAIL", "RESERVED"];
 //const car_ids1: [&str; 13] = ["Car_ID"];
 //const repair_ids1: [&str; 13] = ["RepairID"];
-const res_statues: [&str; 4] = ["Status","RESERVED", "IN PROCESS", "COMPLETED"];
+const res_statues: [&str; 3] = ["Status","REQUESTED", "ACCEPTED"];
 const membership_types: [&str; 3] = ["MembershipType","REG", "GOLD"]; 
 
 const AMT_OF_BRANCHES: usize = 11;
@@ -51,6 +51,19 @@ impl Gen for StatusID {
         s
     }
 }
+
+struct ReservationStatus;
+impl Gen for ReservationStatus {
+    fn gen() -> String {
+        let mut r = rand::thread_rng();
+        let mut rng: usize = r.gen_range(0..3);
+        let mut s = String::from(format!("{}", rng)); 
+        s
+    }
+}
+
+
+
 
 struct FirstName;
 static mut FIRSTNAME_IDX: usize = 0;

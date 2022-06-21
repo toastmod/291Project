@@ -12,9 +12,25 @@ namespace _291Project
         bool branch_change;
         public DataTable CustRes_dt = new DataTable();
         public SqlDataReader reader = null;
-        public CustRequestRes()
+        public bool asEmployee = false; 
+
+        /// <summary>
+        /// Override for initializing this UC as an employee.
+        /// </summary>
+        /// <param name="asEmployee"></param>
+        public CustRequestRes(bool asEmployee)
         {
+            this.asEmployee = asEmployee;
             InitializeComponent();
+            if (asEmployee)
+            {
+                label1.Text = "Reservation ID to accept";
+            }
+            else
+            {
+                label1.Text = "Car ID to request";
+            }
+
             branch_change = false;
             reader = DBridge.run_query(CustRequestRes.gen_querystr());
             CustRes_dt.Load(reader);
@@ -188,6 +204,49 @@ namespace _291Project
             }
 
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(this.asEmployee)
+            {
+                // Submit request as an employee?
+            }
+            else
+            {
+                // Submit request as a customer? not sure what the difference might but...
+            }
+        }
+
+        public void GoBack()
+        {
+            this.Hide();
+            this.Enabled = false;
+        }
+
+        private void ReservationTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

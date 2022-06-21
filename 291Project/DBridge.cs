@@ -47,5 +47,21 @@ namespace _291Project
             return myReader;
         }
 
+        public static void create_res(String car_id, String next_res_id)
+        {
+            var i = 0;
+            if (int.TryParse(car_id, System.Globalization.NumberStyles.Integer, null, out i))
+            {
+                var cmd = new SqlCommand();
+                // NOT RIGHT DONT TOUCH this needs to be an INSERT command 
+                //cmd.CommandText = $"UPDATE Reservations SET Status = \"ACCEPTED\" WHERE res_id = ${car_id.ToString()} AND Status = \"REQUESTED\"";
+            }
+            else
+            {
+                MessageBox.Show("Invalid input","Invalid input");
+            }
+
+        }
+
     }
 }

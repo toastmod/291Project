@@ -7,6 +7,8 @@ namespace _291Project
     static class Program
     {
 
+        public static bool context_customer = false;
+        public static String context_userid = null;
         public static String context_branchid = null;
         /// <summary>
         ///  The main entry point for the application.

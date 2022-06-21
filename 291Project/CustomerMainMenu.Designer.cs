@@ -37,7 +37,7 @@
             this.view_curr_res_button = new System.Windows.Forms.Button();
             this.req_res_button = new System.Windows.Forms.Button();
             this.Customer_id_box = new System.Windows.Forms.Label();
-            this.custRequestRes1 = new _291Project.CustRequestRes();
+            this.custRequestRes1 = new _291Project.CustRequestRes(false);
             this.custViewCurrentRes1 = new _291Project.CustViewCurrentRes();
             this.custViewPastRes1 = new _291Project.custViewPastRes();
             this.tableLayoutPanel1.SuspendLayout();

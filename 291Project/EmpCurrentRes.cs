@@ -35,9 +35,8 @@ namespace _291Project
         public void GoBack()
         {
             Program.println("Going back from EmpCurrentRes");
-            this.Visible = false;
+            //this.SendToBack();
             this.Hide();
-            this.SendToBack();
             this.Enabled = false;
         }
     }
