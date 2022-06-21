@@ -78,6 +78,10 @@ namespace _291Project
             {
                 query += $" AND c.Car_Type LIKE '{cartypes.SelectedItem.ToString()}'";
             }
+            if (rate_filter)
+            {
+                query += $" AND ct.monthly_rate <= '{Program.ExtractLeadingNumbers(rates.Text)}'";
+            }
             return query;
 
         }
@@ -353,6 +357,28 @@ namespace _291Project
 
         }
 
+        bool ratesValid(String s)
+        {
+            if (Program.ExtractLeadingNumbers(s).Length > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void rates_TextChanged_1(object sender, EventArgs e)
+        {
+            if (ratesValid(rates.Text))
+            {
+                rate_filter = true;
+                RefreshView();
+            }
+            else
+            {
+                rate_filter = false;
+
+            }
+        }
     }
 }
 
