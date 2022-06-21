@@ -47,13 +47,14 @@ namespace _291Project
             return myReader;
         }
 
-        public static void accept_res(String res_id)
+        public static void create_res(String car_id, String next_res_id)
         {
             var i = 0;
-            if (int.TryParse(res_id, System.Globalization.NumberStyles.Integer, null, out i))
+            if (int.TryParse(car_id, System.Globalization.NumberStyles.Integer, null, out i))
             {
                 var cmd = new SqlCommand();
-                cmd.CommandText = $"UPDATE Reservations SET Status = \"ACCEPTED\" WHERE res_id = ${res_id.ToString()} AND Status = \"REQUESTED\"";
+                // NOT RIGHT DONT TOUCH this needs to be an INSERT command 
+                //cmd.CommandText = $"UPDATE Reservations SET Status = \"ACCEPTED\" WHERE res_id = ${car_id.ToString()} AND Status = \"REQUESTED\"";
             }
             else
             {

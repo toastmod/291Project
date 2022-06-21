@@ -49,14 +49,21 @@ namespace _291Project
 		public bool GoBack() 
 		{
 
+            
             if(createResPanel != null)
             {
+                // close create res and return here
                 if(createResPanel.Enabled)
                 {
                     createResPanel.GoBack();
+                    this.Enabled = true;
+                    this.BringToFront();
+                    this.Show();
+                    return false;
                 }
             }
 
+            // close current res and return here
             if(empCurrentRes1.Enabled)
             {
                 empCurrentRes1.GoBack();
@@ -65,14 +72,14 @@ namespace _291Project
                 this.Show();
                 return false;
             }
-            else
-            {
-                Program.println("Going back from EmpReservationMenu");
-                this.Hide();
-                this.Enabled = false;
-                return true;
-            }
-		}
+
+            // return home
+            Program.println("Going back from EmpReservationMenu");
+            this.Hide();
+            this.Enabled = false;
+            return true;
+
+        }
 
         private void EmpReservationMenu_Load(object sender, EventArgs e)
         {

@@ -55,10 +55,26 @@ namespace _291Project
             }
             else if (login_id[0] == 'C') // redirect to customer menu
             {
-                CustomerMainMenu cMain = new CustomerMainMenu(this);
-                cMain.CustomerDisplayName = userlogin;
-                cMain.Show();
-                this.Visible = false;
+                Program.context_userid = userlogin.Substring(1);
+                Program.println($"Logging in as customer: {Program.context_userid}");
+                var reader = DBridge.run_query($"SELECT first_name FROM Customers WHERE customer_ID = {Program.context_userid}");
+                if (reader.Read())
+                {
+                    Program.context_customer = true;
+                    var cust_name = reader["first_name"].ToString();
+                    CustomerMainMenu cMain = new CustomerMainMenu(this);
+                    cMain.CustomerDisplayName = cust_name;
+                    cMain.Show();
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter Valid Credentials", "Failed to Login",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                reader.Close();
+
             }
             else if (login_id[0] == 'E') // redirect to employee menu
             {
