@@ -19,6 +19,16 @@ namespace _291Project
         bool branch_filter = false;
         bool rate_filter = false;
 
+        private int from_day;
+        private int from_month;
+        private int from_year;
+
+        private int to_day;
+        private int to_month;
+        private int to_year;
+
+
+
         /// <summary>
         /// Override for initializing this UC as an employee.
         /// </summary>
@@ -63,7 +73,7 @@ namespace _291Project
         }
 
 
-        private string gen_querystr()
+        private string default_query()
         {
             String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate\" FROM Cars c, CarTypes ct, Branches b, CarStatus cs WHERE c.Car_Type = ct.CarType AND b.Branch_ID = c.Branch_ID AND c.CarStatusID = 1";
             if (province_filter)
@@ -80,6 +90,62 @@ namespace _291Project
             }
             return query;
 
+        }
+
+
+        private string date_query()
+        {
+            String query = "SELECT DISTINCT c.Car_ID as \"ID\", c.Car_Type, b.City, b.Province, FORMAT(ct.daily_rate, 'C') as \"Day Rate\", FORMAT(ct.weekly_rate, 'C') as \"Weekly Rate\", FORMAT(ct.monthly_rate, 'C') as \"Monthly Rate\" " +
+                "FROM Cars c, CarTypes ct, Branches b, CarStatus cs, Reservations r " +
+                "WHERE c.Car_Type = ct.CarType AND b.Branch_ID = c.Branch_ID AND c.CarStatusID = 1" +
+                "AND r.Car_ID = c.Car_ID" +
+                $"AND (" +
+                        // from/to reserved is ahead of requested from/to
+                        $"(" +
+                            $"(DATEFROMPARTS(r.From_Year, r.From_Month, r.From_Day) > DATEFROMPARTS({from_year},{from_month},{from_day}))" +
+                            $"AND" +
+                            $"(DATEFROMPARTS(r.To_Year, r.To_Month, r.To_Day) > DATEFROMPARTS({to_year},{to_month},{to_day}))" +
+                        $"(" +
+                    $"XOR" +
+                        // from/to reserved is behind requested from/to
+                        "(" +
+                            $"(DATEFROMPARTS(r.From_Year, r.From_Month, r.From_Day) < DATEFROMPARTS({from_year},{from_month},{from_day}))" +
+                            $"AND" +
+                            $"(DATEFROMPARTS(r.To_Year, r.To_Month, r.To_Day) < DATEFROMPARTS({to_year},{to_month},{to_day}))" +
+                        ")" +
+                    $")";
+            if (province_filter)
+            {
+                query += $" AND b.Province LIKE '{Provinces.SelectedItem.ToString()}'";
+            }
+            if (branch_filter)
+            {
+                query += $" AND b.branch_ID = {Program.ExtractLeadingNumbers(Branches.SelectedItem.ToString())}";
+            }
+            if (cartype_filter)
+            {
+                query += $" AND c.Car_Type LIKE '{cartypes.SelectedItem.ToString()}'";
+            }
+            return query;
+
+        }
+
+
+        private string gen_querystr()
+        {
+            if(
+                (from_day == null || from_month == null || from_year == null)
+                ||
+                (to_day == null || to_month == null || to_year == null)
+                
+            )
+            {
+                return default_query();
+            }
+            else
+            {
+                return date_query();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -345,21 +411,27 @@ namespace _291Project
 
         }
 
-
-
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             // From Date update
-            var from_day = dateTimePicker1.Value.Day;
-            var from_month = dateTimePicker1.Value.Month;
-            var from_year = dateTimePicker1.Value.Year;
+            from_day = dateTimePicker1.Value.Day;
+            from_month = dateTimePicker1.Value.Month;
+            from_year = dateTimePicker1.Value.Year;
 
 
 
 
         }
 
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            // To Date update
+            to_day = dateTimePicker2.Value.Day;
+            to_month = dateTimePicker2.Value.Month;
+            to_year = dateTimePicker2.Value.Year;
+
+
+        }
     }
 }
 
